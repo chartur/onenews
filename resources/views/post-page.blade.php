@@ -88,6 +88,10 @@
 							<div class="post-content">
 								{!! getAttributeByLang($post, 'content') !!}
 							</div>
+							<p class="mt-2">
+								<b class="mr-2">{{ trans('main.href') }}</b>
+								<a href="{{ $post->source }}" target="_blank"><i>{{ $post->source }}</i></a>
+							</p>
 						</div>
 					</div>
 					<hr>
