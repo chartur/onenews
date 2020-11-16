@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a9c7e3-7d99-48c6-9812-0c07c4ff5224" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/admin/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/css/app-green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/css/app-green.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,13 +31,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="41" />
+          <entry key="css" value="42" />
           <entry key="env" value="4" />
           <entry key="html" value="5" />
           <entry key="js" value="41" />
           <entry key="json" value="3" />
           <entry key="md" value="1" />
-          <entry key="php" value="493" />
+          <entry key="php" value="494" />
           <entry key="png" value="2" />
           <entry key="rnc" value="1" />
           <entry key="stub" value="1" />
@@ -50,8 +48,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="219" />
-          <entry key="CSS" value="41" />
+          <entry key="Blade" value="220" />
+          <entry key="CSS" value="42" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="3" />
@@ -65,7 +63,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="4186" />
+          <entry key="css" value="4187" />
           <entry key="dummy" value="13" />
           <entry key="env" value="38" />
           <entry key="html" value="389" />
@@ -78,7 +76,7 @@
         <counts>
           <entry key=".env file" value="38" />
           <entry key="Blade" value="27015" />
-          <entry key="CSS" value="4187" />
+          <entry key="CSS" value="4188" />
           <entry key="HTML" value="442" />
           <entry key="JSON" value="25" />
           <entry key="JavaScript" value="3144" />
@@ -166,29 +164,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/admin/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-12">
               <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/lang/hy/main.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="30" selection-start-line="30" selection-end-line="31" />
+            <state relative-caret-position="180">
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/admin/css/app-green.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="21" lean-forward="true" selection-end-line="51" selection-end-column="29" />
+              <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -205,7 +203,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>has_video</find>
       <find>create-new-post-href</find>
       <find>embed</find>
       <find>addButton</find>
@@ -235,6 +232,7 @@
       <find>John Doe</find>
       <find>href</find>
       <find>http://fonts.googleapis.com/css</find>
+      <find>app-green.css</find>
     </findStrings>
     <replaceStrings>
       <replace>col-sm-4 font-button</replace>
@@ -246,7 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/symfony/mime/Resources/bin/update_mime_types.php" />
         <option value="$PROJECT_DIR$/resources/views/components/breaking-news.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/posts-list.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_11_15_111949_create_pages_table.php" />
@@ -297,6 +294,7 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/header.blade.php" />
         <option value="$PROJECT_DIR$/public/admin/css/app.css" />
+        <option value="$PROJECT_DIR$/public/admin/css/app-green.css" />
       </list>
     </option>
   </component>
@@ -548,7 +546,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="header&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/header.blade.php&#10;main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;loader&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/LoaderController.php&#10;Post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;Main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/MainController.php&#10;page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;admin&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;web&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/routes/web.php&#10;kernel&#9;null&#9;null&#10;authCo&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;app/Exceptions/Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;st&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;wel&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;we&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;Categ&#9;null&#9;null&#10;Posts&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/PostsController.php&#10;menu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;Page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PageController.php&#10;about&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/about.blade.php&#10;admin.blad&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;footer&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;seo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;se&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;2020_11_15_112556_create_seos_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_112556_create_seos_table.php&#10;2020_11_15_111949_create_pages_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_111949_create_pages_table.php&#10;enu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;main.&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;ain&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/lang/ru/main.php&#10;fancybox&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/fancybox&#10;create&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;list&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/posts-list.blade.php&#10;post-pa&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;foot&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;foo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;post-&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;postCont&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;men&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;adm&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;2020_11_14_181506_add_description_column_in_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_14_181506_add_description_column_in_posts_table.php&#10;scrip&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;2020_11_13_231010_create_tag_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_13_231010_create_tag_posts_table.php&#10;cate&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/seeders/CategoriesSeeder.php&#10;create_post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_04_222110_create_posts_table.php&#10;scr&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;ստ&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/css/styles.css&#10;crea&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;app&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/config/app.php" />
+    <property name="SearchEverywhereHistoryKey" value="app-green.css&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/css/app-green.css&#10;admin&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;header&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/header.blade.php&#10;main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;loader&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/LoaderController.php&#10;Post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;Main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/MainController.php&#10;page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;web&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/routes/web.php&#10;kernel&#9;null&#9;null&#10;authCo&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;app/Exceptions/Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;st&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;wel&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;we&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;Categ&#9;null&#9;null&#10;Posts&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/PostsController.php&#10;menu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;Page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PageController.php&#10;about&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/about.blade.php&#10;admin.blad&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;footer&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;seo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;se&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;2020_11_15_112556_create_seos_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_112556_create_seos_table.php&#10;2020_11_15_111949_create_pages_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_111949_create_pages_table.php&#10;enu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;main.&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;ain&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/lang/ru/main.php&#10;fancybox&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/fancybox&#10;create&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;list&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/posts-list.blade.php&#10;post-pa&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;foot&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;foo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;post-&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;postCont&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;men&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;adm&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;2020_11_14_181506_add_description_column_in_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_14_181506_add_description_column_in_posts_table.php&#10;scrip&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;2020_11_13_231010_create_tag_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_13_231010_create_tag_posts_table.php&#10;cate&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/seeders/CategoriesSeeder.php&#10;create_post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_04_222110_create_posts_table.php&#10;scr&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;ստ&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/css/styles.css&#10;crea&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -609,12 +607,12 @@
       <workItem from="1605439029902" duration="13467000" />
       <workItem from="1605472327797" duration="8518000" />
       <workItem from="1605521730255" duration="9528000" />
-      <workItem from="1605544567583" duration="17067000" />
+      <workItem from="1605544567583" duration="17132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210599000" />
+    <option name="totallyTimeSpent" value="210664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="24" width="1359" height="798" extended-state="0" />
@@ -649,13 +647,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/components/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/admin/tinymce/plugins/embed/plugin.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -914,16 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="106" column="45" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -1019,8 +1000,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/admin/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-12">
           <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/css/app-green.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
         </state>
       </provider>
     </entry>
