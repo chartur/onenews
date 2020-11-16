@@ -2,7 +2,7 @@
 	<a class="d-block mr-5" href="/">
 		<div style="padding-left: 30px" class="position-relative">
 			<div class="d-inline-block main-color logo-name">ONE</div>
-			<img src="{{ asset('/images/fav.png') }}" width="60px">
+			<img src="{{ asset('/images/fav.png') }}" alt="onenews logo" width="60px">
 		</div>
 	</a>
 	<div class="d-none d-sm-block w-50">

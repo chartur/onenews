@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a9c7e3-7d99-48c6-9812-0c07c4ff5224" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +33,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="40" />
+          <entry key="css" value="41" />
           <entry key="env" value="4" />
           <entry key="html" value="5" />
           <entry key="js" value="41" />
           <entry key="json" value="3" />
           <entry key="md" value="1" />
-          <entry key="php" value="490" />
+          <entry key="php" value="493" />
           <entry key="png" value="2" />
           <entry key="rnc" value="1" />
           <entry key="stub" value="1" />
@@ -48,14 +50,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="4" />
-          <entry key="Blade" value="217" />
-          <entry key="CSS" value="40" />
+          <entry key="Blade" value="219" />
+          <entry key="CSS" value="41" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="41" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="273" />
+          <entry key="PHP" value="274" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RNG Compact" value="1" />
           <entry key="TypeScript" value="3" />
@@ -63,24 +65,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="4185" />
+          <entry key="css" value="4186" />
           <entry key="dummy" value="13" />
           <entry key="env" value="38" />
           <entry key="html" value="389" />
           <entry key="js" value="3173" />
           <entry key="json" value="25" />
-          <entry key="php" value="46547" />
+          <entry key="php" value="46610" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="38" />
-          <entry key="Blade" value="26990" />
-          <entry key="CSS" value="4186" />
+          <entry key="Blade" value="27015" />
+          <entry key="CSS" value="4187" />
           <entry key="HTML" value="442" />
           <entry key="JSON" value="25" />
           <entry key="JavaScript" value="3144" />
-          <entry key="PHP" value="19532" />
+          <entry key="PHP" value="19570" />
           <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
@@ -107,22 +109,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+            <state relative-caret-position="618">
+              <caret line="70" column="62" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoaderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+            <state relative-caret-position="135">
+              <caret line="22" column="66" lean-forward="true" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
               <folding>
-                <element signature="e#139#175#0#PHP" expanded="true" />
+                <element signature="e#132#156#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/post-page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
+            <state relative-caret-position="1380">
               <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
             </state>
           </provider>
@@ -147,13 +149,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
-              <folding>
-                <element signature="e#7#44#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-567">
+              <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/header.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/admin/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -168,31 +185,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="18" column="21" lean-forward="true" selection-end-line="51" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/admin.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="106" column="45" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -209,7 +205,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>is_general</find>
       <find>has_video</find>
       <find>create-new-post-href</find>
       <find>embed</find>
@@ -239,6 +234,7 @@
       <find>bootstrap-4</find>
       <find>John Doe</find>
       <find>href</find>
+      <find>http://fonts.googleapis.com/css</find>
     </findStrings>
     <replaceStrings>
       <replace>col-sm-4 font-button</replace>
@@ -250,7 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2020_11_14_181506_add_description_column_in_posts_table.php" />
         <option value="$PROJECT_DIR$/vendor/symfony/mime/Resources/bin/update_mime_types.php" />
         <option value="$PROJECT_DIR$/resources/views/components/breaking-news.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/posts-list.blade.php" />
@@ -270,12 +265,10 @@
         <option value="$PROJECT_DIR$/resources/views/admin/seo/contact.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/seo/about.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/contact-us.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/seo/main.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Category.php" />
         <option value="$PROJECT_DIR$/resources/views/categories.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/components/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LoaderController.php" />
@@ -301,6 +294,9 @@
         <option value="$PROJECT_DIR$/resources/lang/ru/main.php" />
         <option value="$PROJECT_DIR$/resources/views/post-page.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/components/header.blade.php" />
+        <option value="$PROJECT_DIR$/public/admin/css/app.css" />
       </list>
     </option>
   </component>
@@ -552,7 +548,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;Main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/MainController.php&#10;main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/lang/hy/main.php&#10;page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;admin&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;web&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/routes/web.php&#10;kernel&#9;null&#9;null&#10;authCo&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;app/Exceptions/Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;st&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;wel&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;we&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;Categ&#9;null&#9;null&#10;Posts&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/PostsController.php&#10;menu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;Page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PageController.php&#10;about&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/about.blade.php&#10;admin.blad&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;footer&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;seo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;se&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;2020_11_15_112556_create_seos_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_112556_create_seos_table.php&#10;2020_11_15_111949_create_pages_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_111949_create_pages_table.php&#10;enu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;main.&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;ain&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/lang/ru/main.php&#10;fancybox&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/fancybox&#10;create&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;list&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/posts-list.blade.php&#10;post-pa&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;foot&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;foo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;loader&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/LoaderController.php&#10;post-&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;postCont&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;men&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;adm&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;2020_11_14_181506_add_description_column_in_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_14_181506_add_description_column_in_posts_table.php&#10;scrip&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;2020_11_13_231010_create_tag_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_13_231010_create_tag_posts_table.php&#10;cate&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/seeders/CategoriesSeeder.php&#10;create_post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_04_222110_create_posts_table.php&#10;scr&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;ստ&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/css/styles.css&#10;crea&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;app&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/config/app.php&#10;config&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/filemanager/config/config.php" />
+    <property name="SearchEverywhereHistoryKey" value="header&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/header.blade.php&#10;main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;loader&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/LoaderController.php&#10;Post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;Main&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/MainController.php&#10;page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;admin&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;web&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/routes/web.php&#10;kernel&#9;null&#9;null&#10;authCo&#9;null&#9;null&#10;sty&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;app/Exceptions/Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;Handler.php&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Exceptions/Handler.php&#10;st&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/css/styles.css&#10;wel&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;we&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/welcome.blade.php&#10;Categ&#9;null&#9;null&#10;Posts&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/PostsController.php&#10;menu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;Page&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PageController.php&#10;about&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/about.blade.php&#10;admin.blad&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;footer&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;seo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;se&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Models/Seo.php&#10;2020_11_15_112556_create_seos_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_112556_create_seos_table.php&#10;2020_11_15_111949_create_pages_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_15_111949_create_pages_table.php&#10;enu&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;main.&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/layouts/main.blade.php&#10;ain&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/lang/ru/main.php&#10;fancybox&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/fancybox&#10;create&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;list&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/posts-list.blade.php&#10;post-pa&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;foot&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;foo&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/components/footer.blade.php&#10;post-&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/post-page.blade.php&#10;postCont&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/app/Http/Controllers/Admin/PostsController.php&#10;men&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/components/menu.blade.php&#10;adm&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/layouts/admin.blade.php&#10;2020_11_14_181506_add_description_column_in_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_14_181506_add_description_column_in_posts_table.php&#10;scrip&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;2020_11_13_231010_create_tag_posts_table&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_13_231010_create_tag_posts_table.php&#10;cate&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/seeders/CategoriesSeeder.php&#10;create_post&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/database/migrations/2020_11_04_222110_create_posts_table.php&#10;scr&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/js/script.js&#10;ստ&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/public/admin/css/styles.css&#10;crea&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/resources/views/admin/create-new-post.blade.php&#10;app&#9;FILE&#9;file:///Users/arturchilingaryan/Desktop/workspace/onenews/config/app.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -613,15 +609,16 @@
       <workItem from="1605439029902" duration="13467000" />
       <workItem from="1605472327797" duration="8518000" />
       <workItem from="1605521730255" duration="9528000" />
-      <workItem from="1605544567583" duration="16410000" />
+      <workItem from="1605544567583" duration="17067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209942000" />
+    <option name="totallyTimeSpent" value="210599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="24" width="1359" height="798" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2072893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -652,13 +649,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_11_15_112556_create_seos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -763,13 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/about.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -781,16 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoaderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="22" column="66" lean-forward="true" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
-          <folding>
-            <element signature="e#132#156#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,13 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="39" selection-start-line="39" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -1006,13 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/post-page.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -1022,8 +981,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+        <state relative-caret-position="618">
+          <caret line="70" column="62" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoaderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="22" column="66" lean-forward="true" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+          <folding>
+            <element signature="e#132#156#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/post-page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
