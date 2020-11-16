@@ -53,12 +53,12 @@ class PostsController extends Controller
             }
         }
 
-        $post->hy_title = $request->hy_title;
-        $post->hy_content = $request->hy_content;
-        $post->ru_title = $request->ru_title;
-        $post->ru_content = $request->ru_content;
+        $post->hy_title = trim($request->hy_title);
+        $post->hy_content = trim($request->hy_content);
+        $post->ru_title = trim($request->ru_title);
+        $post->ru_content = trim($request->ru_content);
         $post->image = str_replace(url(''), '', $request->image);
-        $post->source = $request->source;
+        $post->source = trim($request->source);
         $post->category_id = $request->category_id;
         if($request->is_general && ($request->hy_title && $request->hy_content)) {
             $post->is_general = 1;
@@ -66,10 +66,9 @@ class PostsController extends Controller
         if($request->is_general && ($request->ru_title && $request->ru_content)) {
             $post->is_general = 2;
         }
-        $post->is_general = $request->is_general;
         $post->has_video = $request->has_video;
-        $post->hy_description = $request->hy_description;
-        $post->ru_description = $request->ru_description;
+        $post->hy_description = trim($request->hy_description);
+        $post->ru_description = trim($request->ru_description);
         $post->saveOrFail();
         $post->tags()->detach();
         $post->tags()->attach($request->tags);
