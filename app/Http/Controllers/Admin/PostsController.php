@@ -68,7 +68,7 @@ class PostsController extends Controller
         }
         $post->is_general = $request->is_general;
         $post->has_video = $request->has_video;
-        $post->hy_description = $request->description;
+        $post->hy_description = $request->hy_description;
         $post->ru_description = $request->ru_description;
         $post->saveOrFail();
         $post->tags()->detach();
