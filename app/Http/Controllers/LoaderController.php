@@ -19,6 +19,10 @@ class LoaderController extends Controller
     public function getMainPost()
     {
         $lang = app()->getLocale();
+        $post = Post::where('is_general', 3)->first();
+        if($post) {
+            return view('components.main-post')->with(compact('post'));
+        }
         $generalIndex = $lang == 'hy' ? 1 : 2;
         $post = Post::where('is_general', $generalIndex)->first();
         if(!$post) {

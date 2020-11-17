@@ -66,6 +66,9 @@ class PostsController extends Controller
         if($request->is_general && ($request->ru_title && $request->ru_content)) {
             $post->is_general = 2;
         }
+        if($request->is_general && ($request->hy_title && $request->hy_content && $request->hy_title && $request->hy_content)){
+            $post->is_general = 3;
+        }
         $post->has_video = $request->has_video;
         $post->hy_description = trim($request->hy_description);
         $post->ru_description = trim($request->ru_description);
