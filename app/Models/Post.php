@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['is_general'];
+
     protected $casts = [
         'is_general' => 'boolean',
         'has_video' => 'boolean'
