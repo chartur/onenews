@@ -36,6 +36,11 @@ class PostsController
     public function article(Post $post)
     {
         $lang = app()->getLocale();
+
+        if(!$post->{$lang.'_title'} && !$post->{$lang.'_content'}){
+            abort(404);
+        }
+
         $tags = Tag::orderBy('searched', 'desc')
             ->limit(15)
             ->get();
