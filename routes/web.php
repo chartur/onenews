@@ -11,6 +11,7 @@ use \App\Http\Controllers\Admin\PostsController as AdminPostsController;
 use \App\Http\Controllers\Admin\TagsController;
 use \App\Http\Controllers\Admin\PageController;
 use \App\Http\Controllers\Admin\AuthController;
+use \App\Http\Controllers\Admin\CategoryController;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -66,6 +67,10 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
 
     Route::group(['prefix' => 'tags'], function (){
         Route::post('add-new', [TagsController::class, 'addNewTag']);
+    });
+
+    Route::group(['prefix' => 'category'], function () {
+        Route::post('add-new', [CategoryController::class, 'addNewCategory']);
     });
 });
 

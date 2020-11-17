@@ -79,6 +79,11 @@
 							</option>
 						@endforeach
 					</select>
+					<div class="text-center mt-2 text-success" data-toggle="modal" data-target="#add-category-modal">
+						<a href="#">
+							<i class="fa fa-plus-circle"></i> Ավելացնել
+						</a>
+					</div>
 					<hr>
 					<ul class="pl-0 mb-0" style="list-style: none">
 						<li>
@@ -184,6 +189,54 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" onclick="addNewTag()">Ավելացնել</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Փակել</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div>
+
+
+	<div class="modal fade" id="add-category-modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Ավելացնել նոր թեգ</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="w-100" id="add-new-category-form">
+						<div class="form-group">
+							<label class="w-100">
+								Հայերեն անուն
+								<input type="text" required name="hy_name" class="form-control">
+							</label>
+						</div>
+						<div class="form-group">
+							<label class="w-100">
+								Ռուսերեն անուն
+								<input type="text" required name="ru_name" class="form-control">
+							</label>
+						</div>
+						<div class="form-group">
+							<label class="w-100">
+								Կարճ անուն (պարտադիր անգլերեն) որը երևալու է URL հասցեում
+								<br>
+								(օր <b>{{ url('/category') }}/<span class="text-success">political</span></b>)
+								<br>
+								<div class="input-group">
+	                <span class="input-group-prepend">
+	                    <span class="input-group-text">{{ url('/category') }}/</span>
+	                </span>
+									<input type="text" required name="slug" class="form-control" placeholder="Some text here">
+								</div>
+							</label>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="addNewCategory()">Ավելացնել</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Փակել</button>
 				</div>
 			</div><!-- /.modal-content -->
@@ -339,6 +392,36 @@
 					$this.text('Թարմացնել');
 					$this.prop('disabled', false);
 					showMessage(res.status, res.message)
+				},
+				error: function (err) {
+					showMessage(err.responseJSON.status, err.responseJSON.message);
+				}
+			})
+		}
+
+		function addNewCategory() {
+			if(!$('#add-new-tag-form').valid()) {
+				return showMessage('danger', 'Բոլոր դաշտերը պարտադիր են')
+			}
+
+			var hy_name = $('#add-new-category-form input[name=hy_name]').val();
+			var ru_name = $('#add-new-category-form input[name=ru_name]').val();
+			var slug = $('#add-new-category-form input[name=slug]').val();
+
+			var form = {hy_name: hy_name, ru_name: ru_name, slug: slug};
+
+			$.ajax({
+				url: '/cabinet/category/add-new',
+				type: 'post',
+				data: form,
+				beforeSend: NProgress.start,
+				complete: NProgress.done,
+				success: function (res) {
+					showMessage(res.status, res.message);
+					var cat = `<option value="${res.category.id}" selected>${res.category.hy_name}</option>`;
+					$('select[name=category_id]').append(cat);
+					$('#add-new-category-form').trigger("reset");
+					$('.modal').modal('hide');
 				},
 				error: function (err) {
 					showMessage(err.responseJSON.status, err.responseJSON.message);

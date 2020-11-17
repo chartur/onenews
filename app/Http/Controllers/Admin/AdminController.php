@@ -11,10 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\CategoryPlace;
-use App\Models\ContentPlace;
 use App\Models\Place;
-use App\Models\PostStyle;
 use App\Models\Widget;
 
 class AdminController extends Controller
