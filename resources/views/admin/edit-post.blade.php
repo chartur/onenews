@@ -19,7 +19,7 @@
 				Հայերեն
 			</button>
 			<div class="input-group w-50">
-				<input value="{{ createPostLink($post->id.'/hy') }}" id="post-url-input" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն կլինի այստեղ">
+				<input value="{{ $url }}" id="post-url-input" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն կլինի այստեղ">
 				<span class="input-group-append pointer-cursor">
           <button class="input-group-text bg-success text-white">
 	          <i class="fa fa-copy"></i>

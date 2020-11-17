@@ -76,12 +76,12 @@ class PostsController extends Controller
         $post->tags()->detach();
         $post->tags()->attach($request->tags);
 
-        $url = createPostLink('/hy/'.$post->id);
-        if($request->ru_title && $request->ru_content) {
-            $url = createPostLink('/ru/'.$post->id);
+        $url = createPostLink($post->id, 'hy');
+        if($post->ru_title && $post->ru_content) {
+            $url = createPostLink($post->id, 'ru');
         }
-        if($request->hy_title && $request->hy_content) {
-            $url = createPostLink('/hy/'.$post->id);
+        if($post->hy_title && $post->hy_content) {
+            $url = createPostLink($post->id, 'hy');
         }
 
         if($post->is_general) {
@@ -122,7 +122,14 @@ class PostsController extends Controller
         $categories = Category::get();
         $tags = Tag::get();
         $post->load('tags', 'category');
-        return view('admin.edit-post')->with(compact('post','categories','tags','activePage'));
+        $url = createPostLink($post->id, 'hy');
+        if($post->ru_title && $post->ru_content) {
+            $url = createPostLink($post->id, 'ru');
+        }
+        if($post->hy_title && $post->hy_content) {
+            $url = createPostLink($post->id, 'hy');
+        }
+        return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'url'));
     }
 
     /**

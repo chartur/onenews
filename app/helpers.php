@@ -12,6 +12,9 @@
         return url($url[0] == '/' ? app()->getLocale(). $url : app()->getLocale() . "/$url");
     }
 
-    function createPostLink($id) {
+    function createPostLink($id, $lang = false) {
+        if($lang) {
+            return url($lang .'/article/'. $id);
+        }
         return url('/article/'. $id);
     }
