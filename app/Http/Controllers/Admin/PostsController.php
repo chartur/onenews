@@ -60,13 +60,13 @@ class PostsController extends Controller
         $post->image = str_replace(url(''), '', $request->image);
         $post->source = trim($request->source);
         $post->category_id = $request->category_id;
-        if($request->is_general && ($request->hy_title && $request->hy_content)) {
+        if($request->is_general && $request->hy_title && $request->hy_content) {
             $post->is_general = 1;
         }
-        if($request->is_general && ($request->ru_title && $request->ru_content)) {
+        if($request->is_general && $request->ru_title && $request->ru_content) {
             $post->is_general = 2;
         }
-        if($request->is_general && ($request->hy_title && $request->hy_content && $request->hy_title && $request->hy_content)){
+        if($request->is_general && $request->hy_title && $request->hy_content && $request->hy_title && $request->hy_content){
             $post->is_general = 3;
         }
         $post->has_video = $request->has_video;
