@@ -12,7 +12,6 @@ class Post extends Model
     protected $fillable = ['is_general'];
 
     protected $casts = [
-        'is_general' => 'boolean',
         'has_video' => 'boolean'
     ];
 
