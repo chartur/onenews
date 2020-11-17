@@ -77,9 +77,19 @@ class PostsController extends Controller
         $post->tags()->attach($request->tags);
 
         if($post->is_general) {
-            Post::where('is_general', $post->is_general)
+            if ($post->is_general == 3) {
+                Post::where('is_general', '<>', 0)
                 ->where('id', '<>', $post->id)
-                ->update(['is_general' => 0]);
+                    ->update(['is_general' => 0]);
+            }else{
+                Post::where('is_general', 3)
+                    ->update(['is_general' => $post->is_general == 1 ? 2 : 1]);
+
+                Post::where('is_general', $post->is_general)
+                    ->where('id', '<>', $post->id)
+                    ->update(['is_general' => 0]);
+            }
+
         }
 
         return response()->json([
