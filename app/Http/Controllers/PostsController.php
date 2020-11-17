@@ -46,8 +46,8 @@ class PostsController
             ->first();
 
         $more_posts = Post::where('id', '<>', $post->id)
-            ->whereNotNull($lang.'_title')
-            ->whereNotNull($lang.'_content')
+            ->where($lang.'_title', '<>', '')
+            ->where($lang.'_content', '<>', '')
             ->orderByDesc('id')
             ->limit(10)
             ->get();

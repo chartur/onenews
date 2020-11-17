@@ -45,8 +45,8 @@ class LoaderController extends Controller
                 case 'posts':
                     $category = Category::find($p->data->category_id);
                     $posts = Post::where('category_id', $p->data->category_id)
-                        ->whereNotNull($lang.'_title')
-                        ->whereNotNull($lang.'_content')
+                        ->where($lang.'_title', '<>', '')
+                        ->where($lang.'_content', '<>', '')
                         ->orderBy('id', 'desc')
                         ->limit($p->data->post_count)
                         ->get();
@@ -78,8 +78,8 @@ class LoaderController extends Controller
         setLocale(LC_ALL, $langAttr['regional']);
         $date = strftime("%A %d %B %Y");
         $news = Post::orderBy('id', 'desc')
-            ->whereNotNull($locale.'_title')
-            ->whereNotNull($locale.'_content')
+            ->where($locale.'_title', '<>', '')
+            ->where($locale.'_content', '<>', '')
             ->limit(15)
             ->get();
         return view('components.breaking-news')->with(compact('news', 'date'));

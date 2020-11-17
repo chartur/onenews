@@ -98,7 +98,10 @@ class MainController extends Controller
     {
         $lang = app()->getLocale();
         $categories = Category::with(['posts' => function($q) use ($lang){
-            $q->whereNotNull($lang.'_title')->whereNotNull($lang.'_content')->latest();
+            $q
+                ->where($lang.'_title', '<>', '')
+                ->where($lang.'_content', '<>', '')
+                ->latest();
         }])
         ->withCount('posts')
         ->get()
@@ -147,15 +150,15 @@ class MainController extends Controller
             ->first();
 
         $posts = Post::where('category_id', $category->id)
-            ->whereNotNull($lang.'_title')
-            ->whereNotNull($lang.'_content')
+            ->where($lang.'_title', '<>', '')
+            ->where($lang.'_content', '<>', '')
             ->paginate(17);
 
         $aboutSite = getAttributeByLang($seo,'description');
 
         $more_posts = Post::where('category_id', '<>', $category->id)
-            ->whereNotNull($lang.'_title')
-            ->whereNotNull($lang.'_content')
+            ->where($lang.'_title', '<>', '')
+            ->where($lang.'_content', '<>', '')
             ->orderByDesc('id')
             ->limit(5)
             ->get();
@@ -198,14 +201,15 @@ class MainController extends Controller
             ->first();
 
         $posts = Post::where('has_video', 1)
-            ->whereNotNull($lang.'_title')
-            ->whereNotNull($lang.'_content')
+            ->where($lang.'_title', '<>', '')
+            ->where($lang.'_content', '<>', '')
             ->paginate(17);
 
         $aboutSite = getAttributeByLang($seo,'description');
 
         $more_posts = Post::whereNotNull($lang.'_title')
-            ->whereNotNull($lang.'_content')
+            ->where($lang.'_title', '<>', '')
+            ->where($lang.'_content', '<>', '')
             ->orderByDesc('id')
             ->limit(5)
             ->get();
