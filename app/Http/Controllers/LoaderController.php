@@ -23,8 +23,8 @@ class LoaderController extends Controller
         $post = Post::where('is_general', $generalIndex)->first();
         if(!$post) {
             $post = Post::orderBy('id', 'desc')
-                ->whereNotNull($lang.'_title')
-                ->whereNotNull($lang.'_content')
+                ->where($lang.'_title', '<>', '')
+                ->where($lang.'_content', '<>', '')
                 ->limit(1)
                 ->first();
         }
