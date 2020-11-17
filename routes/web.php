@@ -79,6 +79,7 @@ Route::group([
     Route::get('/', [MainController::class, 'index']);
     Route::get('/categories', [MainController::class, 'categories']);
     Route::get('/category/{category}', [MainController::class, 'categoryPage']);
+    Route::get('/videos', [MainController::class, 'videos']);
     Route::get('/about', [MainController::class, 'about']);
     Route::get('/contact', [MainController::class, 'contactUs']);
     Route::get('/article/{post}', [PostsController::class, 'article']);

@@ -23,7 +23,7 @@
 
 @section('content')
 	<article class="overflow-hidden p-3 about-page">
-		<header>
+		<header class="text-center">
 			<h1>{{ getAttributeByLang($category, 'name').' '.getAttributeByLang($seo, 'title') }}</h1>
 		</header>
 			<div class="row">

@@ -172,4 +172,54 @@ class MainController extends Controller
             )
         );
     }
+
+    public function videos()
+    {
+        $lang = app()->getLocale();
+        $category = new Category();
+        $category->hy_name = trans('main.menu.video.name');
+        $category->ru_name = trans('main.menu.video.name');
+
+        if(!$category) {
+            abort(404);
+        }
+
+        $categories = Category::withCount('posts')
+            ->get();
+
+        $tags = Tag::orderBy('searched', 'desc')
+            ->limit(15)
+            ->get();
+
+        $seo = Seo::where('slug', 'main')
+            ->first();
+
+        $page = Page::where('slug', 'main')
+            ->first();
+
+        $posts = Post::where('has_video', 1)
+            ->whereNotNull($lang.'_title')
+            ->whereNotNull($lang.'_content')
+            ->paginate(17);
+
+        $aboutSite = getAttributeByLang($seo,'description');
+
+        $more_posts = Post::whereNotNull($lang.'_title')
+            ->whereNotNull($lang.'_content')
+            ->orderByDesc('id')
+            ->limit(5)
+            ->get();
+
+        return view('category')->with(compact(
+        'category',
+             'posts',
+                'page',
+                'seo',
+                'aboutSite',
+                'categories',
+                'tags',
+                'more_posts'
+            )
+        );
+    }
 }
