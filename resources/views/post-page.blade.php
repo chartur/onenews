@@ -72,7 +72,7 @@
 					<div class="mb-3">
 						<div class="single-post-tags">
 							@foreach($post->tags as $tag)
-								<a href="{{ url("tag/$tag->id") }}" class="text-decoration-none">
+								<a href="{{ url('/search?q='.getAttributeByLang($tag, 'name')) }}" class="text-decoration-none">
 								<span class="single-post-tag-item mr-1 main-bg-color-hover">
 										#{{ getAttributeByLang($tag, 'name') }}
 								</span>

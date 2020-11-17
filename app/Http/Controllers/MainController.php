@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\Post;
 use App\Models\Seo;
 use App\Models\Tag;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -207,8 +208,7 @@ class MainController extends Controller
 
         $aboutSite = getAttributeByLang($seo,'description');
 
-        $more_posts = Post::whereNotNull($lang.'_title')
-            ->where($lang.'_title', '<>', '')
+        $more_posts = Post::where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
             ->orderByDesc('id')
             ->limit(5)
@@ -223,6 +223,72 @@ class MainController extends Controller
                 'categories',
                 'tags',
                 'more_posts'
+            )
+        );
+    }
+
+    public function search(Request $request)
+    {
+        $lang = app()->getLocale();
+        if(!$request->has('q') || !$request->q) {
+            return redirect()->back();
+        }
+
+        $categories = Category::withCount('posts')
+            ->get();
+
+        $tags = Tag::orderBy('searched', 'desc')
+            ->limit(15)
+            ->get();
+
+        $seo = Seo::where('slug', 'main')
+            ->first();
+
+        $page = Page::where('slug', 'main')
+            ->first();
+
+        $category = new Category();
+        $category->hy_name = trans('main.search');
+        $category->ru_name = trans('main.search');
+
+        $query = $request->q;
+
+        $searched_tags = Tag::select('id')
+                ->orWhere($lang.'_name', 'like', '%'.$query.'%')
+                ->orWhere($lang.'_name', 'like', '%'.$query.'%')
+                ->pluck('id');
+
+
+        $posts = Post::orWhere($lang.'_title', 'like', '%'.$query.'%')
+                ->orWhere($lang.'_content', 'like', '%'.$query.'%')
+                ->orWhereHas('tags', function ($q) use ($searched_tags){
+                    $q->whereIn('tags.id', $searched_tags);
+                })
+                ->orderBy('id', 'desc')
+                ->paginate(20);
+
+
+        $posts_ids = $posts->getCollection()->pluck('id')->toArray();
+
+        $more_posts = Post::where($lang.'_title', '<>', '')
+            ->where($lang.'_content', '<>', '')
+            ->whereNotIn('id', $posts_ids)
+            ->orderByDesc('id')
+            ->limit(5)
+            ->get();
+
+        $aboutSite = getAttributeByLang($seo,'description');
+
+        return view('category')->with(compact(
+        'seo',
+            'tags',
+                'category',
+                'categories',
+                'tags',
+                'more_posts',
+                'page',
+                'posts',
+                'aboutSite'
             )
         );
     }

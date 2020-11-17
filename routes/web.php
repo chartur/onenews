@@ -83,6 +83,7 @@ Route::group([
     Route::get('/about', [MainController::class, 'about']);
     Route::get('/contact', [MainController::class, 'contactUs']);
     Route::get('/article/{post}', [PostsController::class, 'article']);
+    Route::get('/search', [MainController::class, 'search']);
 
     Route::group(['prefix' => 'posts'], function (){
         Route::get('/wp-data', [PostsController::class, 'getWpData']);
