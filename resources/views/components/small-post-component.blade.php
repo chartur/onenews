@@ -4,7 +4,7 @@
 			<img class="small-post-image" src="{{ url($post->image) }}">
 		</div>
 		<div class="small-post-title-content">
-			<h4 class="small-post-title">{{ $post->hy_title }}</h4>
+			<h4 class="small-post-title">{{ getAttributeByLang($post, 'title') }}</h4>
 		</div>
 		<div class="small-post-attributes text-right order-sm-0">
 			<span class="mr-2 main-color">
