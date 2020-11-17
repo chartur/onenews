@@ -76,6 +76,14 @@ class PostsController extends Controller
         $post->tags()->detach();
         $post->tags()->attach($request->tags);
 
+        $url = createPostLink('/hy/'.$post->id);
+        if($request->ru_title && $request->ru_content) {
+            $url = createPostLink('/ru/'.$post->id);
+        }
+        if($request->hy_title && $request->hy_content) {
+            $url = createPostLink('/hy/'.$post->id);
+        }
+
         if($post->is_general) {
             if ($post->is_general == 3) {
                 Post::where('is_general', '<>', 0)
@@ -96,7 +104,7 @@ class PostsController extends Controller
             'status' => 'success',
             'message' => 'Փոստը հաջողությամբ ստեղծված է։' ,
             'data' => [
-                'url' => createPostLink($post->id.'/hy'),
+                'url' => $url,
                 'id' => $post->id
             ]
         ]);
