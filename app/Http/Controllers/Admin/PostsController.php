@@ -76,8 +76,11 @@ class PostsController extends Controller
         $post->tags()->detach();
         $post->tags()->attach($request->tags);
 
+        $p = false;
+        $g = false;
         if($post->is_general) {
-            Post::where('is_general', $post->is_general)
+            $g = true;
+            $p = Post::where('is_general', $post->is_general)
                 ->where('id', '<>', $post->id)
                 ->update(['is_general' => 0]);
         }
@@ -86,6 +89,8 @@ class PostsController extends Controller
             'status' => 'success',
             'message' => 'Փոստը հաջողությամբ ստեղծված է։' ,
             'data' => [
+                'p' => $p,
+                'g' => $g,
                 'url' => createPostLink($post->id.'/hy'),
                 'id' => $post->id
             ]
