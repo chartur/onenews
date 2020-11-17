@@ -28,6 +28,7 @@
 											<th>Նկար</th>
 											<th>Վերնագիր</th>
 											<th>Կատեգորիա</th>
+											<th>Լեզուներ</th>
 											<th>Աղբյուր</th>
 											<th>Դիտում</th>
 											<th>Ամսաթիվ</th>
@@ -43,9 +44,21 @@
 														<img src="{{ $post->image }}" width="50px">
 													</a>
 												</td>
-												<td>{{ $post->hy_title }}</td>
+												<td>{{ $post->hy_title ?: $post->ru_title }}</td>
 												<td>{{ $post->category->hy_name }}</td>
-												<td><a href="{{ $post->source }}" target="_blank"></a></td>
+												<td>
+													@if($post->hy_title)
+														<span class="text-success d-block text-center">Հայերեն</span>
+													@endif
+													@if($post->ru_title)
+														<span class="text-primary d-block text-center">Ռուսերեն</span>
+													@endif
+												</td>
+												<td>
+													<a href="{{ $post->source }}" target="_blank">
+														{{ $post->source }}
+													</a>
+												</td>
 												<td>
 													<i class="fa fa-eye mr-2"></i>
 													{{ $post->viewed }}
@@ -65,6 +78,7 @@
 											<th>Նկար</th>
 											<th>Վերնագիր</th>
 											<th>Կատեգորիա</th>
+											<th>Լեզուներ</th>
 											<th>Աղբյուր</th>
 											<th>Դիտում</th>
 											<th>Ամսաթիվ</th>

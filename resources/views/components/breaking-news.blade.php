@@ -8,7 +8,7 @@
 			@for($i = 0; $i <= $news->count() - 1; $i++ )
 				<span>
 					<a href="{{ createPostLink($news->get($i)->id) }}">
-						<span>{{ $news->get($i)->hy_title }} </span>
+						<span>{{ getAttributeByLang($news->get($i), 'title') }} </span>
 					</a>
 				</span>
 				@if($news->count() - 1 != $i)
