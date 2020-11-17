@@ -31,7 +31,7 @@
         </div>
         <div class="col-12 col-md-6 order-1 order-sm-2 mb-2">
             <header class="main-page-header">
-                <h1>{{ getAttributeByLang($seo, 'title') }}</h1>
+                <h1 class="text-center">{{ getAttributeByLang($seo, 'title') }}</h1>
             </header>
             <hr>
             <div class="general-post mb-3">
