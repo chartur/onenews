@@ -135,7 +135,8 @@
 			</li>
 		</ul>
 	</div>
+	@php
+		$post->viewed++;
+		$post->save()
+	@endphp
 @endsection
-
-@php($post->viewed++)
-@php($post->save())
