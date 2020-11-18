@@ -103,6 +103,7 @@
 							<span class="d-inline-block pb-2 main-active-border-color">{{ trans('main.breaking_news') }}</span>
 						</h3>
 						<div class="h-100">
+							@php(addPostViewed($post->id))
 							@foreach($more_posts as $post)
 								@include('components.middle-text-bottom-post-component')
 							@endforeach
@@ -135,5 +136,4 @@
 			</li>
 		</ul>
 	</div>
-	@php(addPostViewed($post->id))
 @endsection
