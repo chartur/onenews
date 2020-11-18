@@ -30,11 +30,17 @@ class PostsController
     /**
      * Returns post main page
      *
-     * @param Post $post
+     * @param int $post_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function article(Post $post)
+    public function article($post_id)
     {
+        $post = Post::with('tags', 'category')->find($post_id);
+
+        if(!$post) {
+            abort(404);
+        }
+
         $lang = app()->getLocale();
 
         if(!$post->{$lang.'_title'} && !$post->{$lang.'_content'}){
@@ -45,7 +51,6 @@ class PostsController
             ->limit(15)
             ->get();
         $categories = Category::withCount('posts')->get();
-        $post->load('tags', 'category');
 
         $aboutSite = Seo::where('slug', 'about')
             ->first();
