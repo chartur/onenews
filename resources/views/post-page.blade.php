@@ -136,7 +136,7 @@
 		</ul>
 	</div>
 	@php
-		$post->viewed++;
+		$post->viewed = $post->viewed+1;
 		$post->save()
 	@endphp
 @endsection
