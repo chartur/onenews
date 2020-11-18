@@ -18,3 +18,11 @@
         }
         return url('/article/'. $id);
     }
+
+    function addPostViewed($post_id) {
+        $post = \App\Models\Post::find($post_id);
+        if($post) {
+            $post->viewed++;
+            $post->save();
+        }
+    }
