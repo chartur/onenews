@@ -7,7 +7,7 @@
 @section('content')
 	<div class="overlay"></div>
 	<div class="title-block">
-		<h3 class="title"> Ստեղծել նոր փոստ <span class="sparkline bar" data-type="bar"></span>
+		<h3 class="title"> Փոստեր <span class="sparkline bar" data-type="bar"></span>
 		</h3>
 	</div>
 

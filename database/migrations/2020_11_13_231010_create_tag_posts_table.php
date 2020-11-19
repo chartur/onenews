@@ -18,16 +18,6 @@ class CreateTagPostsTable extends Migration
             $table->unsignedBigInteger('post_id')->index();
             $table->unsignedBigInteger('tag_id')->index();
             $table->timestamps();
-
-            $table->foreign('post_id')
-                ->references('id')
-                ->on('posts')
-                ->onDelete('cascade');
-
-            $table->foreign('tag_id')
-                ->references('id')
-                ->on('tags')
-                ->onDelete('cascade');
         });
     }
 

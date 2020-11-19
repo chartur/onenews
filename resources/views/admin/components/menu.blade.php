@@ -31,6 +31,27 @@
 				</li>
 			</ul>
 		</li>
+		<li class="{{ in_array($activePage, ['new_tag', 'all_tags', 'tag']) ? 'active open' : '' }}">
+			<a href="">
+				<i class="fa fa-tags"></i>
+				Թեգեր
+				<i class="fa arrow"></i>
+			</a>
+			<ul class="sidebar-nav">
+				<li class="{{ $activePage == 'new_tag' ? 'active' : '' }}">
+					<a href="/cabinet/tags/new">
+						<i class="fa fa-plus mr-2"></i>
+						Ստեղծել
+					</a>
+				</li>
+				<li class="{{ $activePage == 'all_tags' ? 'active' : '' }}">
+					<a href="/cabinet/tags/list">
+						<i class="fa fa-list mr-2"></i>
+						Ցանկ
+					</a>
+				</li>
+			</ul>
+		</li>
 		<li class="{{ in_array($activePage, ['seo_main', 'seo_about', 'seo_contact']) ? 'active open' : '' }}">
 			<a href="">
 				<i class="fa fa-search"></i>

@@ -44,7 +44,7 @@ class PostsController
         $lang = app()->getLocale();
 
         if(!$post->{$lang.'_title'} && !$post->{$lang.'_content'}){
-            abort(404);
+            return redirect()->to('/');
         }
 
         $tags = Tag::orderBy('searched', 'desc')
