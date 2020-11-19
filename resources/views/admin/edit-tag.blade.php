@@ -98,7 +98,7 @@
 				complete: NProgress.done,
 				success: function (res) {
 					showMessage(res.status, res.message);
-					return window.location.href = '/cabinet/tags/list'
+					return history.go(-1);
 				},
 				error: function (err) {
 					showMessage(err.responseJSON.status, err.responseJSON.message);

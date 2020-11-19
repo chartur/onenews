@@ -423,13 +423,16 @@
 			document.body.removeChild(el);
 		}
 
-		searchTag('#tag-search', function () {
-			var val = $('#tag-search').val();
-			$('.tag-list').addClass('loading');
-
-			$('.tag-list').load('/cabinet/tags/search?q='+val, function () {
-				$(this).removeClass('loading')
+		function searchTag() {
+			var val = $('#tag-search').val().toLowerCase().trim();
+			$('.tag-label').each(function(){
+				var text = $(this).text().toLowerCase().trim();
+				(text.indexOf(val) >= 0) ? $(this).show() : $(this).hide();
 			});
-		})
+		};
+
+		$('#tag-search').on('keyup', searchTag);
+
+		$('#tag-search').on('search', searchTag);
 	</script>
 @endsection
