@@ -53,7 +53,10 @@
 						<div class="col-12 col-lg-5 text-right my-auto">
 							<div class="d-flex align-items-end justify-content-center justify-content-lg-end">
 								<div class="d-flex align-items-end mr-2">
-									<iframe src="https://www.facebook.com/plugins/like.php?href={{ url()->current() }}&width=200&layout=button_count&action=like&size=small&share=true&height=20&appId=808625669696768" width="200" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+									<iframe src="https://www.facebook.com/plugins/like.php?href={{ url()->current() }}&width=110&layout=button_count&action=like&size=small&share=false&height=20&appId=182306942842208" width="110" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+								</div>
+								<div class="d-flex align-items-end mr-2">
+									<iframe src="https://www.facebook.com/plugins/share_button.php?href={{ url()->current() }}&layout=button_count&size=small&appId=182306942842208&width=115&height=20" width="120" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 								</div>
 								<div class="d-flex align-items-end mr-2">
 									<script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-share-url="{{ url()->current() }}"></script>
