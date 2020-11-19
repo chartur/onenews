@@ -13,23 +13,25 @@
 
 	<section class="section">
 		<input type="hidden" name="post_id" value="">
-		<div class="d-flex justify-content-around align-items-center mb-3">
-			<button type="button" class="btn btn-primary-outline btn-primary language-container-switcher" data-lang="hy">
+		<div class="d-flex flex-wrap justify-content-around align-items-start mb-3">
+			<button type="button" class="btn btn-primary-outline btn-primary language-container-switcher mr-2 mb-0" data-lang="hy">
 				<i class="fa fa-arrow-left mr-2"></i>
 				Հայերեն
 			</button>
-			<div class="input-group w-50">
-				<input id="post-url-input" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն կլինի այստեղ">
-				<span class="input-group-append pointer-cursor">
-          <button class="input-group-text bg-success text-white">
-	          <i class="fa fa-copy"></i>
-          </button>
-        </span>
-			</div>
-			<button type="button" class="btn btn-primary-outline language-container-switcher" data-lang="ru">
+			<button type="button" class="btn btn-primary-outline language-container-switcher mr-2 mb-0" data-lang="ru">
 				Русский
 				<i class="fa fa-arrow-right mr-2"></i>
 			</button>
+			<div class="flex-grow-1">
+				<div class="input-group">
+					<input id="post-url-input" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն կլինի այստեղ">
+					<span class="input-group-append pointer-cursor">
+	          <button class="input-group-text bg-success text-white">
+		          <i class="fa fa-copy"></i>
+	          </button>
+	        </span>
+				</div>
+			</div>
 		</div>
 
 
