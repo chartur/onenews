@@ -115,4 +115,12 @@ class TagsController
         }
         return response()->json(['status' => 'danger', 'Խնդրում ենք կրկին փորձել']);
     }
+
+    public function adminTagSearch(Request $request)
+    {
+        $tags = Tag::where('hy_name', 'like', '%'.$request->q.'%')
+            ->get();
+
+        return view('admin.includes.tag-search-result')->with(compact('tags'));
+    }
 }

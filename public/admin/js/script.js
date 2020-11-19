@@ -14,6 +14,30 @@ function showMessage(status, message) {
 	NProgress.done();
 }
 
+
+function searchTag(inputSelector, callback) {
+	//setup before functions
+	var typingTimer;                //timer identifier
+	var doneTypingInterval = 700;  //time in ms, 3 second for example
+	var $input = $(inputSelector);
+
+//on keyup, start the countdown
+	$input.on('keyup', function () {
+		clearTimeout(typingTimer);
+		typingTimer = setTimeout(callback, doneTypingInterval);
+	});
+
+//on keydown, clear the countdown
+	$input.on('keydown', function () {
+		clearTimeout(typingTimer);
+	});
+
+	$input.on('search', function () {
+		clearTimeout(typingTimer);
+		callback();
+	});
+}
+
 $(document).ready(function () {
 	$('.options-toggle-button').click(function () {
 		$('.options-container').toggleClass('open');

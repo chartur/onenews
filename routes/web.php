@@ -67,6 +67,7 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
 
     Route::group(['prefix' => 'tags'], function (){
         Route::post('add-new', [TagsController::class, 'addNewTag']);
+        Route::get('search', [TagsController::class, 'adminTagSearch']);
         Route::post('save', [TagsController::class, 'saveTagData']);
         Route::post('delete', [TagsController::class, 'deleteTag']);
         Route::get('list', [TagsController::class, 'lists']);

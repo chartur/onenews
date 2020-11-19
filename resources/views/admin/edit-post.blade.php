@@ -100,7 +100,12 @@
 						</li>
 					</ul>
 					<hr>
-					<label>Ընտրել թեգեր</label>
+					<div class="d-flex justify-content-between align-items-center mb-2">
+						<label class="mb-0 mr-1">Ընտրել թեգեր</label>
+						<div class="flex-grow-1">
+							<input type="search" placeholder="Փնտրել" class="form-control form-control-sm" id="tag-search">
+						</div>
+					</div>
 					<div class="tag-list p-2">
 						@foreach($tags as $tag)
 							<input
@@ -437,5 +442,15 @@
 			document.execCommand('copy');
 			document.body.removeChild(el);
 		}
+
+
+		searchTag('#tag-search', function () {
+			var val = $('#tag-search').val();
+			$('.tag-list').addClass('loading');
+
+			$('.tag-list').load('/cabinet/tags/search?q='+val, function () {
+				$(this).removeClass('loading')
+			});
+		})
 	</script>
 @endsection

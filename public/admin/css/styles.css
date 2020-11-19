@@ -75,11 +75,28 @@
     background: #28a745;
 }
 .tag-list {
+    position: relative;
     background: #c8d0da;
     border-radius: 5px;
-    height: 250px;
+    height: 400px;
     width: 100%;
     overflow-y: scroll;
+}
+.tag-list.loading:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    background-image: url('/admin/assets/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    width: 100%;
+
 }
 .tag-label  {
     cursor: pointer;
