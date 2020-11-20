@@ -26,7 +26,7 @@
 				<div class="input-group">
 					<input id="post-url-input" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն կլինի այստեղ">
 					<span class="input-group-append pointer-cursor">
-	          <button class="input-group-text bg-success text-white">
+	          <button class="input-group-text bg-success text-white" onclick="copyUrl()">
 		          <i class="fa fa-copy"></i>
 	          </button>
 	        </span>
@@ -432,6 +432,10 @@
 				(text.indexOf(val) >= 0) ? $(this).show() : $(this).hide();
 			});
 		};
+
+		function copyUrl() {
+			copyToClipboard($('#post-url-input').val())
+		}
 
 		$('#tag-search').on('keyup', searchTag);
 
