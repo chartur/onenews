@@ -11,7 +11,7 @@
 	<script src="{{ asset('/js/jquery.js') }}"></script>
 	<script src="{{ asset('/js/popper.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('/js/script.js') }}"></script>
+	<script src="{{ asset('/js/script.js?v=1.0.0') }}"></script>
 	<style>
 		.main-color {
 			color: #e74c3c!important;
