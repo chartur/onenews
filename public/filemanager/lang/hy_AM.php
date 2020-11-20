@@ -72,7 +72,7 @@ return array(
     'Date' => 'Ամսաթիվ',
     'Filename' => 'Ֆայլի անունը',
     'Operations' => 'Գործառնություններ',
-    'Date_type' => 'dd-mm-yyyy',
+    'Date_type' => 'd-m-y',
     'OK' => 'Լավ',
     'Cancel' => 'Չեղարկել',
     'Sorting' => 'Տեսակավորում',
