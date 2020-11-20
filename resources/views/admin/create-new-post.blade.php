@@ -121,7 +121,7 @@
 					</div>
 					<hr>
 					<label>Ընտրել գլխաոր նկար</label>
-					<a href="/filemanager/dialog.php?field_id=imgField&lang=hy_AM&akey={{ config('rfm.default_access_key') }}" class="rfm-button">
+					<a href="/filemanager/dialog.php?field_id=imgField&lang=hy_AM&sort_by=date&akey={{ config('rfm.default_access_key') }}" class="rfm-button">
 						<div class="post-image">
 							<img src="{{ asset('/images/image-placeholder.jpg') }}" id="post-image-preview">
 						</div>
