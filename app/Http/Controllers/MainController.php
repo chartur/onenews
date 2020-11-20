@@ -35,9 +35,25 @@ class MainController extends Controller
         $seo = Seo::where('slug', 'main')
             ->first();
 
+        $left_place_content = LoaderController::getCategoriesByPlaces('left');
+        $right_place_content = LoaderController::getCategoriesByPlaces('right');
+        $middle_place_content = LoaderController::getCategoriesByPlaces('middle');
+        $general_post_content = LoaderController::getMainPost();
+
         $aboutSite = getAttributeByLang($aboutSite,'description');
 
-        return view('welcome')->with(compact('categories', 'tags', 'aboutSite', 'seo', 'page'));
+        return view('welcome')->with(compact(
+        'categories',
+            'tags',
+                'aboutSite',
+                'seo',
+                'page',
+                'left_place_content',
+                'right_place_content',
+                'middle_place_content',
+                'general_post_content'
+            )
+        );
     }
 
     /**

@@ -24,9 +24,7 @@
     <div class="row mr-0 ml-0">
         <div class="col-12 col-sm-6 col-md-3 mb-2 order-2 order-sm-1">
             <div class="data-loader" data-place="left">
-                @for($i=0; $i<=5; $i++)
-                    @include('components.content-loading')
-                @endfor
+                {!! $left_place_content !!}
             </div>
         </div>
         <div class="col-12 col-md-6 order-1 order-sm-2 mb-2">
@@ -35,13 +33,10 @@
             </header>
             <hr>
             <div class="general-post mb-3">
-                @include('components.content-loading')
-                @include('components.content-loading')
+                {!! $general_post_content !!}
             </div>
             <div class="data-loader" data-place="middle">
-                @for($i=0; $i<=5; $i++)
-                    @include('components.content-loading')
-                @endfor
+                {!! $middle_place_content !!}
             </div>
             {{--<div class="ad-vertical text-center">--}}
                 {{--<img src="/images/top-banner.png" class="w-100">--}}
@@ -49,20 +44,8 @@
         </div>
         <div class="col-12 col-sm-6 col-md-3 mb-2 order-last">
             <div class="data-loader" data-place="right">
-                @for($i=0; $i<=5; $i++)
-                    @include('components.content-loading')
-                @endfor
+                {!! $right_place_content !!}
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        // Places Loader
-        loadPostsByPlaces();
-
-        // Load Main Post
-				loadGeneralPost();
-    </script>
 @endsection

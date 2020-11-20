@@ -16,7 +16,7 @@ use App\Models\Post;
 class LoaderController extends Controller
 {
 
-    public function getMainPost()
+    public static function getMainPost()
     {
         $lang = app()->getLocale();
         $post = Post::where('is_general', 3)->first();
@@ -35,7 +35,7 @@ class LoaderController extends Controller
         return view('components.main-post')->with(compact('post'));
     }
 
-    public function getCategoriesByPlaces($place)
+    public static function getCategoriesByPlaces($place)
     {
         $lang = app()->getLocale();
         $places = Place::with('widget')
@@ -75,7 +75,7 @@ class LoaderController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function getBreakingNews()
+    public static function getBreakingNews()
     {
         $locale = app()->getLocale();
         $langAttr = config('laravellocalization.supportedLocales.'.$locale);
