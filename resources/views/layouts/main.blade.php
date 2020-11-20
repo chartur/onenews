@@ -40,6 +40,21 @@
 		}
 	</style>
 	<link rel="icon" href="{{ asset('/images/fav.png') }}">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97208566-10"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-97208566-10');
+	</script>
+
+
+@if(url('') !== 'http://localhost:8000')
+		<script data-ad-client="ca-pub-4690904339142228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	@endif
 </head>
 <body>
 	<script>
