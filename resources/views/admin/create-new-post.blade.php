@@ -260,9 +260,9 @@
 			plugins: [
 					'embed emoticons hr insertdatetime media table preview searchreplace',
 					'autolink charmap image fullscreen link print textcolor',
-					'code lists pagebreak quickbars wordcount filemanager',
+					'code lists pagebreak quickbars wordcount filemanager telegram_embed',
 				],
-			toolbar: 'embed media image table | emoticons hr insertdatetime charmap | ' +
+			toolbar: 'embed media image telegram_embed table | emoticons hr insertdatetime charmap | ' +
 					'link forecolor backcolor fontsizeselect alignleft aligncenter alignright alignjustify | numlist bullist pagebreak | ' +
 					'fullscreen preview code | print searchreplace wordcount',
 			quickbars_selection_toolbar: 'bold italic underline forecolor | formatselect fontsizeselect | ' +
@@ -270,7 +270,9 @@
 			quickbars_insert_toolbar: 'embed image hr emoticons',
 			filemanager_access_key: '{{ config('rfm.default_access_key') }}',
 			external_filemanager_path: '/filemanager/',
-			external_plugins: {filemanager: '/filemanager/plugin.min.js'}
+			external_plugins: {filemanager: '/filemanager/plugin.min.js'},
+			content_css: ['/admin/tinymce/plugins/media/css/style.css',],
+			importcss_append: true
 		});
 
 		function addNewTag() {
