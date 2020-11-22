@@ -493,7 +493,7 @@ div#post-page-content article h1 {
 .switch-post-locale a {
     color: #fff!important;
 }
-.telegram-embed-content span{
+.telegram-embed-content iframe {
     border: none;
 }
 .no-wrapp {
