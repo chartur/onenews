@@ -102,10 +102,12 @@
 							<div class="post-content">
 								{!! getAttributeByLang($main_post, 'content') !!}
 							</div>
-							<p class="mt-2">
-								<b class="mr-2">{{ trans('main.href') }}</b>
-								<a href="{{ $main_post->source }}" target="_blank"><i>{{ $main_post->source }}</i></a>
-							</p>
+							@if($main_post->source)
+								<p class="mt-2">
+									<b class="mr-2">{{ trans('main.href') }}</b>
+									<a href="{{ $main_post->source }}" target="_blank"><i>{{ $main_post->source }}</i></a>
+								</p>
+							@endif
 						</div>
 					</div>
 					<hr>
