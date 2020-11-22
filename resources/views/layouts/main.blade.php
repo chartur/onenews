@@ -52,7 +52,7 @@
 	</script>
 
 
-@if(url('') !== 'http://localhost:8000')
+	@if(url('') !== 'http://localhost:8000')
 		<script data-ad-client="ca-pub-4690904339142228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	@endif
 </head>

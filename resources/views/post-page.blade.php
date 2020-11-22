@@ -1,23 +1,23 @@
 @extends('layouts.main')
 
 @section('meta')
-	<title>{{ getAttributeByLang($post, 'title') }}</title>
-	<meta name="title" content="{{ getAttributeByLang($post, 'title') }}">
-	<meta name="keywords" content="{{ $post->tags->pluck(app()->getLocale().'_name')->join(', ') }}">
-	<meta name="description" content="{{ mb_strimwidth(getAttributeByLang($post, $post->description ? 'description' : 'title'), 0, 158, '...') }}">
+	<title>{{ getAttributeByLang($main_post, 'title') }}</title>
+	<meta name="title" content="{{ getAttributeByLang($main_post, 'title') }}">
+	<meta name="keywords" content="{{ $main_post->tags->pluck(app()->getLocale().'_name')->join(', ') }}">
+	<meta name="description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
 	<meta name="author" content="OneNews">
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ url()->current() }}">
-	<meta property="og:title" content="{{ getAttributeByLang($post, 'title') }}">
-	<meta property="og:description" content="{{ mb_strimwidth(getAttributeByLang($post, $post->description ? 'description' : 'title'), 0, 158, '...') }}">
-	<meta property="og:image" content="{{ asset($post->image) }}">
+	<meta property="og:title" content="{{ getAttributeByLang($main_post, 'title') }}">
+	<meta property="og:description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
+	<meta property="og:image" content="{{ asset($main_post->image) }}">
 
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="{{ url()->current() }}">
-	<meta property="twitter:title" content="{{ getAttributeByLang($post, 'title') }}">
-	<meta property="twitter:description" content="{{ mb_strimwidth(getAttributeByLang($post, $post->description ? 'description' : 'title'), 0, 158, '...') }}">
-	<meta property="twitter:image" content="{{ asset($post->image) }}">
+	<meta property="twitter:title" content="{{ getAttributeByLang($main_post, 'title') }}">
+	<meta property="twitter:description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
+	<meta property="twitter:image" content="{{ asset($main_post->image) }}">
 @endsection
 
 
@@ -25,7 +25,7 @@
 	<div id="post-page-content">
 		<article class="p-3">
 			<header>
-				<h1>{{ getAttributeByLang($post, 'title') }}</h1>
+				<h1>{{ getAttributeByLang($main_post, 'title') }}</h1>
 			</header>
 			<div>
 				<aside class="mb-3 pt-2 pb-2">
@@ -34,19 +34,19 @@
 							<ul class="post-details d-flex justify-content-center justify-content-lg-start">
 								<li class="mr-3">
 									<i class="fas fa-user mr-1"></i>
-									onenews.am
+									onenews
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-folder-open mr-1"></i>
-									<a class="main-color-hover" href="{{ url('/category/'.$post->category->slug) }}">{{ getAttributeByLang($post->category, 'name') }}</a>
+									<a class="main-color-hover" href="{{ url('/category/'.$main_post->category->slug) }}">{{ getAttributeByLang($main_post->category, 'name') }}</a>
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-calendar mr-1"></i>
-									{{ $post->created_at->formatLocalized('%d %b %Y') }}
+									{{ $main_post->created_at->formatLocalized('%d %b %Y') }}
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-eye mr-1"></i>
-									{{ $post->viewed }}
+									{{ $main_post->viewed }}
 								</li>
 							</ul>
 						</div>
@@ -74,7 +74,7 @@
 				<div class="col-12 col-md-9" style="height: max-content">
 					<div class="mb-3">
 						<div class="single-post-tags">
-							@foreach($post->tags as $tag)
+							@foreach($main_post->tags as $tag)
 								<a href="{{ url('/search?q='.getAttributeByLang($tag, 'name')) }}" class="text-decoration-none">
 								<span class="single-post-tag-item mr-1 main-bg-color-hover">
 										#{{ getAttributeByLang($tag, 'name') }}
@@ -86,14 +86,25 @@
 					<div>
 						<div class="overflow-hidden">
 							<div class="post-image-container">
-								<img src="{{ $post->image }}" alt="{{ getAttributeByLang($post, $post->description ? 'description' : 'title') }}">
+								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
+								@if($main_post->hy_title && $main_post->ru_title)
+									<div class="switch-post-locale mt-2 text-center">
+										@if(app()->getLocale() == 'hy')
+											<img width="30px" style="border: none" src="/images/flags/russia.png">
+											<a href="{{ str_replace('/hy/', '/ru/', url()->current()) }}">Доступен на Русском</a>
+										@else
+											<img width="30px" style="border: none" src="/images/flags/armenia.png">
+											<a href="{{ str_replace('/ru/', '/hy/', url()->current()) }}">Հասանել է Հայերեն</a>
+										@endif
+									</div>
+								@endif
 							</div>
 							<div class="post-content">
-								{!! getAttributeByLang($post, 'content') !!}
+								{!! getAttributeByLang($main_post, 'content') !!}
 							</div>
 							<p class="mt-2">
 								<b class="mr-2">{{ trans('main.href') }}</b>
-								<a href="{{ $post->source }}" target="_blank"><i>{{ $post->source }}</i></a>
+								<a href="{{ $main_post->source }}" target="_blank"><i>{{ $main_post->source }}</i></a>
 							</p>
 						</div>
 					</div>
@@ -106,7 +117,6 @@
 							<span class="d-inline-block pb-2 main-active-border-color">{{ trans('main.breaking_news') }}</span>
 						</h3>
 						<div class="h-100">
-							@php(addPostViewed($post->id))
 							@foreach($more_posts as $post)
 								@include('components.middle-text-bottom-post-component')
 							@endforeach
@@ -117,26 +127,27 @@
 		</article>
 	</div>
 	<div class="single-post-position p-3">
-		<ul class="overflow-hidden">
-			<li class="mr-3 d-inline-block">
+		<ul class="d-flex justify-content-start align-items-center flex-wrap overflow-hidden">
+			<li class="mr-3">
 				<span class="mr-3">{{ trans('main.you_are_here') }}</span>
 				<i class="fas fa-caret-right main-color"></i>
 			</li>
-			<li class="mr-3 d-inline-block">
+			<li class="mr-3 ">
 				<a href="/" class="main-color-hover text-decoration-none">
 					<span class="mr-3">{{ trans('main.menu.home.name') }}</span>
 				</a>
 				<i class="fas fa-caret-right main-color"></i>
 			</li>
-			<li class="mr-3 d-inline-block">
-				<a href="{{ url('/category/'.$post->category->slug) }}" class="main-color-hover text-decoration-none">
-					<span class="mr-3">{{ getAttributeByLang($post->category, 'name') }}</span>
+			<li class="mr-3 ">
+				<a href="{{ url('/category/'.$main_post->category->slug) }}" class="main-color-hover text-decoration-none">
+					<span class="mr-3">{{ getAttributeByLang($main_post->category, 'name') }}</span>
 				</a>
 				<i class="fas fa-caret-right main-color"></i>
 			</li>
-			<li class="mr-3 overflow-hidden d-inline-block">
-				<span class="mr-3 no-wrapp">{{ getAttributeByLang($post, 'title') }}</span>
+			<li class="mr-3 overflow-hidden d-flex align-items-center">
+				<span>{{ getAttributeByLang($main_post, 'title') }}</span>
 			</li>
 		</ul>
 	</div>
 @endsection
+@php(addPostViewed($main_post->id))

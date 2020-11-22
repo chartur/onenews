@@ -486,6 +486,13 @@ div#post-page-content article h1 {
     color: #555555;
     font-size: 14px;
 }
+.switch-post-locale {
+    padding: 10px 5px;
+    background: #3d566e;
+}
+.switch-post-locale a {
+    color: #fff!important;
+}
 .no-wrapp {
     white-space: nowrap!important;
 }

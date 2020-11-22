@@ -35,15 +35,15 @@ class PostsController
      */
     public function article($post_id)
     {
-        $post = Post::with('tags', 'category')->find($post_id);
+        $main_post = Post::with('tags', 'category')->find($post_id);
 
-        if(!$post) {
+        if(!$main_post) {
             abort(404);
         }
 
         $lang = app()->getLocale();
 
-        if(!$post->{$lang.'_title'} && !$post->{$lang.'_content'}){
+        if(!$main_post->{$lang.'_title'} && !$main_post->{$lang.'_content'}){
             return redirect()->to('/');
         }
 
@@ -55,7 +55,7 @@ class PostsController
         $aboutSite = Seo::where('slug', 'about')
             ->first();
 
-        $more_posts = Post::where('id', '<>', $post->id)
+        $more_posts = Post::where('id', '<>', $main_post->id)
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
             ->orderByDesc('id')
@@ -64,6 +64,6 @@ class PostsController
 
         $aboutSite = getAttributeByLang($aboutSite,'description');
 
-        return view('post-page')->with(compact('post', 'categories', 'tags', 'aboutSite', 'more_posts'));
+        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts'));
     }
 }

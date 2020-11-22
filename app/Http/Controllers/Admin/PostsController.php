@@ -76,12 +76,12 @@ class PostsController extends Controller
         $post->tags()->detach();
         $post->tags()->attach($request->tags);
 
-        $url = createPostLink($post->id, 'hy');
+        $urls = [];
         if($post->ru_title && $post->ru_content) {
-            $url = createPostLink($post->id, 'ru');
+            $urls['ru'] = createPostLink($post->id, 'ru');
         }
         if($post->hy_title && $post->hy_content) {
-            $url = createPostLink($post->id, 'hy');
+            $urls['hy'] = createPostLink($post->id, 'hy');
         }
 
         if($post->is_general) {
@@ -104,7 +104,7 @@ class PostsController extends Controller
             'status' => 'success',
             'message' => 'Փոստը հաջողությամբ ստեղծված է։' ,
             'data' => [
-                'url' => $url,
+                'urls' => $urls,
                 'id' => $post->id
             ]
         ]);
@@ -122,14 +122,14 @@ class PostsController extends Controller
         $categories = Category::get();
         $tags = Tag::get();
         $post->load('tags', 'category');
-        $url = createPostLink($post->id, 'hy');
+        $urls = [];
         if($post->ru_title && $post->ru_content) {
-            $url = createPostLink($post->id, 'ru');
+            $urls['ru'] = createPostLink($post->id, 'ru');
         }
         if($post->hy_title && $post->hy_content) {
-            $url = createPostLink($post->id, 'hy');
+            $urls['hy'] = createPostLink($post->id, 'hy');
         }
-        return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'url'));
+        return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'urls'));
     }
 
     /**

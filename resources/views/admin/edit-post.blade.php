@@ -22,18 +22,29 @@
 				Русский
 				<i class="fa fa-arrow-right mr-2"></i>
 			</button>
-			<div class="flex-grow-1">
+		</div>
+		<div class="d-flex flex-wrap justify-content-between align-items-center">
+			<div class="flex-grow-1 mb-2 mr-0 mr-md-2">
 				<div class="input-group">
-					<input value="{{ $url }}" id="post-url-input" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն կլինի այստեղ">
-					<span class="input-group-append pointer-cursor">
-	          <button class="input-group-text bg-success text-white" onclick="copyUrl()">
-		          <i class="fa fa-copy"></i>
-	          </button>
+					<span class="input-group-prepend pointer-cursor">
+		          <button class="input-group-text bg-success text-white" onclick="copyUrl('hy')">
+			          <i class="fa fa-copy"></i>
+		          </button>
 	        </span>
+					<input id="post-url-input-hy" value="{{ isset($urls['hy']) ? $urls['hy'] : '' }}" type="text" class="form-control" disabled="disabled" placeholder="Փոստի հասցեն հայերենի համար կլինի այստեղ">
+				</div>
+			</div>
+			<div class="flex-grow-1 mb-2 ml-0 ml-md-2">
+				<div class="input-group">
+					<input id="post-url-input-ru" value="{{ isset($urls['ru']) ? $urls['ru'] : '' }}" type="text" class="form-control" disabled="disabled" placeholder="Ссилка поста для русского будет здесь">
+					<span class="input-group-append pointer-cursor">
+		          <button class="input-group-text bg-success text-white" onclick="copyUrl('ru')">
+			          <i class="fa fa-copy"></i>
+		          </button>
+		        </span>
 				</div>
 			</div>
 		</div>
-
 
 		<div class="row">
 			<div class="col-12">
@@ -71,6 +82,32 @@
 				</div>
 			</div>
 			<div class="p-3 pt-4 options-container-content">
+				<div class="d-flex justify-content-between align-items-center mb-2">
+					<label class="mb-0 mr-1">Ընտրել թեգեր</label>
+					<div class="flex-grow-1">
+						<input type="search" placeholder="Փնտրել" class="form-control form-control-sm" id="tag-search">
+					</div>
+				</div>
+				<div class="tag-list p-2">
+					@foreach($tags as $tag)
+						<input
+										type="checkbox" id="tag-{{ $tag->id }}"
+										class="d-none tag-input"
+										name="tags[]"
+										value="{{ $tag->id }}"
+										{{ $post->tags->contains($tag->id) ? 'checked' : '' }}
+						>
+						<label class="tag-label btn btn-danger-outline" for="tag-{{ $tag->id }}">
+							{{ $tag->hy_name }}
+						</label>
+					@endforeach
+				</div>
+				<div class="text-center mt-2 text-success" data-toggle="modal" data-target="#add-tag-modal">
+					<a href="#">
+						<i class="fa fa-plus-circle"></i> Ավելացնել
+					</a>
+				</div>
+				<hr>
 				<div class="form-group">
 					<label>Կատեգորիա</label>
 					<select class="form-control" required name="category_id">
@@ -101,32 +138,6 @@
 							</label>
 						</li>
 					</ul>
-					<hr>
-					<div class="d-flex justify-content-between align-items-center mb-2">
-						<label class="mb-0 mr-1">Ընտրել թեգեր</label>
-						<div class="flex-grow-1">
-							<input type="search" placeholder="Փնտրել" class="form-control form-control-sm" id="tag-search">
-						</div>
-					</div>
-					<div class="tag-list p-2">
-						@foreach($tags as $tag)
-							<input
-									type="checkbox" id="tag-{{ $tag->id }}"
-									class="d-none tag-input"
-									name="tags[]"
-									value="{{ $tag->id }}"
-									{{ $post->tags->contains($tag->id) ? 'checked' : '' }}
-							>
-							<label class="tag-label btn btn-danger-outline" for="tag-{{ $tag->id }}">
-								{{ $tag->hy_name }}
-							</label>
-						@endforeach
-					</div>
-					<div class="text-center mt-2 text-success" data-toggle="modal" data-target="#add-tag-modal">
-						<a href="#">
-							<i class="fa fa-plus-circle"></i> Ավելացնել
-						</a>
-					</div>
 					<hr>
 					<label>Ընտրել գլխաոր նկար</label>
 					<a href="/filemanager/dialog.php?field_id=imgField&lang=hy_AM&sort_by=date&akey={{ config('rfm.default_access_key') }}" class="rfm-button">
@@ -396,8 +407,15 @@
 				success: function(res) {
 					$('input[name=post_id]').val(res.data.id);
 					$('.create-new-post-href').removeClass('d-none');
-					$('#post-url-input').val(res.data.url);
-					copyToClipboard(res.data.url);
+
+					if(res.data.urls.hy) {
+						$('#post-url-input-hy').val(res.data.urls.hy);
+					}
+
+					if(res.data.urls.ru) {
+						$('#post-url-input-ru').val(res.data.urls.ru);
+					}
+
 					$this.text('Թարմացնել');
 					$this.prop('disabled', false);
 					showMessage(res.status, res.message)
@@ -456,8 +474,10 @@
 			});
 		};
 
-		function copyUrl() {
-			copyToClipboard($('#post-url-input').val())
+		function copyUrl(lang) {
+			var url = $('#post-url-input-'+lang).val();
+			var title = $('input[name='+ lang +'_title]').val().trim();
+			copyToClipboard(url+' \n\r '+title);
 		}
 
 		$('#tag-search').on('keyup', searchTag);

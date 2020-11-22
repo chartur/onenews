@@ -87,8 +87,16 @@
 									</tfoot>
 								</table>
 							</div>
-							<div>
-								{!! $posts->links('vendor.pagination.bootstrap-4') !!}
+							<div class="fixed-bottom card mb-0">
+								<div class="position-absolute">
+									<section>
+										<div class="row">
+											<div class="col-12">
+												{!! $posts->links('vendor.pagination.bootstrap-4') !!}
+											</div>
+										</div>
+									</section>
+								</div>
 							</div>
 						</section>
 					</div>
