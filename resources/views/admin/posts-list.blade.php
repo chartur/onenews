@@ -111,7 +111,7 @@
 					{data: 'id', name: 'id'},
 					{data: 'image', name: 'image', orderable: false, searchable: false},
 					{data: 'hy_title', name: 'hy_title'},
-					{data: 'category.hy_name', name: 'category'},
+					{data: 'category.hy_name', name: 'category.hy_name'},
 					{data: 'langs', name: 'langs', orderable: false, searchable: false},
 					{data: 'source', name: 'source'},
 					{data: 'viewed', name: 'viewed'},
