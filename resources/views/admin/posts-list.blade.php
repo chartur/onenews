@@ -110,7 +110,7 @@
 				columns: [
 					{data: 'id', name: 'id'},
 					{data: 'image', name: 'image', orderable: false, searchable: false},
-					{data: 'hy_title', name: 'hy_title'},
+					{data: 'title', name: 'title'},
 					{data: 'category.hy_name', name: 'category.hy_name'},
 					{data: 'langs', name: 'langs', orderable: false, searchable: false},
 					{data: 'source', name: 'source'},

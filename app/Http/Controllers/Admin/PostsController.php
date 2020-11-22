@@ -160,6 +160,9 @@ class PostsController extends Controller
 
                     return $btn;
                 })
+                ->addColumn('title', function($row){
+                    return $row->hy_title ?: $row->ru_title;
+                })
                 ->addColumn('image', function($row){
 
                     $image = '<img src="'. $row->image .'" width="50px">';
