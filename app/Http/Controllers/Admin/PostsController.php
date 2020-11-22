@@ -15,9 +15,16 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Yajra\DataTables\Facades\DataTables;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        app()->setLocale('hy');
+    }
+
     /**
      * Returns new post creation page
      *
@@ -132,19 +139,46 @@ class PostsController extends Controller
         return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'urls'));
     }
 
-    /**
-     * Returns all posts
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function lists()
+
+    public function lists(Request $request)
     {
+
+        if ($request->ajax()) {
+            $data = Post::with('category');
+
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+
+                    $btn = '<a href="/cabinet/posts/update/'. $row->id .'" class="edit btn btn-primary btn-sm">View</a>';
+
+                    return $btn;
+                })
+                ->addColumn('image', function($row){
+
+                    $image = '<img src="'. $row->image .'" width="50px">';
+
+                    return $image;
+                })
+                ->addColumn('langs', function($row) {
+                    $langs = '';
+                    if ($row->hy_title) {
+                        $langs .= '<span class="text-success d-block text-center" > Հայերեն</span >';
+                    }
+                    if ($row->ru_title){
+                        $langs .= '<span class="text-primary d-block text-center" > Ռուսերեն</span >';
+                    }
+
+                    return $langs;
+                })
+                ->addColumn('date', function($row) {
+                    return $row->created_at->diffForHumans();
+                })
+                ->rawColumns(['action', 'langs', 'image'])
+                ->make(true);
+        }
+
         $activePage = 'all_posts';
-        $posts = Post::with('category')
-            ->orderByDesc('id')
-            ->paginate(20);
-
-
-        return view('admin.posts-list')->with(compact('activePage', 'posts'));
+        return view('admin.posts-list')->with(compact('activePage'));
     }
 }

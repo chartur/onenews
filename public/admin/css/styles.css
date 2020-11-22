@@ -133,3 +133,38 @@
 .language-container-switcher.btn-primary {
     color: #ffffff!important;
 }
+
+.paginate-card {
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 10px;
+}
+.paginate-card ul {
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+}
+.fixed-bottom-pagination {
+    position: fixed;
+    bottom: 0;
+}
+
+
+th {
+    padding-right: 20px!important;
+    position: relative;
+}
+
+.table-sort-arrow {
+    position: absolute;
+    right: 5px;
+}
+th.table-sort-arrow:first-child {
+    top: 25%;
+}
+th.table-sort-arrow:first-child {
+    bottom: 25%;
+}

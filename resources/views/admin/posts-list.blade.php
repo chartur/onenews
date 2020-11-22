@@ -2,6 +2,7 @@
 
 @section('styles')
 	<link rel="stylesheet" href="{{ asset('/admin/fancybox/jquery.fancybox.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/admin/datatable/datatables.min.css') }}">
 @endsection
 
 @section('content')
@@ -21,7 +22,7 @@
 						</div>
 						<section class="example">
 							<div class="table-responsive">
-								<table class="table table-striped table-bordered table-hover">
+								<table class="data-table table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
 											<th>#</th>
@@ -36,67 +37,43 @@
 										</tr>
 									</thead>
 									<tbody>
-										@foreach($posts as $post)
-											<tr>
-												<td>{{ $post->id }}</td>
-												<td>
-													<a href="{{ url($post->image) }}" class="fancy">
-														<img src="{{ $post->image }}" width="50px">
-													</a>
-												</td>
-												<td>{{ $post->hy_title ?: $post->ru_title }}</td>
-												<td>{{ $post->category->hy_name }}</td>
-												<td>
-													@if($post->hy_title)
-														<span class="text-success d-block text-center">Հայերեն</span>
-													@endif
-													@if($post->ru_title)
-														<span class="text-primary d-block text-center">Ռուսերեն</span>
-													@endif
-												</td>
-												<td>
-													<a href="{{ $post->source }}" target="_blank">
-														{{ $post->source }}
-													</a>
-												</td>
-												<td>
-													<i class="fa fa-eye mr-2"></i>
-													{{ $post->viewed }}
-												</td>
-												<td>{{ $post->created_at->diffForHumans() }}</td>
-												<td>
-													<a class="btn btn-warning" href="{{ url('/cabinet/posts/update/'.$post->id) }}">
-														<i class="fa fa-edit"></i>
-													</a>
-												</td>
-											</tr>
-										@endforeach
+										{{--@foreach($posts as $post)--}}
+											{{--<tr>--}}
+												{{--<td>{{ $post->id }}</td>--}}
+												{{--<td>--}}
+													{{--<a href="{{ url($post->image) }}" class="fancy">--}}
+														{{--<img src="{{ $post->image }}" width="50px">--}}
+													{{--</a>--}}
+												{{--</td>--}}
+												{{--<td>{{ $post->hy_title ?: $post->ru_title }}</td>--}}
+												{{--<td>{{ $post->category->hy_name }}</td>--}}
+												{{--<td>--}}
+													{{--@if($post->hy_title)--}}
+														{{--<span class="text-success d-block text-center">Հայերեն</span>--}}
+													{{--@endif--}}
+													{{--@if($post->ru_title)--}}
+														{{--<span class="text-primary d-block text-center">Ռուսերեն</span>--}}
+													{{--@endif--}}
+												{{--</td>--}}
+												{{--<td>--}}
+													{{--<a href="{{ $post->source }}" target="_blank">--}}
+														{{--{{ $post->source }}--}}
+													{{--</a>--}}
+												{{--</td>--}}
+												{{--<td>--}}
+													{{--<i class="fa fa-eye mr-2"></i>--}}
+													{{--{{ $post->viewed }}--}}
+												{{--</td>--}}
+												{{--<td>{{ $post->created_at->diffForHumans() }}</td>--}}
+												{{--<td>--}}
+													{{--<a class="btn btn-warning" href="{{ url('/cabinet/posts/update/'.$post->id) }}">--}}
+														{{--<i class="fa fa-edit"></i>--}}
+													{{--</a>--}}
+												{{--</td>--}}
+											{{--</tr>--}}
+										{{--@endforeach--}}
 									</tbody>
-									<tfoot>
-										<tr>
-											<th>#</th>
-											<th>Նկար</th>
-											<th>Վերնագիր</th>
-											<th>Կատեգորիա</th>
-											<th>Լեզուներ</th>
-											<th>Աղբյուր</th>
-											<th>Դիտում</th>
-											<th>Ամսաթիվ</th>
-											<th>Գործողություն</th>
-										</tr>
-									</tfoot>
 								</table>
-							</div>
-							<div class="fixed-bottom card mb-0">
-								<div class="position-absolute">
-									<section>
-										<div class="row">
-											<div class="col-12">
-												{!! $posts->links('vendor.pagination.bootstrap-4') !!}
-											</div>
-										</div>
-									</section>
-								</div>
 							</div>
 						</section>
 					</div>
@@ -108,6 +85,7 @@
 
 @section('scripts')
 	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
+	<script src="{{ asset('/admin/datatable/datatables.min.js') }}" ></script>
 	<script>
 		$(document).ready(function () {
 			$("a.fancy").fancybox({
@@ -122,5 +100,27 @@
 				},
 			});
 		});
+
+		$(function () {
+
+			var table = $('.data-table').DataTable({
+				processing: true,
+				serverSide: true,
+				ajax: "{{ route('posts.list') }}",
+				columns: [
+					{data: 'id', name: 'id'},
+					{data: 'image', name: 'image', orderable: false, searchable: false},
+					{data: 'hy_title', name: 'hy_title'},
+					{data: 'category.hy_name', name: 'category'},
+					{data: 'langs', name: 'langs', orderable: false, searchable: false},
+					{data: 'source', name: 'source'},
+					{data: 'viewed', name: 'viewed'},
+					{data: 'date', name: 'date'},
+					{data: 'action', name: 'action', orderable: false, searchable: false},
+				]
+			});
+
+		});
+
 	</script>
 @endsection
