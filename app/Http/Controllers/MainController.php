@@ -22,7 +22,8 @@ class MainController extends Controller
         $categories = Category::withCount('posts')
             ->get();
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 
@@ -66,7 +67,8 @@ class MainController extends Controller
         $categories = Category::withCount('posts')
             ->get();
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 
@@ -91,7 +93,8 @@ class MainController extends Controller
         $categories = Category::withCount('posts')
             ->get();
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 
@@ -128,7 +131,8 @@ class MainController extends Controller
         });
 
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 
@@ -143,6 +147,12 @@ class MainController extends Controller
         return view('categories')->with(compact('categories','tags','page','seo', 'aboutSite'));
     }
 
+    /**
+     * Page of single category
+     *
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function categoryPage($slug)
     {
         $lang = app()->getLocale();
@@ -156,7 +166,8 @@ class MainController extends Controller
         $categories = Category::withCount('posts')
             ->get();
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 
@@ -193,6 +204,11 @@ class MainController extends Controller
         );
     }
 
+    /**
+     * Page posts where has video
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function videos()
     {
         $lang = app()->getLocale();
@@ -207,7 +223,8 @@ class MainController extends Controller
         $categories = Category::withCount('posts')
             ->get();
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 
@@ -243,6 +260,12 @@ class MainController extends Controller
         );
     }
 
+    /**
+     * Search page
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
+     */
     public function search(Request $request)
     {
         $lang = app()->getLocale();
@@ -253,7 +276,8 @@ class MainController extends Controller
         $categories = Category::withCount('posts')
             ->get();
 
-        $tags = Tag::orderBy('searched', 'desc')
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
             ->limit(15)
             ->get();
 

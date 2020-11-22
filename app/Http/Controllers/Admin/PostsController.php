@@ -139,7 +139,13 @@ class PostsController extends Controller
         return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'urls'));
     }
 
-
+    /**
+     * Posts list with DataTable
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @throws \Exception
+     */
     public function lists(Request $request)
     {
 
