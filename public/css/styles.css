@@ -493,6 +493,9 @@ div#post-page-content article h1 {
 .switch-post-locale a {
     color: #fff!important;
 }
+.telegram-embed-content span{
+    border: none;
+}
 .no-wrapp {
     white-space: nowrap!important;
 }
