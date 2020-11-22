@@ -46,7 +46,7 @@
 			<ul class="footer-tags pl-0">
 				@foreach($tags as $tag)
 					<a href="/search?q={{ getAttributeByLang($tag, 'name') }}">
-						<li class="d-inline-block mr-2 mb-2">
+						<li class="d-inline-block mr-2 mb-2 text-lowercase">
 							#{{ getAttributeByLang($tag, 'name') }}
 						</li>
 					</a>
