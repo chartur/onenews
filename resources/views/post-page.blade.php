@@ -168,6 +168,8 @@
 			$.fancybox.close();
 		}
 
+		$(document).on('click', '#telegram-click', clickTelegramLink);
+
 		$('.post-content img').click(function () {
 			var src = $(this).attr('src');
 			$.fancybox.open('<img src="'+ src +'">');
