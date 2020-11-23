@@ -1,4 +1,4 @@
-<div class="telegram-join-page">
+<div class="telegram-join-page" onclick="clickTelegramLink()">
 	<div class="position-relative">
 		<div class="position-absolute circular-effect">
 			<div class="icon-container text-center">

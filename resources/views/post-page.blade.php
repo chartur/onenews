@@ -161,6 +161,13 @@
 @section('scripts')
 	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
 	<script>
+
+		function clickTelegramLink() {
+			window.open('https://t.me/infoonenews');
+			!localStorage.setItem('telegram-joined', 'clicked');
+			$.fancybox.close();
+		}
+
 		$('.post-content img').click(function () {
 			var src = $(this).attr('src');
 			$.fancybox.open('<img src="'+ src +'">');
@@ -174,12 +181,6 @@
 				}, 500)
 			}, 5000);
 		}
-
-		$(document).on('click', '.telegram-join-page', function () {
-			window.open('https://t.me/infoonenews');
-			!localStorage.setItem('telegram-joined', 'clicked');
-			$.fancybox.close();
-		})
 
 	</script>
 @endsection
