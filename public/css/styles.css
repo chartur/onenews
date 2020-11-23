@@ -522,7 +522,10 @@ div#post-page-content article h1 {
 }
 
 
-
+.telegram-join-page a {
+    outline: none;
+    border: none;
+}
 .telegram-join-page {
     width: 350px;
     padding: 25px 40px;
