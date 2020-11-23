@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="{{ asset('/admin/datatable/datatables.min.css') }}">
 
 	<style>
-		.data-table th:nth-child(4), td:nth-child(4), th:nth-child(5), td:nth-child(5) {
+		.data-table th:nth-child(4), td:nth-child(4), th:nth-child(5), td:nth-child(5),th:nth-child(7), td:nth-child(7) {
 			word-break: break-all;
 			width: 100px!important;
 		}
