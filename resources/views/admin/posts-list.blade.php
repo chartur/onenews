@@ -123,12 +123,13 @@
 					{data: 'action', name: 'action', orderable: false, searchable: false},
 					{data: 'id', name: 'id'},
 					{data: 'image', name: 'image', orderable: false, searchable: false},
-					{data: 'title', name: 'title'},
+					{data: 'title', name: 'posts.hy_title'},
 					{data: 'category.hy_name', name: 'category.hy_name'},
 					{data: 'langs', name: 'langs', orderable: false, searchable: false},
 					{data: 'source', name: 'source'},
 					{data: 'viewed', name: 'viewed'},
 					{data: 'date', name: 'date'},
+					{data: 'title_ru', name: 'posts.ru_title', visible: false},
 				]
 			});
 

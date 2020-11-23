@@ -173,6 +173,9 @@ class PostsController extends Controller
 
                     return $btn;
                 })
+                ->addColumn('title_ru', function($row){
+                    return $row->hy_title ?: $row->ru_title;
+                })
                 ->addColumn('title', function($row){
                     return $row->hy_title ?: $row->ru_title;
                 })
