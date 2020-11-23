@@ -9,7 +9,7 @@
 		<div class="small-post-attributes text-right order-sm-0">
 			<span class="mr-2 main-color">
 				<i class="fa fa-calendar"></i>
-				{{ $post->created_at->formatLocalized('%d %b, %Y') }}
+				{{ $post->created_at->formatLocalized('%d %b, %Y %H:%m') }}
 			</span>
 			<span class="main-color">
 				<i class="fa fa-eye"></i>
