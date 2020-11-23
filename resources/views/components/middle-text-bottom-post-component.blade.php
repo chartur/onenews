@@ -6,7 +6,7 @@
 		<div class="middle-text-bottom-post-attributes main-color">
 			<span class="mr-2">
 				<i class="fa fa-calendar"></i>
-				{{ $post->created_at->formatLocalized('%d %b, %Y %H:%m') }}
+				{{ $post->created_at->formatLocalized('%d %b, %Y %H:%M') }}
 			</span>
 			<span>
 				<i class="fa fa-eye"></i>
