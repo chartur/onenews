@@ -20,6 +20,10 @@
 	<meta property="twitter:image" content="{{ asset($main_post->image) }}">
 @endsection
 
+@section('styles')
+	<link rel="stylesheet" href="{{ asset('/admin/fancybox/jquery.fancybox.min.css') }}">
+@endsection
+
 
 @section('content')
 	<div id="post-page-content">
@@ -153,3 +157,13 @@
 	</div>
 @endsection
 @php(addPostViewed($main_post->id))
+
+@section('scripts')
+	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
+	<script>
+		$('.post-content img').click(function () {
+			var src = $(this).attr('src');
+			$.fancybox.open('<img src="'+ src +'">');
+		});
+	</script>
+@endsection

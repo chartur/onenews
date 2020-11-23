@@ -452,6 +452,9 @@ div#post-page-content article .post-content {
 div#post-page-content article .post-content iframe {
     max-width: 100%!important;
 }
+div#post-page-content article .post-content img {
+    cursor: pointer;
+}
 div#post-page-content aside {
     border-top: 1px dotted #ededed;
     border-bottom: 1px dotted #ededed;
@@ -518,7 +521,9 @@ div#post-page-content article h1 {
     color: #3d566e;
 }
 
-
+.fancybox-content img {
+    max-width: 100%;
+}
 @media (min-width: 576px) {
     .container {
         max-width: 570px;

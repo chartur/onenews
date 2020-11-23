@@ -10,6 +10,8 @@
 
 	@yield('meta')
 
+	@yield('styles')
+
 	<script src="{{ asset('/js/jquery.js') }}"></script>
 	<script src="{{ asset('/js/popper.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
@@ -84,7 +86,7 @@
 
 	<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.0.2') }}">
+	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.0.3') }}">
 
 	@yield('scripts')
 </body>
