@@ -162,13 +162,12 @@
 	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
 	<script>
 
-		function clickTelegramLink() {
+		$(document).on('click', '#telegram-click', function (e) {
+			e.stopPropagation();
 			window.open('https://t.me/infoonenews');
 			!localStorage.setItem('telegram-joined', 'clicked');
 			$.fancybox.close();
-		}
-
-		$(document).on('click', '#telegram-click', clickTelegramLink);
+		});
 
 		$('.post-content img').click(function () {
 			var src = $(this).attr('src');
