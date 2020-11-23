@@ -1,5 +1,5 @@
-<div class="telegram-join-page" onclick="clickTelegramLink()">
-	<div class="position-relative">
+<div class="telegram-join-page">
+	<div class="position-relative" onclick="clickTelegramLink()">
 		<div class="position-absolute circular-effect">
 			<div class="icon-container text-center">
 				<i class="fa fa-telegram-plane"></i>
