@@ -49,6 +49,7 @@ class LoaderController extends Controller
                 case 'posts':
                     $category = Category::find($p->data->category_id);
                     $posts = Post::where('category_id', $p->data->category_id)
+                        ->where('is_general', 0)
                         ->where($lang.'_title', '<>', '')
                         ->where($lang.'_content', '<>', '')
                         ->orderBy('id', 'desc')
