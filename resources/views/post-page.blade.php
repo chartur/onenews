@@ -174,14 +174,16 @@
 			$.fancybox.open('<img src="'+ src +'">');
 		});
 
-		if(localStorage.getItem('telegram-joined') != 'clicked'){
-			{{--setTimeout(function () {--}}
-				{{--$.fancybox.open(`@include('components.telegram-join')`);--}}
-				{{--setTimeout(function () {--}}
-					{{--$('.telegram-join-page').addClass('active')--}}
-				{{--}, 500)--}}
-			{{--}, 5000);--}}
-		}
+		// if(localStorage.getItem('telegram-joined') != 'clicked'){
+			setTimeout(function () {
+				$.fancybox.open(`@include('components.telegram-join')`, {
+					touch: false
+				});
+				setTimeout(function () {
+					$('.telegram-join-page').addClass('active')
+				}, 500)
+			}, 5000);
+		// }
 
 	</script>
 @endsection
