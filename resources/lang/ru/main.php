@@ -28,5 +28,6 @@ return [
 
     'return_home' => 'Назад',
     'search' => 'Поиск',
-    'href' => 'Источник:՝'
+    'href' => 'Источник:՝',
+    'telegram-popup-content' => '<b>Присоединяйтесь к нам в Telegram</b><span>Гарантируем быструю и достоверную информацию</span>'
 ];

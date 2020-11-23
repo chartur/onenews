@@ -165,5 +165,21 @@
 			var src = $(this).attr('src');
 			$.fancybox.open('<img src="'+ src +'">');
 		});
+
+		if(localStorage.getItem('telegram-joined') != 'clicked'){
+			setTimeout(function () {
+				$.fancybox.open(`@include('components.telegram-join')`);
+				setTimeout(function () {
+					$('.telegram-join-page').addClass('active')
+				}, 500)
+			}, 5000);
+		}
+
+		$(document).on('click', '.telegram-join-page', function () {
+			window.open('https://t.me/infoonenews');
+			!localStorage.setItem('telegram-joined', 'clicked');
+			$.fancybox.close();
+		})
+
 	</script>
 @endsection
