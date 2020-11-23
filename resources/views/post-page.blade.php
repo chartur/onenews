@@ -175,12 +175,12 @@
 		});
 
 		if(localStorage.getItem('telegram-joined') != 'clicked'){
-			setTimeout(function () {
-				$.fancybox.open(`@include('components.telegram-join')`);
-				setTimeout(function () {
-					$('.telegram-join-page').addClass('active')
-				}, 500)
-			}, 5000);
+			{{--setTimeout(function () {--}}
+				{{--$.fancybox.open(`@include('components.telegram-join')`);--}}
+				{{--setTimeout(function () {--}}
+					{{--$('.telegram-join-page').addClass('active')--}}
+				{{--}, 500)--}}
+			{{--}, 5000);--}}
 		}
 
 	</script>
