@@ -46,7 +46,7 @@
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-calendar mr-1"></i>
-									{{ $post->created_at->formatLocalized('%d %b, %Y %H:%M') }}
+									{{ $main_post->created_at->formatLocalized('%d %b, %Y %H:%M') }}
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-eye mr-1"></i>
