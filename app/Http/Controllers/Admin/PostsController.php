@@ -156,7 +156,20 @@ class PostsController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
 
-                    $btn = '<a href="/cabinet/posts/update/'. $row->id .'" class="edit btn btn-primary btn-sm">View</a>';
+                    $btn = '<a href="/cabinet/posts/update/'. $row->id .'" class="edit btn btn-warning btn-sm mr-2">
+                                <i class="fa fa-edit"></i>
+                            </a>';
+                    $lang = 'hy';
+                    if($row->ru_title) {
+                        $lang = 'ru';
+                    }
+                    if($row->hy_title) {
+                        $lang = 'hy';
+                    }
+
+                    $btn .= '<a href="'. createPostLink($row->id, $lang) .'" target="_blank" class="edit btn btn-primary btn-sm mr-2">
+                              <i class="fa fa-eye"></i>
+                            </a>';
 
                     return $btn;
                 })
