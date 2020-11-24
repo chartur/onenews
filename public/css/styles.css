@@ -540,7 +540,16 @@ div#post-page-content article h1 {
     color: #3d566e;
 }
 
+.telegram-join-page.animation .icon-container {
+    animation: rotateion;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 
+}
+@keyframes rotateion {
+    from { transform: rotateY(0deg); }
+    to {transform: rotateY(360deg);}
+}
 .telegram-join-page a {
     outline: none;
     border: none;
