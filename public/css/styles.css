@@ -328,6 +328,10 @@ nav a:hover {
     color: #3d566e;
     font-size: 14px;
     transition: all .4s ease;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .small-post-attributes {
     font-size: 12px;
