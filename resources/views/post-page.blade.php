@@ -162,7 +162,7 @@
 	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
 	<script>
 
-		$(document).on('click', '#telegram-click', function (e) {
+		$(document).on('click', '.telegram-click', function (e) {
 			e.stopPropagation();
 			window.open('https://t.me/infoonenews');
 			!localStorage.setItem('telegram-joined', 'clicked');
