@@ -22,12 +22,12 @@
 
 @section('content')
     <div class="row mr-0 ml-0">
-        <div class="col-12  col-md-6 col-lg-3 mb-2 order-2 order-sm-1 order-md-2 order-lg-1">
+        <div class="col-12  col-md-6 col-xl-3 mb-2 order-2 order-md-2 order-xl-1">
             <div class="data-loader" data-place="left">
                 {!! $left_place_content !!}
             </div>
         </div>
-        <div class="col-12  col-lg-6 order-1 order-sm-2 order-md-1 order-lg-2 mb-2">
+        <div class="col-12  col-xl-6 order-1 order-xl-2 order-md-1 mb-2">
             <header class="main-page-header">
                 <h1 class="text-center">{{ getAttributeByLang($seo, 'title') }}</h1>
             </header>
@@ -42,7 +42,7 @@
                 {{--<img src="/images/top-banner.png" class="w-100">--}}
             {{--</div>--}}
         </div>
-        <div class="col-12  col-md-6 col-lg-3 mb-2 order-last">
+        <div class="col-12  col-md-6 col-xl-3 mb-2 order-last">
             <div class="data-loader" data-place="right">
                 {!! $right_place_content !!}
             </div>

@@ -546,6 +546,14 @@ div#post-page-content article h1 {
     animation-iteration-count: infinite;
 
 }
+.telegram-join-page.animation .join-text .content-join-telegram {
+    margin-left: 40%;
+}
+.telegram-join-page.animation .join-text {
+    left: unset;
+    right: 0;
+    width: 90%!important;
+}
 @keyframes rotateion {
     from { transform: rotateY(0deg); }
     to {transform: rotateY(360deg);}
