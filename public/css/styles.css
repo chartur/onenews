@@ -35,6 +35,21 @@
     font-family: "Font Awesome 5 Brands";
     margin-right: 8px;
 }
+
+.telegram-share-button {
+    display: inline-block;
+    background: #54A9EB;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 2px 6px;
+    font-weight: bold;
+}
+.telegram-share-button:before {
+    content: '\f3fe';
+    font-family: "Font Awesome 5 Brands";
+    margin-right: 8px;
+}
 body {
     font-family:  Dosis-Regular, NotoSansArmenian-Regular!important;
 }
@@ -532,6 +547,7 @@ div#post-page-content article h1 {
 }
 .telegram-join-page .position-relative {
     height: 110px;
+    cursor: pointer;
 }
 .telegram-join-page .circular-effect{
     border-radius: 100%;

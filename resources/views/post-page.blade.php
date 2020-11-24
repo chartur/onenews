@@ -63,10 +63,10 @@
 									<iframe src="https://www.facebook.com/plugins/share_button.php?href={{ url()->current() }}&layout=button_count&size=small&appId=182306942842208&width=115&height=20" width="120" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 								</div>
 								<div class="d-flex align-items-end mr-2">
-									<script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-share-url="{{ url()->current() }}"></script>
+									<a href="https://t.me/share/url?url={{ url()->current() }}" target="_blank" class="telegram-share-button">Telegram</a>
 								</div>
 								<div>
-									<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+									<a href="https://twitter.com/share" target="_blank" class="twitter-share-button">Tweet</a>
 								</div>
 							</div>
 
