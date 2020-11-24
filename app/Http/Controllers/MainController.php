@@ -180,6 +180,7 @@ class MainController extends Controller
         $posts = Post::where('category_id', $category->id)
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
+            ->orderByDesc('id')
             ->paginate(17);
 
         $aboutSite = getAttributeByLang($seo,'description');
@@ -237,6 +238,7 @@ class MainController extends Controller
         $posts = Post::where('has_video', 1)
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
+            ->orderBy('id', 'desc')
             ->paginate(17);
 
         $aboutSite = getAttributeByLang($seo,'description');
