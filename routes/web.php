@@ -70,8 +70,8 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
         Route::get('search', [TagsController::class, 'adminTagSearch']);
         Route::post('save', [TagsController::class, 'saveTagData']);
         Route::post('delete', [TagsController::class, 'deleteTag']);
-        Route::get('list', [TagsController::class, 'lists'])->name('tags.list');;
-        Route::get('update/{tag}', [TagsController::class, 'updateTagView']);
+        Route::get('list', [TagsController::class, 'lists'])->name('tags.list');
+        Route::get('update/{tag}', [TagsController::class, 'updateTagView'])->name('tag.update');
     });
 
     Route::group(['prefix' => 'category'], function () {

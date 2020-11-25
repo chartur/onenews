@@ -64,11 +64,32 @@ class TagsController
     /**
      * Returns post update template
      *
+     * @param Request $request
      * @param Tag $tag
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @throws \Exception
      */
-    public function updateTagView(Tag $tag)
+    public function updateTagView(Request $request, Tag $tag)
     {
+        if ($request->ajax()) {
+            $tags = Tag::withCount('posts')
+                ->where('id', '<>', $tag->id);
+
+            return Datatables::of($tags)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+
+                    $btn = '<input type="radio" class="form-control" name="replace-post-tag" value="'. $row->id .'">';
+
+                    return $btn;
+                })
+                ->addColumn('date', function($row) {
+                    return $row->created_at->diffForHumans();
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
         $activePage = 'tag';
         $tag->loadCount('posts');
         return view('admin.edit-tag')->with(compact('tag', 'activePage'));
@@ -126,7 +147,11 @@ class TagsController
             return response()->json(['status' => 'danger', 'message' => 'Թեգը չի գտնվել'], 404);
         }
 
-        $tag->posts()->detach();
+        if($request->replace) {
+            $tag->posts()->update(['tag_id' => $request->replace]);
+        }else {
+            $tag->posts()->detach();
+        }
 
         $status = $tag->delete();
 
