@@ -104,7 +104,7 @@ class TagsController
      */
     public function lists(Request $request)
     {
-
+        dd(ini_get('post_max_size'));
         if ($request->ajax()) {
             $tags = Tag::withCount('posts');
 
