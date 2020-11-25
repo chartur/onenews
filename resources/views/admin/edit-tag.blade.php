@@ -150,11 +150,11 @@
 				beforeSend: NProgress.start,
 				complete: NProgress.done,
 				success: function (res) {
-					// showMessage(res.status, res.message);
-					// return history.go(-1);
+					showMessage(res.status, res.message);
+					return history.go(-1);
 				},
 				error: function (err) {
-					// showMessage(err.responseJSON.status, err.responseJSON.message);
+					showMessage(err.responseJSON.status, err.responseJSON.message);
 				}
 			})
 		}
