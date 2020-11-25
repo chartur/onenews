@@ -29,10 +29,10 @@
 				<div class="card">
 					<div class="card-block">
 						<div class="card-title-block">
-							<h3 class="title"> Responsive simple </h3>
+							<h3 class="title"> Փոստեր </h3>
 						</div>
 						<section class="example">
-							{{--<div class="table-responsive">--}}
+							<div class="table-responsive">
 								<table class="data-table table table-striped table-bordered table-hover w-100">
 									<thead>
 										<tr>
@@ -48,44 +48,9 @@
 										</tr>
 									</thead>
 									<tbody>
-										{{--@foreach($posts as $post)--}}
-											{{--<tr>--}}
-												{{--<td>{{ $post->id }}</td>--}}
-												{{--<td>--}}
-													{{--<a href="{{ url($post->image) }}" class="fancy">--}}
-														{{--<img src="{{ $post->image }}" width="50px">--}}
-													{{--</a>--}}
-												{{--</td>--}}
-												{{--<td>{{ $post->hy_title ?: $post->ru_title }}</td>--}}
-												{{--<td>{{ $post->category->hy_name }}</td>--}}
-												{{--<td>--}}
-													{{--@if($post->hy_title)--}}
-														{{--<span class="text-success d-block text-center">Հայերեն</span>--}}
-													{{--@endif--}}
-													{{--@if($post->ru_title)--}}
-														{{--<span class="text-primary d-block text-center">Ռուսերեն</span>--}}
-													{{--@endif--}}
-												{{--</td>--}}
-												{{--<td>--}}
-													{{--<a href="{{ $post->source }}" target="_blank">--}}
-														{{--{{ $post->source }}--}}
-													{{--</a>--}}
-												{{--</td>--}}
-												{{--<td>--}}
-													{{--<i class="fa fa-eye mr-2"></i>--}}
-													{{--{{ $post->viewed }}--}}
-												{{--</td>--}}
-												{{--<td>{{ $post->created_at->diffForHumans() }}</td>--}}
-												{{--<td>--}}
-													{{--<a class="btn btn-warning" href="{{ url('/cabinet/posts/update/'.$post->id) }}">--}}
-														{{--<i class="fa fa-edit"></i>--}}
-													{{--</a>--}}
-												{{--</td>--}}
-											{{--</tr>--}}
-										{{--@endforeach--}}
 									</tbody>
 								</table>
-							{{--</div>--}}
+							</div>
 						</section>
 					</div>
 				</div>
@@ -126,8 +91,8 @@
 					{data: 'title', name: 'posts.hy_title'},
 					{data: 'category.hy_name', name: 'category.hy_name'},
 					{data: 'langs', name: 'langs', orderable: false, searchable: false},
-					{data: 'source', name: 'source'},
-					{data: 'viewed', name: 'viewed'},
+					{data: 'source', name: 'source', orderable: false, searchable: false},
+					{data: 'viewed', name: 'viewed', orderable: false, searchable: false},
 					{data: 'date', name: 'date'},
 					{data: 'title_ru', name: 'posts.ru_title', visible: false},
 				]

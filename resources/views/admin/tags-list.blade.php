@@ -1,9 +1,13 @@
 @extends('admin.layouts.admin')
 
+@section('styles')
+	<link rel="stylesheet" href="{{ asset('/admin/datatable/datatables.min.css') }}">
+@endsection
+
 @section('content')
 	<div class="overlay"></div>
 	<div class="title-block">
-		<h3 class="title"> Փոստեր <span class="sparkline bar" data-type="bar"></span>
+		<h3 class="title"> Թեգեր <span class="sparkline bar" data-type="bar"></span>
 		</h3>
 	</div>
 
@@ -17,47 +21,30 @@
 						</div>
 						<section class="example">
 							<div class="table-responsive">
-								<table class="table table-striped table-bordered table-hover">
+								<table class="data-table table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
-											<th>#</th>
+											<th>Գործողություն</th>
+											<th>#ID</th>
 											<th>Հայաերեն անվանում</th>
 											<th>Ռուսերեն անվանում</th>
 											<th>Փոստերի քանակ</th>
 											<th>Ամսաթիվ</th>
-											<th>Գործողություն</th>
 										</tr>
 									</thead>
 									<tbody>
-										@foreach($tags as $tag)
-											<tr>
-												<td>{{ $tag->id }}</td>
-												<td>{{ $tag->hy_name }}</td>
-												<td>{{ $tag->ru_name }}</td>
-												<td>{{ $tag->posts_count }}</td>
-												<td>{{ $tag->created_at->diffForHumans() }}</td>
-												<td>
-													<a class="btn btn-warning" href="{{ url('/cabinet/tags/update/'.$tag->id) }}">
-														<i class="fa fa-edit"></i>
-													</a>
-												</td>
-											</tr>
-										@endforeach
 									</tbody>
 									<tfoot>
 										<tr>
-											<th>#</th>
+											<th>Գործողություն</th>
+											<th>#ID</th>
 											<th>Հայաերեն անվանում</th>
 											<th>Ռուսերեն անվանում</th>
 											<th>Փոստերի քանակ</th>
 											<th>Ամսաթիվ</th>
-											<th>Գործողություն</th>
 										</tr>
 									</tfoot>
 								</table>
-							</div>
-							<div>
-								{!! $tags->links('vendor.pagination.bootstrap-4') !!}
 							</div>
 						</section>
 					</div>
@@ -65,4 +52,31 @@
 			</div>
 		</div>
 	</section>
+@endsection
+
+
+@section('scripts')
+	<script src="{{ asset('/admin/datatable/datatables.min.js') }}" ></script>
+	<script>
+
+		$(function () {
+
+			var table = $('.data-table').DataTable({
+				processing: true,
+				serverSide: true,
+				ajax: "{{ route('tags.list') }}",
+				order: [[ 1, "desc" ]],
+				columns: [
+					{data: 'action', name: 'action', orderable: false, searchable: false},
+					{data: 'id', name: 'id'},
+					{data: 'hy_name', name: 'hy_name'},
+					{data: 'ru_name', name: 'ru_name'},
+					{data: 'posts_count', name: 'posts_count', orderable: false, searchable: false},
+					{data: 'date', name: 'date'},
+				]
+			});
+
+		});
+
+	</script>
 @endsection

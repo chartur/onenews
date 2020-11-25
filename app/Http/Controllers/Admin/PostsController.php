@@ -173,6 +173,10 @@ class PostsController extends Controller
 
                     return $btn;
                 })
+                ->addColumn('source', function($row){
+                    return $row->source ? '<span class="text-success d-block text-center" >Ունի հղում</span >'
+                                        : '<span class="text-danger d-block text-center" >Չունի հղում</span >';
+                })
                 ->addColumn('title_ru', function($row){
                     return $row->hy_title ?: $row->ru_title;
                 })
@@ -199,7 +203,7 @@ class PostsController extends Controller
                 ->addColumn('date', function($row) {
                     return $row->created_at->diffForHumans();
                 })
-                ->rawColumns(['action', 'langs', 'image'])
+                ->rawColumns(['action', 'langs', 'image', 'source'])
                 ->make(true);
         }
 

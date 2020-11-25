@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class TagsController
 {
@@ -76,17 +77,36 @@ class TagsController
     /**
      * Returns all posts
      *
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @throws \Exception
      */
-    public function lists()
+    public function lists(Request $request)
     {
+
+        if ($request->ajax()) {
+            $tags = Tag::withCount('posts');
+
+            return Datatables::of($tags)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+
+                    $btn = '<a href="/cabinet/tags/update/'. $row->id .'" class="edit btn btn-warning btn-sm mr-2">
+                                <i class="fa fa-edit"></i>
+                            </a>';
+
+                    return $btn;
+                })
+                ->addColumn('date', function($row) {
+                    return $row->created_at->diffForHumans();
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
         $activePage = 'all_tags';
-        $tags = Tag::withCount('posts')
-            ->orderByDesc('id')
-            ->paginate(20);
 
-
-        return view('admin.tags-list')->with(compact('activePage', 'tags'));
+        return view('admin.tags-list')->with(compact('activePage'));
     }
 
     /**
