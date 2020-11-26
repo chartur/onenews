@@ -2,6 +2,7 @@
 
 @section('styles')
 	<link rel="stylesheet" href="{{ asset('/admin/fancybox/jquery.fancybox.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/admin/css/codemirror.css') }}">
 @endsection
 
 @section('content')
@@ -162,6 +163,9 @@
 				<button class="btn btn-block btn-primary" onclick="validatePostDataAndSave(this)">
 					Հրապարակել
 				</button>
+				<button class="btn btn-block btn-success" onclick="openFacebookModal()">
+					Facebook Code
+				</button>
 				<a class="d-none btn btn-block btn-secondary mt-2 create-new-post-href" href="/cabinet/posts/new">
 					Ստեղծել նոր փոստ
 				</a>
@@ -169,8 +173,29 @@
 		</div>
 	</section>
 
-	<div class="modal fade" id="add-tag-modal">
-		<div class="modal-dialog modal-sm" role="document">
+	<div class="modal fade" id="facebook-template-code-modal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Facebook Template</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div>
+						<textarea id="facebook-code"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success-outline btn-block"><i class="fa fa-copy mr-2"></i> Պատճենել</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div>
+
+	<div class="modal fade" id="add-category-modal">
+		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Ավելացնել նոր թեգ</h4>
@@ -179,7 +204,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="w-100" id="add-new-tag-form">
+					<form class="w-100" id="add-new-category-form">
 						<div class="form-group">
 							<label class="w-100">
 								Հայերեն անուն
@@ -192,15 +217,30 @@
 								<input type="text" required name="ru_name" class="form-control">
 							</label>
 						</div>
+						<div class="form-group">
+							<label class="w-100">
+								Կարճ անուն (պարտադիր անգլերեն) որը երևալու է URL հասցեում
+								<br>
+								(օր <b>{{ url('/category') }}/<span class="text-success">political</span></b>)
+								<br>
+								<div class="input-group">
+	                <span class="input-group-prepend">
+	                    <span class="input-group-text">{{ url('/category') }}/</span>
+	                </span>
+									<input type="text" required name="slug" class="form-control" placeholder="Some text here">
+								</div>
+							</label>
+						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="addNewTag()">Ավելացնել</button>
+					<button type="button" class="btn btn-primary" onclick="addNewCategory()">Ավելացնել</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Փակել</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div>
+
 
 	<div class="modal fade" id="add-category-modal">
 		<div class="modal-dialog" role="document">
@@ -253,7 +293,18 @@
 @section('scripts')
 	<script src="{{ asset('/admin/tinymce/tinymce.min.js') }}" ></script>
 	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
+	<script src="{{ asset('/admin/js/codemirror.js') }}" ></script>
+	<script src="{{ asset('/admin/js/xml.js') }}" ></script>
 	<script>
+
+		var editor = CodeMirror.fromTextArea(document.getElementById('facebook-code'), {
+			lineNumbers: true,
+			mode: "xml",
+			autoRefresh:true,
+		});
+
+		editor.refresh();
+
 		$('.rfm-button').fancybox({
 			width: 900,
 			height: 600,
@@ -431,6 +482,30 @@
 					$this.text('Թարմացնել');
 					$this.prop('disabled', false);
 					showMessage(res.status, res.message)
+				},
+				error: function (err) {
+					showMessage(err.responseJSON.status, err.responseJSON.message);
+				}
+			})
+		}
+
+		function openFacebookModal() {
+			var postId = $('input[name=post_id]').val();
+			if(!postId) {
+				return showMessage('danger', 'Փոստը գտնված չէ')
+			}
+			$.ajax({
+				url: '/cabinet/posts/instant-article/'+ postId,
+				type: 'post',
+				dataType: 'json',
+				complete: NProgress.done,
+				success: function(res) {
+					console.log(res);
+					editor.setValue(res.content);
+					setTimeout(function() {
+						editor.refresh();
+					},100);
+					$('#facebook-template-code-modal').modal('show')
 				},
 				error: function (err) {
 					showMessage(err.responseJSON.status, err.responseJSON.message);

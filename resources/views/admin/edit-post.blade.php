@@ -2,6 +2,7 @@
 
 @section('styles')
 	<link rel="stylesheet" href="{{ asset('/admin/fancybox/jquery.fancybox.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/admin/css/codemirror.css') }}">
 @endsection
 
 @section('content')
@@ -173,12 +174,36 @@
 				<button class="btn btn-block btn-primary" onclick="validatePostDataAndSave(this)">
 					Թարմացնել
 				</button>
+				<button class="btn btn-block btn-success" onclick="openFacebookModal()">
+					Facebook Code
+				</button>
 				<a class="btn btn-block btn-secondary mt-2 create-new-post-href" href="/cabinet/posts/new">
 					Ստեղծել նոր փոստ
 				</a>
 			</div>
 		</div>
 	</section>
+
+	<div class="modal fade" id="facebook-template-code-modal">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Facebook Template</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div>
+						<textarea id="facebook-code"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success-outline btn-block"><i class="fa fa-copy mr-2"></i> Պատճենել</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div>
 
 	<div class="modal fade" id="add-tag-modal">
 		<div class="modal-dialog modal-sm" role="document">
@@ -267,7 +292,17 @@
 @section('scripts')
 	<script src="{{ asset('/admin/tinymce/tinymce.min.js') }}" ></script>
 	<script src="{{ asset('/admin/fancybox/jquery.fancybox.min.js') }}" ></script>
+	<script src="{{ asset('/admin/js/codemirror.js') }}" ></script>
+	<script src="{{ asset('/admin/js/xml.js') }}" ></script>
 	<script>
+
+		var editor = CodeMirror.fromTextArea(document.getElementById('facebook-code'), {
+			autoRefresh:true,
+			lineNumbers: true,
+			mode: "xml",
+		});
+
+		editor.refresh();
 		$('.rfm-button').fancybox({
 			width: 900,
 			height: 600,
@@ -450,6 +485,32 @@
 					$('select[name=category_id]').append(cat);
 					$('#add-new-category-form').trigger("reset");
 					$('.modal').modal('hide');
+				},
+				error: function (err) {
+					showMessage(err.responseJSON.status, err.responseJSON.message);
+				}
+			})
+		}
+
+
+		function openFacebookModal() {
+			var postId = $('input[name=post_id]').val();
+			if(!postId) {
+				return showMessage('danger', 'Փոստը գտնված չէ')
+			}
+			$.ajax({
+				url: '/cabinet/posts/instant-article/'+ postId,
+				type: 'post',
+				dataType: 'json',
+				complete: NProgress.done,
+				success: function(res) {
+					console.log(res);
+					editor.setValue(res.content);
+					setTimeout(function() {
+						editor.refresh();
+					},100);
+					editor.refresh();
+					$('#facebook-template-code-modal').modal('show')
 				},
 				error: function (err) {
 					showMessage(err.responseJSON.status, err.responseJSON.message);

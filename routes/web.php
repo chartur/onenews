@@ -56,6 +56,7 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
         Route::post('/store', [AdminPostsController::class, 'store']);
         Route::get('update/{post}', [AdminPostsController::class, 'updatePostView']);
         Route::get('list', [AdminPostsController::class, 'lists'])->name('posts.list');
+        Route::post('instant-article/{post}', [AdminPostsController::class, 'getFacebookArticleCode']);
     });
 
     Route::group(['prefix' => 'seo'], function (){

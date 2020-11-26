@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Repos\FacebookArticleRepo;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -209,5 +210,18 @@ class PostsController extends Controller
 
         $activePage = 'all_posts';
         return view('admin.posts-list')->with(compact('activePage'));
+    }
+
+    /**
+     * Get post facebook template code
+     *
+     * @param Post $post
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getFacebookArticleCode(Post $post)
+    {
+        $fb = new FacebookArticleRepo($post, 'hy');
+        $content = $fb->createContentHTML();
+        return response()->json(compact('content'));
     }
 }

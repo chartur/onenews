@@ -37,8 +37,6 @@ class PostsController
     public function article($post_id)
     {
         $main_post = Post::with('tags', 'category')->find($post_id);
-        $fb = new FacebookArticleRepo($main_post, 'hy');
-        $fb->loadContent();
         if(!$main_post) {
             abort(404);
         }
