@@ -98,7 +98,7 @@
 											<a href="{{ str_replace('/hy/', '/ru/', url()->current()) }}">Доступен на Русском</a>
 										@else
 											<img width="30px" style="border: none" src="/images/flags/armenia.png">
-											<a href="{{ str_replace('/ru/', '/hy/', url()->current()) }}">Հասանել է Հայերեն</a>
+											<a href="{{ str_replace('/ru/', '/hy/', url()->current()) }}">Հասանելի է Հայերեն</a>
 										@endif
 									</div>
 								@endif
