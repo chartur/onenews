@@ -36,7 +36,7 @@
 			{!! $content !!}
 
 			@foreach($tags as $tag)
-				<figure {{ $tag['type'] == 'iframe' ? 'class="op-interactive"' : '' }}>
+				<figure {{ $tag['type'] == 'iframe' ? 'class=\"op-interactive\"' : '' }}>
 					{!! $tag['content'] !!}
 				</figure>
 			@endforeach
