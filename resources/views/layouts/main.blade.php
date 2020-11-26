@@ -7,6 +7,7 @@
 	<meta name="robots" content="index, follow">
 	<meta property="fb:app_id" content="808625669696768">
 	<meta property="fb:pages" content="268599243671295" />
+	<meta property="fb:article_style" content="custom">
 
 	@yield('meta')
 
