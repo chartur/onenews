@@ -127,7 +127,8 @@
 				editor.on('init', function () {
 					editor.setContent($('input[name=' + editor.id + '_value]').val());
 				})
-			}
+			},
+			relative_urls: false
 		});
 
 		$('.save-page-data').click(function (el) {

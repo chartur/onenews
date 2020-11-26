@@ -132,7 +132,8 @@
 				'{{ asset('/css/all.min.css') }}',
 				'{{ asset('/admin/tinymce/plugins/fontawesome/css/fontawesome.css') }}',
 			],
-			valid_child_elements: 'span'
+			valid_child_elements: 'span',
+			relative_urls: false
 		});
 
 		$('.save-page-data').click(function (el) {

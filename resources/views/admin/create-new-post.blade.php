@@ -284,7 +284,8 @@
 			external_filemanager_path: '/filemanager/',
 			external_plugins: {filemanager: '/filemanager/plugin.min.js'},
 			content_css: ['/admin/tinymce/plugins/media/css/style.css',],
-			importcss_append: true
+			importcss_append: true,
+			relative_urls: false
 		});
 
 		function addNewTag() {
