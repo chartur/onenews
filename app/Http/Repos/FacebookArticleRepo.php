@@ -40,7 +40,7 @@ class FacebookArticleRepo
         $content = $this->getParagraphs();
         $title = $this->post->{$this->selectedLanguage.'_title'};
         $url = createPostLink($this->post->id, $this->selectedLanguage);
-        $datetime = $this->post->created_at->format('Y-m-dTH:i:sZ');
+        $datetime = $this->post->created_at->format("Y-m-d'T'H:i:s'Z'");
         $datetime_print = $this->post->created_at->formatLocalized('%d %b, %Y %H:%M');
         $image = url($this->post->image);
         $tags = $this->tags;
