@@ -194,8 +194,8 @@
 		</div><!-- /.modal-dialog -->
 	</div>
 
-	<div class="modal fade" id="add-category-modal">
-		<div class="modal-dialog" role="document">
+	<div class="modal fade" id="add-tag-modal">
+		<div class="modal-dialog modal-sm" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Ավելացնել նոր թեգ</h4>
@@ -204,7 +204,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="w-100" id="add-new-category-form">
+					<form class="w-100" id="add-new-tag-form">
 						<div class="form-group">
 							<label class="w-100">
 								Հայերեն անուն
@@ -217,24 +217,10 @@
 								<input type="text" required name="ru_name" class="form-control">
 							</label>
 						</div>
-						<div class="form-group">
-							<label class="w-100">
-								Կարճ անուն (պարտադիր անգլերեն) որը երևալու է URL հասցեում
-								<br>
-								(օր <b>{{ url('/category') }}/<span class="text-success">political</span></b>)
-								<br>
-								<div class="input-group">
-	                <span class="input-group-prepend">
-	                    <span class="input-group-text">{{ url('/category') }}/</span>
-	                </span>
-									<input type="text" required name="slug" class="form-control" placeholder="Some text here">
-								</div>
-							</label>
-						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="addNewCategory()">Ավելացնել</button>
+					<button type="button" class="btn btn-primary" onclick="addNewTag()">Ավելացնել</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Փակել</button>
 				</div>
 			</div><!-- /.modal-content -->
@@ -246,7 +232,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">Ավելացնել նոր թեգ</h4>
+					<h4 class="modal-title">Ավելացնել նոր կատեգորիա</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">×</span>
 					</button>
