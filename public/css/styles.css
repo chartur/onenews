@@ -369,14 +369,23 @@ nav a:hover {
 }
 .middle-text-bottom-post-image-container {
     overflow: hidden;
-    height: 300px;
-    text-align: center;
 }
 .middle-text-bottom-post-image-container img {
-    height: 100%;
+    max-width:100%;
+    max-height:100%;
     padding: 4px;
     border: 1px solid #ededed;
     transition: all .2s ease;
+}
+
+.middle-text-bottom-post-image-container.vertical-posts {
+    height: 300px;
+    text-align: center;
+}
+.middle-text-bottom-post-image-container.vertical-posts {
+    height: 100%;
+    max-width:none;
+    max-height: none;
 }
 .middle-text-bottom-post-title {
     font-size: 16px;
