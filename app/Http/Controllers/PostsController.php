@@ -58,12 +58,17 @@ class PostsController
         $more_posts = Post::where('id', '<>', $main_post->id)
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
+            ->whereHas('tags', function ($q) use ($main_post) {
+                return $q->whereIn('tags.id', $main_post->tags->pluck('id'));
+            })
             ->orderByDesc('id')
-            ->limit(10)
+            ->limit(11)
             ->get();
+
+        $floating_post = $more_posts->sortByDesc('viewed')->first();
 
         $aboutSite = getAttributeByLang($aboutSite,'description');
 
-        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts'));
+        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post'));
     }
 }

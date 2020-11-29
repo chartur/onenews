@@ -156,6 +156,9 @@
 		</ul>
 	</div>
 @endsection
+@if($floating_post)
+	@include('components.floating-news')
+@endif
 @php(addPostViewed($main_post->id))
 
 @section('scripts')
