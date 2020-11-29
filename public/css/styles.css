@@ -382,7 +382,7 @@ nav a:hover {
     height: 300px;
     text-align: center;
 }
-.middle-text-bottom-post-image-container.vertical-posts {
+.middle-text-bottom-post-image-container.vertical-posts img {
     height: 100%;
     max-width:none;
     max-height: none;
