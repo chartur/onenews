@@ -1,6 +1,6 @@
 <a href="{{ createPostLink($post->id)  }}" class="text-decoration-none">
-	<div class="middle-text-bottom-post-container vertical-posts">
-		<div class="middle-text-bottom-post-image-container mb-2">
+	<div class="middle-text-bottom-post-container">
+		<div class="middle-text-bottom-post-image-container vertical-posts mb-2">
 			<img src="{{ url($post->image) }}">
 		</div>
 		<div class="middle-text-bottom-post-attributes main-color">
