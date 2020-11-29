@@ -14,6 +14,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Seo;
 use App\Models\Tag;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PostsController
@@ -32,13 +33,20 @@ class PostsController
      * Returns post main page
      *
      * @param int $post_id
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function article($post_id)
+    public function article($post_id, Request $request)
     {
         $main_post = Post::with('tags', 'category')->find($post_id);
         if(!$main_post) {
             abort(404);
+        }
+
+        $refs = session()->has('ref-float') ? session()->get('ref-float') : [];
+        if($request->has('ref-float') && !in_array($request->get('ref-float'), $refs)) {
+            $refs[] = $request->get('ref-float');
+            session()->put('ref-float', $refs);
         }
 
         $lang = app()->getLocale();
@@ -58,6 +66,7 @@ class PostsController
         $more_posts = Post::where('id', '<>', $main_post->id)
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
+            ->whereNotIn('id', $refs)
             ->whereHas('tags', function ($q) use ($main_post) {
                 return $q->whereIn('tags.id', $main_post->tags->pluck('id'));
             })

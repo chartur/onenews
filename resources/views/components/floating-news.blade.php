@@ -4,8 +4,34 @@
 			<span aria-hidden="true">×</span>
 		</button>
 	</div>
-	@php($post = $floating_post)
-	@include('components.small-post-component')
+	<div>
+		<a href="{{ createPostLink($floating_post->id) }}?ref-float={{ $main_post->id }}" class="text-decoration-none">
+			<div class="small-post-container">
+				<div class="mr-2 float-left small-post-image-container">
+					<img class="small-post-image" src="{{ url(str_replace('/upload/', '/thumbs/', $floating_post->image)) }}">
+				</div>
+				<div class="small-post-title-content">
+					<h4 class="small-post-title">{{ getAttributeByLang($floating_post, 'title') }}</h4>
+				</div>
+				<div class="small-post-attributes text-center order-sm-0">
+			<span class="mr-2 main-color">
+				<i class="fa fa-calendar"></i>
+				{{ $floating_post->created_at->formatLocalized('%d %b, %Y %H:%M') }}
+			</span>
+					<span class="main-color">
+				<i class="fa fa-eye"></i>
+						{{ $floating_post->viewed }}
+			</span>
+					@if($floating_post->has_video)
+						<span class="ml-2 main-color">
+					<i class="fas fa-video"></i>
+				</span>
+					@endif
+				</div>
+			</div>
+		</a>
+
+	</div>
 </div>
 
 <script>
