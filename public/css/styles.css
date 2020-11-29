@@ -546,6 +546,9 @@ div#post-page-content article h1 {
     animation-iteration-count: infinite;
 
 }
+.icon-container i {
+    line-height: 80px;
+}
 .telegram-join-page.animation .join-text .content-join-telegram {
     margin-left: 40%;
 }
