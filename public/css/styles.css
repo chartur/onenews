@@ -377,12 +377,15 @@ nav a:hover {
     border: 1px solid #ededed;
     transition: all .2s ease;
 }
-
-.middle-text-bottom-post-image-container.vertical-posts {
-    height: 300px;
+.vertical-posts-component {
     text-align: center;
 }
-.middle-text-bottom-post-image-container.vertical-posts img {
+.vertical-posts-component .middle-text-bottom-post-image-container {
+    height: 230px;
+    display: flex;
+    justify-content: center;
+}
+.vertical-posts-component .middle-text-bottom-post-image-container img {
     height: 100%;
     max-width:none;
     max-height: none;
