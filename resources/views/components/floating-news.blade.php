@@ -1,6 +1,6 @@
 <div class="floating-news">
 	<div class="mb-3">
-		<button type="button" class="close" onclick="closeFloating(this)">
+		<button type="button" class="close p-2" onclick="closeFloating(this)">
 			<span aria-hidden="true">×</span>
 		</button>
 	</div>
