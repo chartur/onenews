@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Repos\FacebookArticleRepo;
+use App\Models\Adsense;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -36,7 +37,8 @@ class PostsController extends Controller
         $activePage = 'new_post';
         $categories = Category::get();
         $tags = Tag::get();
-        return view('admin.create-new-post')->with(compact('activePage', 'categories', 'tags'));
+        $ads = Adsense::get();
+        return view('admin.create-new-post')->with(compact('activePage', 'categories', 'tags', 'ads'));
     }
 
     public function store(Request $request)
@@ -126,6 +128,7 @@ class PostsController extends Controller
      */
     public function updatePostView(Post $post)
     {
+        $ads = Adsense::get();
         $activePage = 'post';
         $categories = Category::get();
         $tags = Tag::get();
@@ -137,7 +140,7 @@ class PostsController extends Controller
         if($post->hy_title && $post->hy_content) {
             $urls['hy'] = createPostLink($post->id, 'hy');
         }
-        return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'urls'));
+        return view('admin.edit-post')->with(compact('post','categories','tags','activePage', 'urls', 'ads'));
     }
 
     /**

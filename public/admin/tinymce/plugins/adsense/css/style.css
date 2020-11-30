@@ -1,0 +1,8 @@
+.ads-el-container {
+    padding: 20px;
+    text-align: center;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+}

@@ -12,6 +12,7 @@ use \App\Http\Controllers\Admin\TagsController;
 use \App\Http\Controllers\Admin\PageController;
 use \App\Http\Controllers\Admin\AuthController;
 use \App\Http\Controllers\Admin\CategoryController;
+use \App\Http\Controllers\Admin\AdsController;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -77,6 +78,12 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
 
     Route::group(['prefix' => 'category'], function () {
         Route::post('add-new', [CategoryController::class, 'addNewCategory']);
+    });
+
+    Route::group(['prefix' => 'ads'], function (){
+       Route::get('/', [AdsController::class, 'index']);
+       Route::get('/all', [AdsController::class, 'getAds']);
+       Route::post('/store', [AdsController::class, 'store']);
     });
 });
 

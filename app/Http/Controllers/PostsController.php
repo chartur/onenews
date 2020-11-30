@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Repos\FacebookArticleRepo;
+use App\Models\Adsense;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Seo;
@@ -43,6 +44,7 @@ class PostsController
             abort(404);
         }
 
+        $ads = Adsense::get();
         $refs = session()->has('ref-float') ? session()->get('ref-float') : [];
         if($request->has('ref-float') && !in_array($request->get('ref-float'), $refs)) {
             $refs[] = $request->get('ref-float');
@@ -53,6 +55,16 @@ class PostsController
 
         if(!$main_post->{$lang.'_title'} && !$main_post->{$lang.'_content'}){
             return redirect()->to('/');
+        }
+
+        $post_content = getAttributeByLang($main_post, 'content');
+
+        foreach ($ads as $ad) {
+            $post_content = str_replace(
+                '<span class="ads-element mceNotEditable '.$ad->slug.'">Գովազդ</span>',
+                $ad->content,
+                $post_content
+            );
         }
 
         $tags = Tag::orderBy('searched', 'desc')
@@ -78,6 +90,6 @@ class PostsController
 
         $aboutSite = getAttributeByLang($aboutSite,'description');
 
-        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post'));
+        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post', 'post_content'));
     }
 }

@@ -283,6 +283,8 @@
 	<script src="{{ asset('/admin/js/xml.js') }}" ></script>
 	<script>
 
+		var ads = <?php echo json_encode($ads->toArray()) ?>;
+
 		var editor = CodeMirror.fromTextArea(document.getElementById('facebook-code'), {
 			lineNumbers: true,
 			mode: "xml",
@@ -309,22 +311,24 @@
 			plugins: [
 					'embed emoticons hr insertdatetime media table preview searchreplace',
 					'autolink charmap image fullscreen link print textcolor',
-					'code lists pagebreak quickbars wordcount filemanager telegram_embed',
+					'code lists pagebreak quickbars wordcount filemanager telegram_embed adsense noneditable',
 				],
-			toolbar: 'embed media image telegram_embed table | emoticons hr insertdatetime charmap | ' +
+			toolbar: 'embed media image adsense telegram_embed table | emoticons hr insertdatetime charmap | ' +
 					'link forecolor backcolor fontsizeselect alignleft aligncenter alignright alignjustify | numlist bullist pagebreak | ' +
 					'fullscreen preview code | print searchreplace wordcount',
 			quickbars_selection_toolbar: 'bold italic underline forecolor | formatselect fontsizeselect | ' +
 					'quicklink blockquote | alignleft aligncenter alignright alignjustify',
-			quickbars_insert_toolbar: 'embed image hr emoticons',
+			quickbars_insert_toolbar: 'embed image adsense hr emoticons',
 			filemanager_access_key: '{{ config('rfm.default_access_key') }}',
 			external_filemanager_path: '/filemanager/',
 			external_plugins: {filemanager: '/filemanager/plugin.min.js'},
-			content_css: ['/admin/tinymce/plugins/media/css/style.css',],
+			content_css: ['/admin/tinymce/plugins/media/css/style.css', '/admin/tinymce/plugins/adsense/css/style.css'],
 			importcss_append: true,
 			relative_urls : false,
 			remove_script_host : true,
-			document_base_url : '{{ url('') }}'
+			document_base_url : '{{ url('') }}',
+			noneditable_editable_class: "mceEditable",
+			noneditable_noneditable_class: "mceNotEditable"
 		});
 
 		function addNewTag() {

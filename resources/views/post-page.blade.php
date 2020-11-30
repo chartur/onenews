@@ -104,7 +104,7 @@
 								@endif
 							</div>
 							<div class="post-content">
-								{!! getAttributeByLang($main_post, 'content') !!}
+								{!! $post_content !!}
 							</div>
 							@if($main_post->source)
 								<p class="mt-2">

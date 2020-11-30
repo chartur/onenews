@@ -79,6 +79,10 @@
 				</li>
 			</ul>
 		</li>
+		<li class="{{ $activePage == 'ads' ? 'active' : '' }}">
+			<a href="/cabinet/ads">
+				<i class="fa fa-handshake-o"></i> Գովազդներ </a>
+		</li>
 		<li>
 			<a href="">
 				<i class="fa fa-area-chart"></i> Charts <i class="fa arrow"></i>
