@@ -223,7 +223,7 @@
 
 			clickTimer = setTimeout(function () {
 				$.fancybox.close();
-			}, 1000)
+			}, 700)
 		}
 
 		@if(false)
