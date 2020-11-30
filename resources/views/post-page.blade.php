@@ -190,11 +190,12 @@
 		$.fancybox.open(`@include('components.post-popover')`, {
 			// touch: false,
 			modal : true,
+			scrolling   : 'hidden',
 			closeClick  : false, // prevents closing when clicking INSIDE fancybox
 			helpers     : {
 				overlay : {
 					closeClick: false,
-					locked: false
+					locked: true,
 				} // prevents closing when clicking OUTSIDE fancybox
 			},
 			beforeShow: function(){
