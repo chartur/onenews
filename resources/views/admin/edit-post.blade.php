@@ -339,7 +339,7 @@
 					editor.setContent($('input[name=' + editor.id + '_value]').val());
 				})
 			},
-			relative_urls : true,
+			relative_urls : false,
 			remove_script_host : true,
 			document_base_url : '{{ url('') }}'
 		});
