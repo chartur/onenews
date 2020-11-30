@@ -21,6 +21,13 @@
     font-weight: normal;
     font-style: normal;
 }
+
+.adsbygoogle {
+    display: inline-block;
+    width:100%;
+    overflow: hidden;
+}
+
 .twitter-share-button {
     display: inline-block;
     background: #1b95e0;
