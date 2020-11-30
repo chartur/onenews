@@ -92,7 +92,7 @@
 							<div class="post-image-container">
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
 								@if($ads->first())
-								<div class="mt-2 mb-2">
+								<div class="mt-2 mb-2 w-100">
 									{!! $ads->first()->content !!}
 								</div>
 								@endif
