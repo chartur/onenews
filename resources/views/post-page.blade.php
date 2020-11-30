@@ -198,11 +198,19 @@
 					locked: true,
 				} // prevents closing when clicking OUTSIDE fancybox
 			},
-			beforeShow: function(){
-				$("body").css({'overflow-y':'hidden'});
+			onInit: function () {
+				if ($.fancybox.isMobile) {
+					$('body').css('top', $('body').scrollTop() * -1).addClass('fancybox-iosfix');
+				}
 			},
-			afterClose: function(){
-				$("body").css({'overflow-y':'visible'});
+			afterClose: function () {
+				var offset;
+
+				if ($('body').hasClass('fancybox-iosfix')) {
+					offset = parseInt(document.body.style.top, 10);
+
+					$('body').removeClass('fancybox-iosfix').css('top', '').scrollTop(offset * -1);
+				}
 			}
 		});
 
