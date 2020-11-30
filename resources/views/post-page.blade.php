@@ -93,7 +93,7 @@
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
 								@if($ads->count())
 								<div class="mt-2 mb-2 w-100">
-									{!! $ads->first()->content !!}
+									{!! $ads->toArray()[1]['content'] !!}
 								</div>
 								@endif
 								@if($main_post->hy_title && $main_post->ru_title)
