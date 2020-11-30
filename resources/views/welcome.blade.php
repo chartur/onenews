@@ -21,7 +21,7 @@
 @endsection
 
 @section('content')
-    <div class="row mr-0 ml-0">
+    <div class="row mr-0 ml-0 main-page">
         <div class="col-12  col-md-6 col-xl-3 mb-2 order-2 order-md-2 order-xl-1">
             <div class="data-loader" data-place="left">
                 {!! $left_place_content !!}
