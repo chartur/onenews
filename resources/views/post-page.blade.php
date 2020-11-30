@@ -188,26 +188,45 @@
 			}, 5000);
 		}
 
-		// function addLink() {
-		//
-		// 	var selection = window.getSelection();
-		// 	pagelink = `<p><b>Ամբողջական նյութը այստեղ</b> - <u><a href="${document.location.href }">${document.location.href }</a></u></p>`;
-		// 	copytext = selection + pagelink;
-		//
-		// 	newdiv = document.createElement('div');
-		//
-		// 	newdiv.style.position = 'absolute';
-		// 	newdiv.style.left = '-99999px';
-		//
-		// 	document.body.appendChild(newdiv);
-		// 	newdiv.innerHTML = copytext;
-		// 	selection.selectAllChildren(newdiv);
-		//
-		// 	window.setTimeout(function () {
-		// 		document.body.removeChild(newdiv);
-		// 	}, 100);
-		// }
-		// document.addEventListener('copy', addLink);
+		function getSelectionHtml() {
+			var html = "";
+			if (typeof window.getSelection != "undefined") {
+				var sel = window.getSelection();
+				if (sel.rangeCount) {
+					var container = document.createElement("div");
+					for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+						container.appendChild(sel.getRangeAt(i).cloneContents());
+					}
+					html = container.innerHTML;
+				}
+			} else if (typeof document.selection != "undefined") {
+				if (document.selection.type == "Text") {
+					html = document.selection.createRange().htmlText;
+				}
+			}
+			return html;
+		}
+
+		function addLink() {
+
+			var selection = getSelectionHtml();
+			pagelink = `<p><b>Ամբողջական նյութը այստեղ</b> - <u><a href="${document.location.href }">${document.location.href }</a></u></p>`;
+			copytext = selection + pagelink;
+
+			newdiv = document.createElement('div');
+
+			newdiv.style.position = 'absolute';
+			newdiv.style.left = '-99999px';
+
+			document.body.appendChild(newdiv);
+			newdiv.innerHTML = copytext;
+			selection.selectAllChildren(newdiv);
+
+			window.setTimeout(function () {
+				document.body.removeChild(newdiv);
+			}, 100);
+		}
+		document.addEventListener('copy', addLink);
 
 	</script>
 @endsection
