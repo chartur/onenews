@@ -187,6 +187,27 @@
 			$.fancybox.open('<img src="'+ src +'">');
 		});
 
+		$.fancybox.open(`@include('components.post-popover')`, {
+			// touch: false,
+			modal : true,
+			closeClick  : false, // prevents closing when clicking INSIDE fancybox
+			helpers     : {
+				overlay : {closeClick: false} // prevents closing when clicking OUTSIDE fancybox
+			}
+		});
+
+		var clickTimer;
+
+		function closePopover() {
+			if(typeof clickTimer != 'undefined') {
+				return;
+			}
+
+			clickTimer = setTimeout(function () {
+				$.fancybox.close();
+			}, 1000)
+		}
+
 		@if(false)
 		if(localStorage.getItem('telegram-joined') != 'clicked'){
 			setTimeout(function () {

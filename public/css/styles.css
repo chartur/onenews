@@ -655,6 +655,15 @@ div#post-page-content article h1 {
     width: 80%;
 }
 
+.close-popover-modal-button {
+    border-radius: 0;
+    background: #3d566e;
+    color: #fff;
+}
+.close-popover-modal-button:hover {
+    color: #e74c3c!important;
+}
+
 .floating-news {
     position: fixed;
     max-width: 100%;
