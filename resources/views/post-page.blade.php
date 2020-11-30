@@ -177,6 +177,7 @@
 			$.fancybox.open('<img src="'+ src +'">');
 		});
 
+		@if(false)
 		if(localStorage.getItem('telegram-joined') != 'clicked'){
 			setTimeout(function () {
 				$.fancybox.open(`@include('components.telegram-join')`, {
@@ -187,6 +188,7 @@
 				}, 500)
 			}, 5000);
 		}
+		@endif
 
 		function getSelectionHtml() {
 			var html = "";
