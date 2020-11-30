@@ -193,6 +193,12 @@
 			closeClick  : false, // prevents closing when clicking INSIDE fancybox
 			helpers     : {
 				overlay : {closeClick: false} // prevents closing when clicking OUTSIDE fancybox
+			},
+			beforeShow: function(){
+				$("body").css({'overflow-y':'hidden'});
+			},
+			afterClose: function(){
+				$("body").css({'overflow-y':'visible'});
 			}
 		});
 
