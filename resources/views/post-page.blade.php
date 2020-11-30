@@ -188,26 +188,26 @@
 			}, 5000);
 		}
 
-		function addLink() {
-
-			var selection = window.getSelection();
-			pagelink = `<p><b>Ամբողջական նյութը այստեղ</b> - <u><a href="${document.location.href }">${document.location.href }</a></u></p>`;
-			copytext = selection + pagelink;
-
-			newdiv = document.createElement('div');
-
-			newdiv.style.position = 'absolute';
-			newdiv.style.left = '-99999px';
-
-			document.body.appendChild(newdiv);
-			newdiv.innerHTML = copytext;
-			selection.selectAllChildren(newdiv);
-
-			window.setTimeout(function () {
-				document.body.removeChild(newdiv);
-			}, 100);
-		}
-		document.addEventListener('copy', addLink);
+		// function addLink() {
+		//
+		// 	var selection = window.getSelection();
+		// 	pagelink = `<p><b>Ամբողջական նյութը այստեղ</b> - <u><a href="${document.location.href }">${document.location.href }</a></u></p>`;
+		// 	copytext = selection + pagelink;
+		//
+		// 	newdiv = document.createElement('div');
+		//
+		// 	newdiv.style.position = 'absolute';
+		// 	newdiv.style.left = '-99999px';
+		//
+		// 	document.body.appendChild(newdiv);
+		// 	newdiv.innerHTML = copytext;
+		// 	selection.selectAllChildren(newdiv);
+		//
+		// 	window.setTimeout(function () {
+		// 		document.body.removeChild(newdiv);
+		// 	}, 100);
+		// }
+		// document.addEventListener('copy', addLink);
 
 	</script>
 @endsection
