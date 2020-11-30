@@ -339,7 +339,9 @@
 					editor.setContent($('input[name=' + editor.id + '_value]').val());
 				})
 			},
-			relative_urls: false
+			relative_urls : false,
+			remove_script_host : true,
+			document_base_url : '{{ url('') }}'
 		});
 
 		function addNewTag() {

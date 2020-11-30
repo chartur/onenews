@@ -322,7 +322,9 @@
 			external_plugins: {filemanager: '/filemanager/plugin.min.js'},
 			content_css: ['/admin/tinymce/plugins/media/css/style.css',],
 			importcss_append: true,
-			relative_urls: false
+			relative_urls : false,
+			remove_script_host : true,
+			document_base_url : '{{ url('') }}'
 		});
 
 		function addNewTag() {
