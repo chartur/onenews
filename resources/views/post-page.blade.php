@@ -29,8 +29,13 @@
 	<div id="post-page-content">
 		<article class="p-3">
 			<header>
-				<h1>{{ getAttributeByLang($main_post, 'title') }}</h1>
+				<h1 class="text-center">{{ getAttributeByLang($main_post, 'title') }}</h1>
 			</header>
+			@if($ads->count())
+				<div class="mt-2 mb-2" style="width: 500px; max-width: 100%">
+					{!! $ads->toArray()[1]['content'] !!}
+				</div>
+			@endif
 			<div>
 				<aside class="mb-3 pt-2 pb-2">
 					<div class="row">
