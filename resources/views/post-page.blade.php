@@ -220,6 +220,7 @@
 
 			document.body.appendChild(newdiv);
 			newdiv.innerHTML = copytext;
+			window.getSelection().selectAllChildren(newdiv);
 
 			window.setTimeout(function () {
 				document.body.removeChild(newdiv);
