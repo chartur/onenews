@@ -91,6 +91,11 @@
 						<div class="overflow-hidden">
 							<div class="post-image-container">
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
+								@if($ads->first())
+								<div class="mt-2 mb-2">
+									{!! $ads->first()->content !!}
+								</div>
+								@endif
 								@if($main_post->hy_title && $main_post->ru_title)
 									<div class="switch-post-locale mt-2 text-center">
 										@if(app()->getLocale() == 'hy')

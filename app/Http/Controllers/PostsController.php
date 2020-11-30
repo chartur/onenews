@@ -90,6 +90,6 @@ class PostsController
 
         $aboutSite = getAttributeByLang($aboutSite,'description');
 
-        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post', 'post_content'));
+        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post', 'post_content', 'ads'));
     }
 }
