@@ -191,6 +191,7 @@
 			// touch: false,
 			modal : true,
 			scrolling   : 'hidden',
+			animationDuration: 0,
 			closeClick  : false, // prevents closing when clicking INSIDE fancybox
 			helpers     : {
 				overlay : {
