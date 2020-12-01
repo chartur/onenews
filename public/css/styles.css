@@ -497,6 +497,7 @@ div#post-page-content article .post-content iframe {
 }
 div#post-page-content article .post-content img {
     cursor: pointer;
+    max-width: 100%!important;
 }
 div#post-page-content aside {
     border-top: 1px dotted #ededed;
