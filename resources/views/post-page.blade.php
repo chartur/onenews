@@ -32,7 +32,7 @@
 				<h1 class="text-center">{{ getAttributeByLang($main_post, 'title') }}</h1>
 			</header>
 			@if($ads->count())
-				<div class="mt-2 mb-2" style="width: 500px; max-width: 100%">
+				<div class="mt-2 mb-2 w-100 text-center">
 					{!! $ads->toArray()[1]['content'] !!}
 				</div>
 			@endif
