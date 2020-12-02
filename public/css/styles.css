@@ -682,6 +682,9 @@ div#post-page-content article h1 {
     bottom: -135px;
     transition: all .5s ease;
 }
+.floating-news#floating-ads {
+    bottom: -400px;
+}
 .floating-news.show {
     bottom: 0;
 }
