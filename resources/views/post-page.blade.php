@@ -119,7 +119,7 @@
 							@if($main_post->source)
 								<p class="mt-2">
 									<b class="mr-2">{{ trans('main.href') }}</b>
-									<a href="{{ $main_post->source }}" target="_blank"><i>{{ $main_post->source }}</i></a>
+									<span><i>{{ $main_post->source }}</i></span>
 								</p>
 							@endif
 						</div>
