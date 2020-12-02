@@ -92,7 +92,7 @@
 					{data: 'category.hy_name', name: 'category.hy_name'},
 					{data: 'langs', name: 'langs', orderable: false, searchable: false},
 					{data: 'source', name: 'source', orderable: false, searchable: false},
-					{data: 'viewed', name: 'viewed', orderable: false},
+					{data: 'viewed', name: 'viewed', orderable: true, searchable: false},
 					{data: 'date', name: 'date'},
 					{data: 'title_ru', name: 'posts.ru_title', visible: false},
 				]
