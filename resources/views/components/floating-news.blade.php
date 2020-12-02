@@ -1,6 +1,6 @@
-<div class="floating-news">
+<div class="floating-news" id="floating-news">
 	<div class="mb-3">
-		<button type="button" class="close p-2" onclick="closeFloating(this)">
+		<button type="button" class="close p-2" onclick="closeFloating(this, true)">
 			<span aria-hidden="true">×</span>
 		</button>
 	</div>
@@ -33,13 +33,18 @@
 
 	</div>
 </div>
-
+@include('components.floating-ads')
 <script>
-	function closeFloating(el) {
+	function closeFloating(el, openAgain) {
 		$(el).closest('.floating-news').removeClass('show');
+		if(openAgain) {
+			setTimeout(function () {
+				$('#floating-ads').addClass('show')
+			}, 6000)
+		}
 	}
 
 	setTimeout(function () {
-		$('.floating-news').addClass('show');
+		$('#floating-news').addClass('show');
 	}, 10000)
 </script>

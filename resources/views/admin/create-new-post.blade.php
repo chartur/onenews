@@ -311,14 +311,14 @@
 			plugins: [
 					'embed emoticons hr insertdatetime media table preview searchreplace',
 					'autolink charmap image fullscreen link print textcolor',
-					'code lists pagebreak quickbars wordcount filemanager telegram_embed adsense noneditable paste',
+					'code lists pagebreak quickbars wordcount filemanager telegram_embed adsense noneditable',
 				],
 			toolbar: 'embed media image adsense telegram_embed table | emoticons hr insertdatetime charmap | ' +
 					'link forecolor backcolor fontsizeselect alignleft aligncenter alignright alignjustify | numlist bullist pagebreak | ' +
 					'fullscreen preview code | print searchreplace wordcount',
 			quickbars_selection_toolbar: 'bold italic underline forecolor | formatselect fontsizeselect | ' +
 					'quicklink blockquote | alignleft aligncenter alignright alignjustify',
-			quickbars_insert_toolbar: 'embed image adsense hr emoticons paste',
+			quickbars_insert_toolbar: 'embed image adsense hr emoticons',
 			filemanager_access_key: '{{ config('rfm.default_access_key') }}',
 			external_filemanager_path: '/filemanager/',
 			external_plugins: {filemanager: '/filemanager/plugin.min.js'},
@@ -329,8 +329,6 @@
 			document_base_url : '{{ url('') }}',
 			noneditable_editable_class: "mceEditable",
 			noneditable_noneditable_class: "mceNotEditable",
-			paste_as_text: true,
-			paste_enable_default_filters: false
 		});
 
 		function addNewTag() {
