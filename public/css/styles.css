@@ -686,7 +686,7 @@ div#post-page-content article h1 {
     bottom: -400px;
 }
 .floating-news.show {
-    bottom: 0;
+    bottom: 0!important;
 }
 .floating-news button {
     font-size: 30px;
