@@ -1,7 +1,7 @@
 function breakingNewsAnimationDuration() {
 	var width = $('.moving-line').width();
 	var el = document.getElementById('moving-line');
-	el.style["-webkit-animation-duration"] = width * 0.2 + 's';
+	el.style["-webkit-animation-duration"] = width * 0.02 + 's';
 }
 
 $(document).ready(function () {
