@@ -91,8 +91,10 @@
 	</div>
 	@yield('scripts')
 	<script>
-		$('ins').each(function(){
-			(adsbygoogle = window.adsbygoogle || []).push({});
+		$(document).ready(function(){
+			$('ins').each(function(){
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			});
 		});
 	</script>
 </body>
