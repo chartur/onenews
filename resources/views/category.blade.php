@@ -27,13 +27,24 @@
 			<h1>{{ getAttributeByLang($category, 'name').' '.getAttributeByLang($seo, 'title') }}</h1>
 		</header>
 			<div class="row">
+				<div class="col-12 col-sm-9">
+					<h3 class="category-section-title mb-3">
+						<span class="d-inline-block pb-2 main-active-border-color">{{ getAttributeByLang($category, 'name') }}</span>
+					</h3>
+					@foreach($posts as $post)
+						@include('components.small-post-component')
+					@endforeach
+					<div class="mt-3 text-center">{!! $posts->links('vendor.pagination.bootstrap-4') !!}</div>
+				</div>
 				<div class="col-12 col-sm-3">
+					@if($ads)
+						<div class="mb-2">
+							{!! $ads->content !!}
+						</div>
+					@endif
 					<h3 class="category-section-title mb-3">
 						<span class="d-inline-block pb-2 main-active-border-color">Facebook</span>
 					</h3>
-					<div class="mb-2">
-						<div class="fb-group" data-href="https://www.facebook.com/groups/940317612749000" data-width="280" data-show-social-context="true" data-show-metadata="false"><blockquote cite="https://www.facebook.com/groups/940317612749000" class="fb-xfbml-parse-ignore">OneNews հետաքրքիր, հումորային փաստեր, նորություններ</blockquote></div>
-					</div>
 					<hr>
 					<div class="mb-2">
 						<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fonenews.am%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=182306942842208" style="border:none;overflow:hidden;max-width: 100%" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
@@ -53,15 +64,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-12 col-sm-9">
-					<h3 class="category-section-title mb-3">
-						<span class="d-inline-block pb-2 main-active-border-color">{{ getAttributeByLang($category, 'name') }}</span>
-					</h3>
-					@foreach($posts as $post)
-						@include('components.small-post-component')
-					@endforeach
-					<div class="mt-3 text-center">{!! $posts->links('vendor.pagination.bootstrap-4') !!}</div>
 				</div>
 			</div>
 	</article>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Adsense;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Post;
@@ -163,6 +164,8 @@ class MainController extends Controller
             abort(404);
         }
 
+        $ads = Adsense::first();
+
         $categories = Category::withCount('posts')
             ->get();
 
@@ -200,7 +203,8 @@ class MainController extends Controller
                 'aboutSite',
                 'categories',
                 'tags',
-                'more_posts'
+                'more_posts',
+                'ads'
             )
         );
     }
@@ -220,6 +224,8 @@ class MainController extends Controller
         if(!$category) {
             abort(404);
         }
+
+        $ads = Adsense::first();
 
         $categories = Category::withCount('posts')
             ->get();
@@ -257,7 +263,8 @@ class MainController extends Controller
                 'aboutSite',
                 'categories',
                 'tags',
-                'more_posts'
+                'more_posts',
+                'ads'
             )
         );
     }
@@ -274,6 +281,8 @@ class MainController extends Controller
         if(!$request->has('q') || !$request->q) {
             return redirect()->back();
         }
+
+        $ads = Adsense::first();
 
         $categories = Category::withCount('posts')
             ->get();
@@ -330,7 +339,8 @@ class MainController extends Controller
                 'more_posts',
                 'page',
                 'posts',
-                'aboutSite'
+                'aboutSite',
+                'ads'
             )
         );
     }
