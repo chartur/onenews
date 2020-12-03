@@ -11,12 +11,12 @@
 
 	@yield('meta')
 
+	<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.6') }}">
+
 	@yield('styles')
 
-	<script src="{{ asset('/js/jquery.js') }}"></script>
-	<script src="{{ asset('/js/popper.js') }}"></script>
-	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('/js/script.js?v=1.0.1') }}"></script>
 	<style>
 		.main-color {
 			color: #e74c3c!important;
@@ -84,11 +84,10 @@
 			@include('components.footer')
 		</div>
 	</div>
-
-	<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.6') }}">
-
+	<script src="{{ asset('/js/jquery.js') }}"></script>
+	<script src="{{ asset('/js/popper.js') }}"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('/js/script.js?v=1.0.1') }}"></script>
 	@yield('scripts')
 </body>
 </html>
