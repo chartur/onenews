@@ -90,12 +90,5 @@
 		</div>
 	</div>
 	@yield('scripts')
-	<script>
-		$(document).ready(function(){
-			$('ins').each(function(){
-				(adsbygoogle = window.adsbygoogle || []).push({});
-			});
-		});
-	</script>
 </body>
 </html>
