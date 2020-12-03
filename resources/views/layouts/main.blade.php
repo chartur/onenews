@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.8') }}">
+	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.9') }}">
 
 	@yield('styles')
 
@@ -90,5 +90,10 @@
 		</div>
 	</div>
 	@yield('scripts')
+	<script>
+		$('ins').each(function(){
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		});
+	</script>
 </body>
 </html>
