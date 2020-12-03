@@ -40,3 +40,8 @@ function loadPostsByPlaces() {
 function loadGeneralPost() {
 	$('.general-post').load('/loader/main-post');
 }
+
+function openSearchInput(el) {
+	$('.search-form').toggleClass('d-block d-none');
+	$('.switch-search-input').toggleClass('main-active-border-color')
+}

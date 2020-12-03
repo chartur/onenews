@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.6') }}">
+	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.7') }}">
 
 	@yield('styles')
 
@@ -43,6 +43,11 @@
 		}
 	</style>
 	<link rel="icon" href="{{ asset('/images/fav.png') }}">
+
+	<script src="{{ asset('/js/jquery.js') }}"></script>
+	<script src="{{ asset('/js/popper.js') }}"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('/js/script.js?v=1.0.2') }}"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97208566-10"></script>
@@ -84,10 +89,6 @@
 			@include('components.footer')
 		</div>
 	</div>
-	<script src="{{ asset('/js/jquery.js') }}"></script>
-	<script src="{{ asset('/js/popper.js') }}"></script>
-	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('/js/script.js?v=1.0.1') }}"></script>
 	@yield('scripts')
 </body>
 </html>

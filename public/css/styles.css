@@ -275,6 +275,7 @@ nav a:hover {
 }
 .switch-locale button {
     background-color: transparent;
+    outline: none;
 }
 .logo-in-mobile-menu {
     padding: 0;
@@ -697,6 +698,41 @@ div#post-page-content article h1 {
 .fancybox-content img {
     max-width: 100%;
 }
+
+
+.search-input-container {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    background: #3d566e;
+    padding: 10px;
+    z-index: 10;
+    box-sizing: border-box;
+}
+.search-input-container input:focus {
+    outline-color: #e74c3c!important
+}
+.search-input-container input {
+    width: 100%;
+    padding: 10px;
+}
+.main-search-button {
+    color: #3d566e!important;
+    right: 10px;
+    top: 9px;
+}
+.main-search-input {
+    padding-right: 45px;
+}
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
 @media (min-width: 576px) {
     .container {
         max-width: 570px;

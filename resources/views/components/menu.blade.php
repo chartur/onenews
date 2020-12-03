@@ -1,4 +1,4 @@
-<nav class="container">
+<nav class="container position-relative">
 	<div class="d-none d-sm-block w-100">
 		<div class="w-100 d-flex justify-content-between align-items-center">
 			<ul class="menu d-sm-flex justify-content-start align-items-center">
@@ -8,7 +8,20 @@
 					</li>
 				@endforeach
 			</ul>
-			<div class="mr-2">
+			<div class="mr-2 d-flex justify-content-between align-items-center">
+				<div class="switch-locale">
+					<button type="button" class="mr-2 switch-search-input" onclick="openSearchInput()">
+						<i class="fa fa-search text-white"></i>
+					</button>
+					<div class="search-form d-none position-absolute search-input-container">
+						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET">
+								<input type="search" name="q" class="main-search-input" placeholder="{{ trans('main.search') }}">
+								<button type="submit" class="main-search-button position-absolute">
+									<i class="fa fa-search"></i>
+								</button>
+						</form>
+					</div>
+				</div>
 				<form class="switch-locale" action="/change-locale" method="post">
 					<button name="locale" class="{{ app()->getLocale() == 'hy' ? 'main-active-border-color' : '' }}" value="hy">
 						<img width="20px" src="{{ asset('/images/flags/armenia.png') }}">
@@ -25,7 +38,20 @@
 
 	<div class="d-block d-sm-none position-relative w-100">
 		<div class="mobile-menu-container d-flex justify-content-between position-relative">
-			<div class="mr-2">
+			<div class="d-flex justify-content-between align-items-center">
+				<div class="switch-locale mr-2">
+					<button type="button" class="mr-2 switch-search-input" onclick="openSearchInput()">
+						<i class="fa fa-search text-white"></i>
+					</button>
+					<div class="search-form d-none position-absolute search-input-container">
+						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET">
+							<input type="search" name="q" class="main-search-input" placeholder="{{ trans('main.search') }}">
+							<button type="submit" class="main-search-button position-absolute">
+								<i class="fa fa-search"></i>
+							</button>
+						</form>
+					</div>
+				</div>
 				<form class="switch-locale" action="/change-locale" method="post">
 					<button name="locale" class="{{ app()->getLocale() == 'hy' ? 'main-active-border-color' : '' }}" value="hy">
 						<img width="20px" src="{{ asset('/images/flags/armenia.png') }}">
