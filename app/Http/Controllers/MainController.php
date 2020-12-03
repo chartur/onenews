@@ -184,7 +184,7 @@ class MainController extends Controller
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
             ->orderByDesc('id')
-            ->paginate(17);
+            ->paginate(25);
 
         $aboutSite = getAttributeByLang($seo,'description');
 
@@ -245,7 +245,7 @@ class MainController extends Controller
             ->where($lang.'_title', '<>', '')
             ->where($lang.'_content', '<>', '')
             ->orderBy('id', 'desc')
-            ->paginate(17);
+            ->paginate(25);
 
         $aboutSite = getAttributeByLang($seo,'description');
 
@@ -316,7 +316,7 @@ class MainController extends Controller
                     $q->whereIn('tags.id', $searched_tags);
                 })
                 ->orderBy('id', 'desc')
-                ->paginate(20);
+                ->paginate(25);
 
 
         $posts_ids = $posts->getCollection()->pluck('id')->toArray();
