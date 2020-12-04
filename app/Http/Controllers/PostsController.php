@@ -67,9 +67,11 @@ class PostsController
             );
         }
 
-        $tags = Tag::orderBy('searched', 'desc')
-            ->limit(15)
+        $tags = Tag::withCount('posts')
+            ->orderBy('posts_count', 'desc')
+            ->limit(25)
             ->get();
+
         $categories = Category::withCount('posts')->get();
 
         $aboutSite = Seo::where('slug', 'about')

@@ -25,7 +25,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $aboutSite = Seo::where('slug', 'about')
@@ -70,7 +70,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $page = Page::where('slug', 'about')
@@ -96,7 +96,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $page = Page::where('slug', 'contact')
@@ -134,7 +134,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $page = Page::where('slug', 'main')
@@ -171,7 +171,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $seo = Seo::where('slug', 'main')
@@ -232,7 +232,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $seo = Seo::where('slug', 'main')
@@ -289,7 +289,7 @@ class MainController extends Controller
 
         $tags = Tag::withCount('posts')
             ->orderBy('posts_count', 'desc')
-            ->limit(15)
+            ->limit(25)
             ->get();
 
         $seo = Seo::where('slug', 'main')
