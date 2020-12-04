@@ -62,7 +62,7 @@
 							</ul>
 						</div>
 						<div class="col-12 col-lg-5 text-right my-auto">
-							<div class="d-flex align-items-end justify-content-center justify-content-lg-end">
+							<div class="d-flex flex-wrap align-items-end justify-content-center justify-content-lg-end">
 								<div class="d-flex align-items-end mr-2">
 									<iframe src="https://www.facebook.com/plugins/like.php?href={{ url()->current() }}&width=110&layout=button_count&action=like&size=small&share=false&height=20&appId=182306942842208" width="110" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 								</div>
@@ -96,7 +96,7 @@
 					</div>
 					<div>
 						<div class="overflow-hidden">
-							<div class="post-image-container">
+							<div class="post-image-container mb-3">
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
 								@if($ads->count())
 									<div class="text-center">
