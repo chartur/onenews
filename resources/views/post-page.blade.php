@@ -97,9 +97,11 @@
 							<div class="post-image-container">
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
 								@if($ads->count())
-								<div class="mt-2 mb-2 text-center" style="width: 320px; height: 100px">
-									{!! $ads->toArray()[1]['content'] !!}
-								</div>
+									<div class="text-center">
+										<div class="mt-2 mb-2" style="width: 320px; height: 100px">
+											{!! $ads->toArray()[1]['content'] !!}
+										</div>
+									</div>
 								@endif
 								@if($main_post->hy_title && $main_post->ru_title)
 									<div class="switch-post-locale mt-2 text-center">
