@@ -99,7 +99,7 @@
 								@if($ads->count())
 									<div class="text-center">
 										<div class="mt-2 mb-2 d-inline-block" style="width: 320px">
-											{!! $ads->toArray()[1]['content'] !!}
+											{!! $ads->first()->content !!}
 										</div>
 									</div>
 								@endif
@@ -118,6 +118,13 @@
 							<div class="post-content">
 								{!! $post_content !!}
 							</div>
+							@if($ads->count())
+								<div class="text-center">
+									<div class="mt-2 mb-2 d-inline-block" style="width: 320px; height: 250px">
+										{!! $ads->first()->content !!}
+									</div>
+								</div>
+							@endif
 							@if($main_post->source)
 								<p class="mt-2">
 									<b class="mr-2">{{ trans('main.href') }}</b>
