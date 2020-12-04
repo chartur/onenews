@@ -684,7 +684,7 @@ div#post-page-content article h1 {
 }
 .floating-news#floating-ads {
     bottom: -400px;
-    width: 520px!important;
+    width: auto!important;
 }
 .floating-news.show {
     bottom: 0!important;
