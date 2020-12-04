@@ -1,9 +1,10 @@
 <div class="p-4 d-flex justify-content-center justify-content-sm-between align-items-center">
-	<a class="d-block mr-5" href="/">
-		<div style="padding-left: 30px" class="position-relative">
-			<div class="d-inline-block main-color logo-name">ONE</div>
-			<img src="{{ asset('/images/fav.png') }}" alt="onenews logo" width="60px">
-		</div>
+	<a class="d-block" href="/">
+		{{--<div style="padding-left: 30px" class="position-relative">--}}
+			{{--<div class="d-inline-block main-color logo-name">ONE</div>--}}
+			<img src="{{ asset('/images/full_logo.png') }}" alt="onenews.info logo" width="120px">
+		{{--</div>--}}
+
 	</a>
 	<div class="d-none d-sm-block w-50">
 		{{--<img src="{{ asset('/images/top-banner.png') }}">--}}
