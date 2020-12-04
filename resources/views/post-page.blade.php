@@ -97,7 +97,7 @@
 							<div class="post-image-container">
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
 								@if($ads->count())
-								<div class="mt-2 mb-2" style="width: 500px; max-width: 100%">
+								<div class="mt-2 mb-2 text-center">
 									{!! $ads->toArray()[1]['content'] !!}
 								</div>
 								@endif
@@ -224,7 +224,7 @@
 
 			clickTimer = setTimeout(function () {
 				$.fancybox.close();
-			}, 1000)
+			}, 1200)
 		}
 
 		@if(false)
