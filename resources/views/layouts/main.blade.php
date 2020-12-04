@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.10') }}">
+	<link rel="stylesheet" href="{{ asset('/css/styles.css?v=1.2.11') }}">
 
 	@yield('styles')
 
