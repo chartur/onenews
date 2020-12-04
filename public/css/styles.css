@@ -684,7 +684,7 @@ div#post-page-content article h1 {
 }
 .floating-news#floating-ads {
     bottom: -400px;
-    width: auto!important;
+    width: 730px!important;
 }
 .floating-news.show {
     bottom: 0!important;
@@ -758,15 +758,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     .container {
         max-width: 760px;
     }
+    .adContent {
+        width: 730px;
+    }
 
 }
 
 @media (min-width: 992px) {
     .container {
         max-width: 95%;
-    }
-    .adContent {
-        width: 730px;
     }
 }
 
