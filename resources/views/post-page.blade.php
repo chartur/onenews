@@ -1,10 +1,12 @@
 @extends('layouts.main')
 
 @section('meta')
+	@php($desc = getAttributeByLang($main_post, 'description') ?: getAttributeByLang($main_post, 'title'))
 	<title>{{ getAttributeByLang($main_post, 'title') }}</title>
 	<meta name="title" content="{{ getAttributeByLang($main_post, 'title') }}">
 	<meta name="keywords" content="{{ $main_post->tags->pluck(app()->getLocale().'_name')->join(', ') }}">
-	<meta name="description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
+	<meta name="description"
+	      content="{{ mb_strimwidth($desc, 0, 158, '...') }}">
 	<meta name="author" content="OneNews">
 
 	<meta property="og:type" content="website">
