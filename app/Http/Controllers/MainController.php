@@ -10,6 +10,8 @@ use App\Models\Post;
 use App\Models\Seo;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class MainController extends Controller
 {
@@ -343,5 +345,40 @@ class MainController extends Controller
                 'ads'
             )
         );
+    }
+
+    /**
+     * Contact us form send email
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function sendMail(Request $request)
+    {
+        $validation = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'name' => 'required',
+            'mess' => 'required'
+        ]);
+
+        if ($validation->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validation, 'contact');
+        }
+
+        Mail::send('email.support', $request->all(), function ($message) use ($request) {
+            $message->to('support@onenews.info', 'OneNews Support')
+                ->from('support@onenews.info', 'Sender of OneNews')
+                ->subject('New message from onenews sender');
+        });
+
+        Mail::send('email.sender', $request->all(), function ($message) use ($request) {
+            $message->to($request->email, $request->name)
+                ->from('support@onenews.info', 'Support of OneNews')
+                ->subject('OneNews լրատվական ծառայություն');
+        });
+
+        return redirect()->back()->with('success', trans('main.message_sent'));
     }
 }

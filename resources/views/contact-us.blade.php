@@ -26,15 +26,23 @@
 @section('content')
 	<div class="p-3 contact-page">
 		<div class="row">
+			@if ($message = Session::get('success'))
+				<div class="col-12">
+					<div class="alert alert-success alert-block">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<strong>{{ $message }}</strong>
+					</div>
+				</div>
+			@endif
 			<div class="col-12 col-md-6">
 				<div class="image mb-2">
 					<img src="{{ asset($page->image) }}" width="100%">
 				</div>
-				<form action="/form-contact" method="post">
+				<form action="{{ routingWithLang('/support') }}" method="POST">
 					@csrf
-					<input type="text" required name="name" class="form-control mb-2" placeholder="{{ trans('main.contact_form.name') }}">
-					<input type="email" required name="email" class="form-control mb-2" placeholder="{{ trans('main.contact_form.email') }}">
-					<textarea required name="message" class="form-control mb-2" placeholder="{{ trans('main.contact_form.message') }}" rows="5" style="resize: none"></textarea>
+					<input type="text" required name="name" class="form-control mb-2 {{ $errors->contact->count() &&  $errors->contact->first('name') ? 'is-invalid' : '' }}" placeholder="{{ trans('main.contact_form.name') }}">
+					<input type="email" required name="email" class="form-control mb-2 {{ $errors->contact->count() &&  $errors->contact->first('email') ? 'is-invalid' : '' }}" placeholder="{{ trans('main.contact_form.email') }}">
+					<textarea required name="mess" class="form-control mb-2 {{ $errors->contact->count() &&  $errors->contact->first('message') ? 'is-invalid' : '' }}" placeholder="{{ trans('main.contact_form.message') }}" rows="5" style="resize: none"></textarea>
 					<button class="btn btn-primary btn-block" style="background-color: #3d566e">{{ trans('main.contact_form.send') }}</button>
 				</form>
 			</div>
