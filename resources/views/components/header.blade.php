@@ -1,5 +1,5 @@
 <div class="p-4 d-flex justify-content-center justify-content-sm-between align-items-center">
-	<a class="d-block" href="/">
+	<a class="d-block text-center" href="/">
 		{{--<div style="padding-left: 30px" class="position-relative">--}}
 			{{--<div class="d-inline-block main-color logo-name">ONE</div>--}}
 			<img src="{{ asset('/images/full_logo.png') }}" alt="onenews.info logo" width="120px">
