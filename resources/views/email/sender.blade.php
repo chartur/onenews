@@ -385,6 +385,7 @@
 						<tr>
 							<td class="content-block">
 								<span class="apple-link">Copyright © 2019 OneNews. All Rights Reserved by onenews.info</span>
+								<br> Don't like these emails? <a href="https://onenews.info/unsubscribe">Unsubscribe</a>.
 							</td>
 						</tr>
 						<tr>
