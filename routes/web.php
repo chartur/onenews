@@ -114,7 +114,7 @@ Route::group([
         Route::get('/place-loader/{place}', [LoaderController::class, 'getCategoriesByPlaces']);
     });
 
+    Route::post('support', [MainController::class, 'sendMail']);
 });
-
 
 
