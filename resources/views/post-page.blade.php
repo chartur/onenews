@@ -200,6 +200,7 @@
 			$.fancybox.open('<img src="'+ src +'">');
 		});
 
+		@if(false)
 		$.fancybox.open(`@include('components.post-popover')`, {
 			// touch: false,
 			modal : true,
@@ -227,6 +228,7 @@
 				}
 			}
 		});
+		@endif
 
 		var clickTimer;
 
