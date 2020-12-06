@@ -33,7 +33,9 @@
 
 	</div>
 </div>
-@include('components.floating-ads')
+@if(false)
+	@include('components.floating-ads')
+@endif
 <script>
 	function closeFloating(el, openAgain) {
 		$(el).closest('.floating-news').removeClass('show');
