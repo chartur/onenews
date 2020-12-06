@@ -101,9 +101,9 @@
 							<div class="post-image-container mb-3">
 								<img src="{{ $main_post->image }}" alt="{{ getAttributeByLang($main_post, $main_post->description ? 'description' : 'title') }}">
 								@if($ads->count())
-									<div class="text-center">
-										<div class="mt-2 mb-2 d-inline-block" style="width: 320px">
-											{!! $ads->first()->content !!}
+									<div class="mt-2 mb-2 w-100 text-center">
+										<div class="d-inline-block" style="width: 320px; height: 250px">
+											{!! $ads->toArray()[1]['content'] !!}
 										</div>
 									</div>
 								@endif
