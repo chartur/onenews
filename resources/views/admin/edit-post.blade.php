@@ -19,6 +19,10 @@
 				<i class="fa fa-arrow-left mr-2"></i>
 				Հայերեն
 			</button>
+			<a class="btn btn-secondary-outline" href="{{ $post->hy_title ? '/hy' : 'ru' }}/article/{{ $post->id }}">
+				<i class="fa fa-eye mr-2"></i>
+				Տեսնել նյութը
+			</a>
 			<button type="button" class="btn btn-primary-outline language-container-switcher mr-2 mb-0" data-lang="ru">
 				Русский
 				<i class="fa fa-arrow-right mr-2"></i>
