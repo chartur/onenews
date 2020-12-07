@@ -1,4 +1,4 @@
-<a href="{{ createPostLink($post->id) }}" class="text-decoration-none">
+<a href="{{ createPostLink($post->id) }}{{ isset($with_ref) && $with_ref ? '?ref-float='.$with_ref : '' }}" class="text-decoration-none">
 	<div class="small-post-container">
 		<div class="mr-2 float-left small-post-image-container">
 			<img class="small-post-image" src="{{ url(str_replace('/upload/', '/thumbs/', $post->image)) }}">

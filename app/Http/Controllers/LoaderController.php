@@ -120,8 +120,10 @@ class LoaderController extends Controller
                 break;
         }
 
+        $with_ref = $request->current;
+
         $post = $post->first();
 
-        return view('components.small-post-component')->with(compact('post'));
+        return view('components.small-post-component')->with(compact('post', 'with_ref'));
     }
 }
