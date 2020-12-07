@@ -200,34 +200,34 @@
 			$.fancybox.open('<img src="'+ src +'">');
 		});
 
-		@if(false)
-		$.fancybox.open(`@include('components.post-popover')`, {
-			// touch: false,
-			modal : true,
-			scrolling   : 'hidden',
-			animationDuration: 0,
-			closeClick  : false, // prevents closing when clicking INSIDE fancybox
-			helpers     : {
-				overlay : {
-					closeClick: false,
-					locked: true,
-				} // prevents closing when clicking OUTSIDE fancybox
-			},
-			onInit: function () {
-				if ($.fancybox.isMobile) {
-					$('body').css('top', $('body').scrollTop() * -1).addClass('fancybox-iosfix');
-				}
-			},
-			afterClose: function () {
-				var offset;
+		@if(true)
+			$.fancybox.open(`@include('components.post-popover')`, {
+				// touch: false,
+				modal : true,
+				scrolling   : 'hidden',
+				animationDuration: 0,
+				closeClick  : false, // prevents closing when clicking INSIDE fancybox
+				helpers     : {
+					overlay : {
+						closeClick: false,
+						locked: true,
+					} // prevents closing when clicking OUTSIDE fancybox
+				},
+				onInit: function () {
+					if ($.fancybox.isMobile) {
+						$('body').css('top', $('body').scrollTop() * -1).addClass('fancybox-iosfix');
+					}
+				},
+				afterClose: function () {
+					var offset;
 
-				if ($('body').hasClass('fancybox-iosfix')) {
-					offset = parseInt(document.body.style.top, 10);
+					if ($('body').hasClass('fancybox-iosfix')) {
+						offset = parseInt(document.body.style.top, 10);
 
-					$('body').removeClass('fancybox-iosfix').css('top', '').scrollTop(offset * -1);
+						$('body').removeClass('fancybox-iosfix').css('top', '').scrollTop(offset * -1);
+					}
 				}
-			}
-		});
+			});
 		@endif
 
 		var clickTimer;
@@ -243,16 +243,16 @@
 		}
 
 		@if(false)
-		if(localStorage.getItem('telegram-joined') != 'clicked'){
-			setTimeout(function () {
-				$.fancybox.open(`@include('components.telegram-join')`, {
-					touch: false
-				});
+			if(localStorage.getItem('telegram-joined') != 'clicked'){
 				setTimeout(function () {
-					$('.telegram-join-page').addClass('active')
-				}, 500)
-			}, 5000);
-		}
+					$.fancybox.open(`@include('components.telegram-join')`, {
+						touch: false
+					});
+					setTimeout(function () {
+						$('.telegram-join-page').addClass('active')
+					}, 500)
+				}, 5000);
+			}
 		@endif
 
 		function getSelectionHtml() {

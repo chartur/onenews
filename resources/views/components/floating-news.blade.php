@@ -33,7 +33,7 @@
 
 	</div>
 </div>
-@if(false)
+@if(true)
 	@include('components.floating-ads')
 @endif
 <script>
