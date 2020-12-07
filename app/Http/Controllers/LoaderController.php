@@ -102,8 +102,15 @@ class LoaderController extends Controller
         $post_type = $request->post_type;
         $category = $request->category;
 
+        $refs = session()->has('ref-float') ? session()->get('ref-float') : [];
+        if($request->has('ref-float') && !in_array($request->get('ref-float'), $refs)) {
+            $refs[] = $request->get('ref-float');
+            session()->put('ref-float', $refs);
+        }
+
         $post = Post::where('category_id', $category)
             ->where('id', '<>', $request->current)
+            ->whereNotIn('id', $refs)
             ->orderBy('id', 'desc')
             ->limit(40);
 
