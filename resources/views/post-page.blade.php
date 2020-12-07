@@ -302,7 +302,7 @@
 
 
 		function loadSingleMiddlePost() {
-			var post_id = $('meta[property=post_id]').data('content');
+			var post_id = $('meta[name=post_id]').data('content');
 			$('.middle-news').each(function () {
 				var $this = $(this);
 				$this.load($this.data('url')+'&current='+post_id, function () {
