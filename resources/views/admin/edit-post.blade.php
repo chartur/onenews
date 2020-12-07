@@ -19,7 +19,7 @@
 				<i class="fa fa-arrow-left mr-2"></i>
 				Հայերեն
 			</button>
-			<a class="btn btn-secondary-outline" href="{{ $post->hy_title ? '/hy' : 'ru' }}/article/{{ $post->id }}">
+			<a class="btn btn-secondary-outline" href="{{ $post->hy_title ? '/hy' : 'ru' }}/article/{{ $post->id }}" target="_blank">
 				<i class="fa fa-eye mr-2"></i>
 				Տեսնել նյութը
 			</a>
