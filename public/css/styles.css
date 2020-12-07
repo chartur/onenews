@@ -491,6 +491,9 @@ div#post-page-content article .post-content {
     color: #8d9aa5;
     font-size: 14px;
 }
+div#post-page-content article .post-content a {
+    text-decoration: underline!important;
+}
 div#post-page-content article .post-content iframe {
     max-width: 100%!important;
 }
