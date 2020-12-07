@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Place;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class LoaderController extends Controller
 {
@@ -88,5 +89,39 @@ class LoaderController extends Controller
             ->limit(15)
             ->get();
         return view('components.breaking-news')->with(compact('news', 'date'));
+    }
+
+    /**
+     * Get related single post
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function loadSinglePostByType(Request $request)
+    {
+        $post_type = $request->post_type;
+        $category = $request->category;
+
+        $post = Post::where('category_id', $category)
+            ->where('id', '<>', $request->current)
+            ->orderBy('id', 'desc')
+            ->limit(40);
+
+
+        switch($post_type) {
+            case 'popular':
+                $post = $post->orderBy('viewed', 'desc');
+                break;
+            case 'unpopular':
+                $post = $post->orderBy('viewed', 'asc');
+                break;
+            case 'latest':
+                $post = $post->orderBy('id', 'desc');
+                break;
+        }
+
+        $post = $post->first();
+
+        return view('components.small-post-component')->with(compact('post'));
     }
 }

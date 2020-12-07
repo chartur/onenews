@@ -112,6 +112,7 @@ Route::group([
         Route::get('/main-post', [LoaderController::class, 'getMainPost']);
         Route::get('/breaking-news', [LoaderController::class, 'getBreakingNews']);
         Route::get('/place-loader/{place}', [LoaderController::class, 'getCategoriesByPlaces']);
+        Route::get('/single-related-post', [LoaderController::class, 'loadSinglePostByType']);
     });
 
     Route::post('support', [MainController::class, 'sendMail']);

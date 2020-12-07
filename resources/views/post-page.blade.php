@@ -20,6 +20,7 @@
 	<meta property="twitter:title" content="{{ getAttributeByLang($main_post, 'title') }}">
 	<meta property="twitter:description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
 	<meta property="twitter:image" content="{{ asset($main_post->image) }}">
+	<meta name="post_id" content="{{ $main_post->id }}">
 @endsection
 
 @section('styles')
@@ -295,5 +296,20 @@
 		}
 		document.addEventListener('copy', addLink);
 
+		$(document).ready(function () {
+			loadSingleMiddlePost();
+		});
+
+
+		function loadSingleMiddlePost() {
+			var post_id = $('meta[property=post_id]').data('content');
+			$('.middle-news').each(function () {
+				var $this = $(this);
+				$this.load($this.data('url')+'&current='+post_id, function () {
+					$this.css({visibility: 'visible'})
+				});
+			})
+
+		}
 	</script>
 @endsection

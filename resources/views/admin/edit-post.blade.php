@@ -297,6 +297,7 @@
 	<script>
 
 		var ads = <?php echo json_encode($ads->toArray()) ?>;
+		var cats = <?php echo json_encode($categories->toArray()) ?>;
 
 		var editor = CodeMirror.fromTextArea(document.getElementById('facebook-code'), {
 			autoRefresh:true,
@@ -323,9 +324,9 @@
 			plugins: [
 					'embed emoticons hr insertdatetime media table preview searchreplace',
 					'autolink charmap image fullscreen link print textcolor',
-					'code lists pagebreak quickbars wordcount filemanager telegram_embed adsense noneditable',
+					'code lists pagebreak quickbars wordcount filemanager telegram_embed adsense noneditable relatedarticle',
 				],
-			toolbar: 'embed media image adsense telegram_embed table | emoticons hr insertdatetime charmap | ' +
+			toolbar: 'embed media image adsense telegram_embed relatedarticle table | emoticons hr insertdatetime charmap | ' +
 					'link forecolor backcolor fontsizeselect alignleft aligncenter alignright alignjustify | numlist bullist pagebreak | ' +
 					'fullscreen preview code | print searchreplace wordcount',
 			quickbars_selection_toolbar: 'bold italic underline forecolor | formatselect fontsizeselect | ' +
@@ -334,7 +335,11 @@
 			filemanager_access_key: '{{ config('rfm.default_access_key') }}',
 			external_filemanager_path: '/filemanager/',
 			external_plugins: {filemanager: '/filemanager/plugin.min.js'},
-			content_css: ['/admin/tinymce/plugins/media/css/style.css', '/admin/tinymce/plugins/adsense/css/style.css'],
+			content_css: [
+				'/admin/tinymce/plugins/media/css/style.css',
+				'/admin/tinymce/plugins/relatedarticle/css/style.css',
+				'/admin/tinymce/plugins/adsense/css/style.css',
+			],
 			importcss_append: true,
 			setup: function (editor) {
 				editor.on('init', function () {

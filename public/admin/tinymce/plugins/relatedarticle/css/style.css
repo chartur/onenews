@@ -1,0 +1,9 @@
+.middle-news {
+    background: rgba(0,0,0,.05);
+    padding: 10px;
+    padding-left: 15px;
+    border-left: 3px solid #3d566e;
+    width: 800px;
+    max-width: 100%;
+    font-style: italic;
+}
