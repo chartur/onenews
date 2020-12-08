@@ -13,9 +13,12 @@
 					<button type="button" class="mr-2 switch-search-input" onclick="openSearchInput()">
 						<i class="fa fa-search text-white"></i>
 					</button>
-					<div class="search-form d-none position-absolute search-input-container">
-						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET">
-								<input type="search" name="q" class="main-search-input" placeholder="{{ trans('main.search') }}">
+					<div class="search-form d-none position-absolute search-input-container" itemscope itemtype="https://schema.org/WebSite">
+						<meta itemprop="url" content="{{ url('') }}"/>
+						<link itemprop="url" href="{{ url('') }}"/>
+						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+								<meta itemprop="target" content="{{ routingWithLang('search?q={q}') }}"/>
+								<input type="search" name="q" class="main-search-input" itemprop="q" required placeholder="{{ trans('main.search') }}">
 								<button type="submit" class="main-search-button position-absolute">
 									<i class="fa fa-search"></i>
 								</button>
@@ -43,9 +46,12 @@
 					<button type="button" class="mr-2 switch-search-input" onclick="openSearchInput()">
 						<i class="fa fa-search text-white"></i>
 					</button>
-					<div class="search-form d-none position-absolute search-input-container">
-						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET">
-							<input type="search" name="q" class="main-search-input" placeholder="{{ trans('main.search') }}">
+					<div class="search-form d-none position-absolute search-input-container" itemscope itemtype="https://schema.org/WebSite">
+						<meta itemprop="url" content="{{ url('') }}"/>
+						<link itemprop="url" href="{{ url('') }}"/>
+						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+							<meta itemprop="target" content="{{ routingWithLang('search?q={q}') }}"/>
+							<input type="search" name="q" class="main-search-input" required itemprop="q" placeholder="{{ trans('main.search') }}">
 							<button type="submit" class="main-search-button position-absolute">
 								<i class="fa fa-search"></i>
 							</button>
