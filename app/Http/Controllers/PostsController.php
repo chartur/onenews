@@ -54,7 +54,8 @@ class PostsController
         $lang = app()->getLocale();
 
         if(!$main_post->{$lang.'_title'} && !$main_post->{$lang.'_content'}){
-            return redirect()->to('/');
+            $us_lang = $lang == 'hy' ? 'ru' : 'hy';
+            return redirect()->to(createPostLink($post_id, $us_lang));
         }
 
         $post_content = getAttributeByLang($main_post, 'content');
