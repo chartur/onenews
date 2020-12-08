@@ -44,11 +44,11 @@
 			<div>
 				<aside class="mb-3 pt-2 pb-2">
 					<div class="row">
-						<div class="col-12 col-lg-7 my-lg-auto mb-2 mb-lg-0">
+						<div class="col-12 col-lg-7 my-lg-auto mb-2 mb-lg-0" itemscope itemtype="https://schema.org/ScholarlyArticle">
 							<ul class="post-details d-flex justify-content-center justify-content-lg-start">
 								<li class="mr-3">
 									<i class="fas fa-user mr-1"></i>
-									onenews
+									<span itemprop="author">onenews</span>
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-folder-open mr-1"></i>
@@ -56,7 +56,7 @@
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-calendar mr-1"></i>
-									{{ $main_post->created_at->formatLocalized('%d %b, %Y %H:%M') }}
+									<time datetime="{{ $main_post->created_at->format('Y-m-d') }}" itemprop="datePublished">{{ $main_post->created_at->formatLocalized('%d %b, %Y %H:%M') }}</time>
 								</li>
 								<li class="mr-3">
 									<i class="fas fa-eye mr-1"></i>
