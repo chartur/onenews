@@ -1,4 +1,4 @@
-<footer class="pt-4 pb-4">
+<footer class="pt-4 pb-4" role="complementary" itemscope="" itemtype="https://schema.org/WPFooter">
 	<div class="row mr-0 ml-0">
 		<div class="col-12 col-md-6 col-lg-4">
 			<h3 class="category-section-title text-white mb-3">
