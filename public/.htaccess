@@ -18,4 +18,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    RewriteCond %{HTTP_HOST} ^www.onenews.info$ [NC]
+    RewriteRule ^(.*)$ https://robindirksen.nl/$1 [R=301,L]
 </IfModule>
