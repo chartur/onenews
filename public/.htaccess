@@ -20,5 +20,5 @@
     RewriteRule ^ index.php [L]
 
     RewriteCond %{HTTP_HOST} ^www.onenews.info$ [NC]
-    RewriteRule ^(.*)$ https://robindirksen.nl/$1 [R=301,L]
+    RewriteRule ^(.*)$ https://onenews.info/$1 [R=301,L]
 </IfModule>
