@@ -16,7 +16,7 @@
 					<div class="search-form d-none position-absolute search-input-container" itemscope itemtype="https://schema.org/WebSite">
 						<meta itemprop="url" content="{{ url('') }}"/>
 						<link itemprop="url" href="{{ url('') }}"/>
-						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
 								<meta itemprop="target" content="{{ routingWithLang('search?q={q}') }}"/>
 								<input type="search" name="q" class="main-search-input" itemprop="query-input" required placeholder="{{ trans('main.search') }}">
 								<button type="submit" class="main-search-button position-absolute">
@@ -49,7 +49,7 @@
 					<div class="search-form d-none position-absolute search-input-container" itemscope itemtype="https://schema.org/WebSite">
 						<meta itemprop="url" content="{{ url('') }}"/>
 						<link itemprop="url" href="{{ url('') }}"/>
-						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+						<form action="{{ routingWithLang('search') }}" class="position-relative" method="GET" role="search" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 							<meta itemprop="target" content="{{ routingWithLang('search?q={q}') }}"/>
 							<input type="search" name="q" class="main-search-input" required itemprop="query-input" placeholder="{{ trans('main.search') }}">
 							<button type="submit" class="main-search-button position-absolute">
