@@ -31,6 +31,11 @@
 					<h3 class="category-section-title mb-3">
 						<span class="d-inline-block pb-2 main-active-border-color">{{ getAttributeByLang($category, 'name') }}</span>
 					</h3>
+					@if(!$posts->total())
+						<div class="middle-news mceNotEditable text-center" style="visibility: visible; color: #3d566e">
+							<h2>{{ trans('main.no_data') }}</h2>
+						</div>
+					@endif
 					@foreach($posts as $post)
 						@include('components.small-post-component')
 					@endforeach

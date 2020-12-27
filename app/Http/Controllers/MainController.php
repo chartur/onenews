@@ -300,10 +300,6 @@ class MainController extends Controller
         $page = Page::where('slug', 'main')
             ->first();
 
-        $category = new Category();
-        $category->hy_name = trans('main.search');
-        $category->ru_name = trans('main.search');
-
         $query = $request->q;
 
         $searched_tags = Tag::select('id')
@@ -320,6 +316,9 @@ class MainController extends Controller
                 ->orderBy('id', 'desc')
                 ->paginate(25);
 
+        $category = new Category();
+        $category->hy_name = trans('main.search') .' - '. $request->q;
+        $category->ru_name = trans('main.search') .' - '. $request->q;
 
         $posts_ids = $posts->getCollection()->pluck('id')->toArray();
 
