@@ -73,7 +73,7 @@
 		      "name": "{{ $menu['name'] }}",
 		      "description": "{{ $menu['desc'] }}",
 		      "url":"{{ routingWithLang($menu['link']) }}"
-		    },
+		    }@if($i<count(trans('main.menu'))), @endif
 		    @endforeach
 		  ]
 		}
