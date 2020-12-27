@@ -59,6 +59,25 @@
 		gtag('config', 'UA-97208566-10');
 	</script>
 
+	@php($i=0)
+	<script type="application/ld+json">
+		{
+		  "@context":"http://schema.org",
+		  "@type":"ItemList",
+		  "itemListElement":[
+		    @foreach(trans('main.menu') as $menu)
+				@php($i++)
+		    {
+		      "@type":"SiteNavigationElement",
+		      "position":{{ $i }},
+		      "name": "{{ $menu['name'] }}",
+		      "description": "{{ $menu['desc'] }}",
+		      "url":"{{ routingWithLang($menu['link']) }}"
+		    },
+		    @endforeach
+		  ]
+		}
+</script>
 
 	@if(url('') !== 'http://localhost:8000')
 		<script data-ad-client="ca-pub-4690904339142228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

@@ -1,13 +1,16 @@
 <?php
 
+    $seo = \App\Models\Seo::where('slug', 'main')
+        ->first();
+
 return [
     'breaking_news' => 'Լրահոս',
     'menu' => [
-        'home' => ['name' => 'Գլխավոր', 'link' => '/'],
-        'category' => ['name' => 'Կատեգորիաներ', 'link' => '/categories'],
-        'about' => ['name' => 'Մեր Մասին', 'link' => '/about'],
-        'contact' => ['name' => 'Հետադարձ Կապ', 'link' => '/contact'],
-        'video' => ['name' => 'Տեսանյութեր', 'link' => '/videos']
+        'home' => ['name' => 'Գլխավոր', 'link' => '/', 'desc' => $seo->hy_title],
+        'category' => ['name' => 'Կատեգորիաներ', 'link' => '/categories', 'desc' => 'Կատեգորիաներ '.$seo->hy_title],
+        'about' => ['name' => 'Մեր Մասին', 'link' => '/about', 'desc' => 'Մեր Մասին '.$seo->hy_title],
+        'contact' => ['name' => 'Հետադարձ Կապ', 'link' => '/contact', 'desc' => 'Հետադարձ Կապ '.$seo->hy_title],
+        'video' => ['name' => 'Տեսանյութեր', 'link' => '/videos', 'desc' => 'Տեսանյութեր '.$seo->hy_title]
     ],
     'newsletter' => [
         'title' => 'Տեղեկագիր',

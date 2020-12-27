@@ -1,10 +1,10 @@
 <nav class="container position-relative">
 	<div class="d-none d-sm-block w-100">
 		<div class="w-100 d-flex justify-content-between align-items-center">
-			<ul class="menu d-sm-flex justify-content-start align-items-center" itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu">
+			<ul class="menu d-sm-flex justify-content-start align-items-center" role="menu">
 				@foreach(trans('main.menu') as $menu)
-					<li itemprop="name" role="menuitem">
-						<a itemprop="url" title="{{ $menu['name'] }}" class="main-color-hover {{ url()->current() == url(routingWithLang($menu['link'])) ? 'main-active-background-color' : '' }}" href="{{ routingWithLang($menu['link']) }}">{{ $menu['name'] }}</a>
+					<li role="menuitem">
+						<a title="{{ $menu['name'] }}" class="main-color-hover {{ url()->current() == url(routingWithLang($menu['link'])) ? 'main-active-background-color' : '' }}" href="{{ routingWithLang($menu['link']) }}">{{ $menu['name'] }}</a>
 					</li>
 				@endforeach
 			</ul>
@@ -77,10 +77,10 @@
 			<div class="hamburger-menu-toggle">
 				<i class="fa fa-bars"></i>
 			</div>
-			<ul class="d-none mobile-menu position-absolute" itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu">
+			<ul class="d-none mobile-menu position-absolute" role="menu">
 				@foreach(trans('main.menu') as $menu)
-					<li itemprop="name" role="menuitem">
-						<a itemprop="url" title="{{ $menu['name'] }}" class="main-color-hover w-100  {{ url()->current() == url(routingWithLang($menu['link'])) ? 'main-active-background-color' : '' }}" href="{{ routingWithLang($menu['link']) }}">{{ $menu['name'] }}</a>
+					<li role="menuitem">
+						<a title="{{ $menu['name'] }}" class="main-color-hover w-100  {{ url()->current() == url(routingWithLang($menu['link'])) ? 'main-active-background-color' : '' }}" href="{{ routingWithLang($menu['link']) }}">{{ $menu['name'] }}</a>
 					</li>
 				@endforeach
 			</ul>
