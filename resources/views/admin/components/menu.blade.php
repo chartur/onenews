@@ -52,6 +52,27 @@
 				</li>
 			</ul>
 		</li>
+		<li class="{{ in_array($activePage, ['new_quiz', 'all_quizzes', 'quiz']) ? 'active open' : '' }}">
+			<a href="">
+				<i class="fa fa-trophy"></i>
+				Թեստեր
+				<i class="fa arrow"></i>
+			</a>
+			<ul class="sidebar-nav">
+				<li class="{{ $activePage == 'new_quiz' ? 'active' : '' }}">
+					<a href="/cabinet/quiz/new">
+						<i class="fa fa-plus mr-2"></i>
+						Ստեղծել
+					</a>
+				</li>
+				<li class="{{ $activePage == 'all_quizzes' ? 'active' : '' }}">
+					<a href="/cabinet/quiz/list">
+						<i class="fa fa-list mr-2"></i>
+						Ցանկ
+					</a>
+				</li>
+			</ul>
+		</li>
 		<li class="{{ in_array($activePage, ['seo_main', 'seo_about', 'seo_contact']) ? 'active open' : '' }}">
 			<a href="">
 				<i class="fa fa-search"></i>
