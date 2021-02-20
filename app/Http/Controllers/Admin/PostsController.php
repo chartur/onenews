@@ -36,7 +36,7 @@ class PostsController extends Controller
     {
         $activePage = 'new_post';
         $categories = Category::get();
-        $tags = Tag::get();
+        $tags = Tag::where('type', Tag::TYPE_POST)->get();
         $ads = Adsense::get();
         return view('admin.create-new-post')->with(compact('activePage', 'categories', 'tags', 'ads'));
     }
@@ -131,7 +131,7 @@ class PostsController extends Controller
         $ads = Adsense::get();
         $activePage = 'post';
         $categories = Category::get();
-        $tags = Tag::get();
+        $tags = Tag::where('type', Tag::TYPE_POST)->get();
         $post->load('tags', 'category');
         $urls = [];
         if($post->ru_title && $post->ru_content) {

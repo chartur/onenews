@@ -29,9 +29,15 @@ class TagsController
             'ru_name' => 'required',
         ]);
 
+        $type = Tag::TYPE_POST;
+        if($request->has('tag_type')) {
+            $type = $request->tag_type;
+        }
+
         $tag = new Tag();
         $tag->hy_name = $request->hy_name;
         $tag->ru_name = $request->ru_name;
+        $tag->type = $type;
         $tag->saveOrFail();
 
         return response()->json(['status' => 'success', 'message' => 'Թեգը հաջողությամբ ավելացվել է։', 'tag' => $tag]);

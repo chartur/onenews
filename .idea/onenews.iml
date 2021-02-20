@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mcamara/laravel-localization" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

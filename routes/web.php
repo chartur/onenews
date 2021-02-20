@@ -13,6 +13,7 @@ use \App\Http\Controllers\Admin\PageController;
 use \App\Http\Controllers\Admin\AuthController;
 use \App\Http\Controllers\Admin\CategoryController;
 use \App\Http\Controllers\Admin\AdsController;
+use App\Http\Controllers\Admin\QuizController as AdminQuizController;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -76,6 +77,17 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
         Route::get('update/{tag}', [TagsController::class, 'updateTagView'])->name('tag.update');
     });
 
+    Route::group(['prefix' => 'quiz'], function (){
+        Route::get('/new', [AdminQuizController::class, 'addNewQuiz']);
+        Route::get('/load-question/{index}', [AdminQuizController::class, 'loadQuestionCollapse']);
+        Route::post('add-new', [AdminQuizController::class, 'addNewQuiz']);
+        Route::get('search', [AdminQuizController::class, 'adminTagSearch']);
+        Route::post('save', [AdminQuizController::class, 'saveTagData']);
+        Route::post('delete', [AdminQuizController::class, 'deleteTag']);
+        Route::get('list', [AdminQuizController::class, 'lists'])->name('tags.list');
+        Route::get('update/{tag}', [AdminQuizController::class, 'updateTagView'])->name('quiz.update');
+    });
+
     Route::group(['prefix' => 'category'], function () {
         Route::post('add-new', [CategoryController::class, 'addNewCategory']);
     });
@@ -85,6 +97,7 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
        Route::get('/all', [AdsController::class, 'getAds']);
        Route::post('/store', [AdsController::class, 'store']);
     });
+
 });
 
 Route::group([
