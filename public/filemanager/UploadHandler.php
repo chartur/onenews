@@ -411,8 +411,6 @@ class UploadHandler
         } else {
             $file_size = $content_length;
         }
-        echo '<pre>';
-        var_dump($this->options['max_file_size']);die;
         if ($this->options['max_file_size'] && (
                 $file_size > $this->options['max_file_size'] ||
                 $file->size > $this->options['max_file_size'])
