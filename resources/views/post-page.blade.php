@@ -179,9 +179,12 @@
 			</li>
 		</ul>
 	</div>
-	@if($floating_post)
+	@if($floating_post && ($floating_news = $options->where('key', \App\Models\Option::SHOW_FLOATING_NEWS)->first()) && (int) $floating_news->value)
 		@include('components.floating-news')
 	@endif
+    @if(($floating_ads = $options->where('key', \App\Models\Option::SHOW_FLOATING_ADS)->first()) && (int) $floating_ads->value)
+        @include('components.floating-ads')
+    @endif
 @endsection
 @php(addPostViewed($main_post->id))
 
@@ -201,7 +204,7 @@
 			$.fancybox.open('<img src="'+ src +'">');
 		});
 
-		@if(false)
+		@if(($fb_option = $options->where('key', \App\Models\Option::SHOW_FB_POPUP)->first()) && (int) $fb_option->value)
 			$.fancybox.open(`@include('components.post-popover')`, {
 				// touch: false,
 				modal : true,
@@ -243,7 +246,7 @@
 			}, 1200)
 		}
 
-		@if(false)
+		@if(($tg_option = $options->where('key', \App\Models\Option::SHOW_TG_POPUP)->first()) && (int) $tg_option->value)
 			if(localStorage.getItem('telegram-joined') != 'clicked'){
 				setTimeout(function () {
 					$.fancybox.open(`@include('components.telegram-join')`, {
@@ -311,5 +314,24 @@
 			})
 
 		}
+
+        function closeFloating(el, openAgain) {
+            $(el).closest('.floating-news').removeClass('show');
+            if(openAgain) {
+                setTimeout(function () {
+                    $('#floating-ads').addClass('show')
+                }, 6000)
+            }
+        }
+
+        @if($floating_post && ($floating_news = $options->where('key', \App\Models\Option::SHOW_FLOATING_NEWS)->first()) && (int) $floating_news->value)
+            setTimeout(function () {
+                $('#floating-news').addClass('show');
+            }, 10000)
+        @elseif(($floating_ads = $options->where('key', \App\Models\Option::SHOW_FLOATING_ADS)->first()) && (int) $floating_ads->value)
+            setTimeout(function () {
+                $('#floating-ads').addClass('show')
+            }, 6000);
+        @endif
 	</script>
 @endsection

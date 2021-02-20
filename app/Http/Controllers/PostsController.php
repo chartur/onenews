@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Http\Repos\FacebookArticleRepo;
 use App\Models\Adsense;
 use App\Models\Category;
+use App\Models\Option;
 use App\Models\Post;
 use App\Models\Seo;
 use App\Models\Tag;
@@ -93,6 +94,8 @@ class PostsController
 
         $aboutSite = getAttributeByLang($aboutSite,'description');
 
-        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post', 'post_content', 'ads'));
+        $options = Option::get();
+
+        return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post', 'post_content', 'ads', 'options'));
     }
 }

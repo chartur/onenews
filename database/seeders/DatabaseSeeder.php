@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
 //            PostsSeeder::class,
 //            WidgetsSeeder::class,
 //            TagsSeeder::class,
-            UsersSeeder::class
+//            UsersSeeder::class
+            OptionsSeeder::class
         ]);
     }
 }

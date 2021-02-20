@@ -1,6 +1,13 @@
 @extends('admin.layouts.admin')
 
 @section('content')
+    <section class="section map-tasks">
+        <div class="row sameheight-container">
+            <div class="col-md-4" id="options-content-loader">
+
+            </div>
+        </div>
+    </section>
     <section class="section">
         <div class="row sameheight-container">
             <div class="col col-12 col-sm-12 col-md-6 col-xl-5 stats-col">
@@ -933,4 +940,28 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        $('#options-content-loader')
+            .contentLoader('small')
+            .load('/cabinet/options');
+
+        $(document).on('click', '.option-checkbox', function () {
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/cabinet/options/toggle/'+id,
+                type: 'post',
+                beforeSend: NProgress.start,
+                complete: NProgress.done,
+                success: function (res) {
+                    showMessage(res.status, res.message);
+                },
+                error: function (err) {
+                    showMessage(err.responseJSON.status, err.responseJSON.message);
+                }
+            })
+        })
+    </script>
 @endsection

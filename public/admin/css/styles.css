@@ -168,3 +168,39 @@ th.table-sort-arrow:first-child {
 th.table-sort-arrow:first-child {
     bottom: 25%;
 }
+.my-loader-card {
+    padding: 15px;
+    justify-content: center;
+    flex-direction: row;
+}
+.loader {
+    display: inline;
+    border: 11px solid #f3f3f3; /* Light grey */
+    border-top: 11px solid #85CE36; /* Blue */
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: spin 2s linear infinite;
+}
+
+.my-loader-card.small .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #85CE36; /* Blue */
+}
+
+.my-loader-card.medium .loader {
+    width: 90px;
+    height: 90px;
+}
+.my-loader-card.large .loader{
+    width: 120px;
+    height: 120px;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #85CE36; /* Blue */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

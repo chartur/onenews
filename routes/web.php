@@ -13,6 +13,7 @@ use \App\Http\Controllers\Admin\PageController;
 use \App\Http\Controllers\Admin\AuthController;
 use \App\Http\Controllers\Admin\CategoryController;
 use \App\Http\Controllers\Admin\AdsController;
+use \App\Http\Controllers\Admin\OptionsController;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -84,6 +85,11 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
        Route::get('/', [AdsController::class, 'index']);
        Route::get('/all', [AdsController::class, 'getAds']);
        Route::post('/store', [AdsController::class, 'store']);
+    });
+
+    Route::group(['prefix' => 'options'], function (){
+        Route::get('/', [OptionsController::class, 'toggleOptionsTemplate']);
+        Route::post('/toggle/{option}', [OptionsController::class, 'toggleOptionById']);
     });
 });
 

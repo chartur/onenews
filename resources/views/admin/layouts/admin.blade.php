@@ -11,7 +11,7 @@
 	<!-- Place favicon.ico in the root directory -->
 	<link rel="stylesheet" href="{{ asset('/admin/css/vendor.css') }}">
 	<link rel="stylesheet" href="/admin/css/app-green.css">
-	<link rel="stylesheet" href="/admin/css/styles.css">
+	<link rel="stylesheet" href="/admin/css/styles.css?v=0.0.1">
 	<link rel="stylesheet" href="/admin/css/jquery-ui.min.css">
 	@yield('styles')
 	<link rel="icon" href="{{ asset('/images/fav.png') }}">
@@ -289,7 +289,7 @@
 <script src="{{ asset('/admin/js/vendor.js') }}"></script>
 <script src="{{ asset('/admin/js/app.js') }}"></script>
 <script src="{{ asset('/admin/js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('/admin/js/script.js') }}"></script>
+<script src="{{ asset('/admin/js/script.js?v=0.0.1') }}"></script>
 @yield('scripts')
 </body>
 </html>

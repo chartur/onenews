@@ -4,6 +4,26 @@ $.ajaxSetup({
 	}
 });
 
+$.fn.contentLoader = function (size) {
+    const sizes = ['small', 'medium', 'large'];
+
+    if(!size) {
+        size = 'medium'
+    }
+
+    if(sizes.indexOf(size) == -1) {
+        size = 'medium'
+    }
+
+    this.html(
+        `<div class="card my-loader-card ${size}">
+            <div class="loader"></div>
+        </div>`
+    );
+
+    return this;
+}
+
 function showMessage(status, message) {
 	var content = '<div class="alert alert-'+ status +' alert-block">' +
 			'<button type="button" class="close" data-dismiss="alert">×</button>' +

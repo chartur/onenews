@@ -1,3 +1,3 @@
 <?php
 
-return include '../public/filemanager/config/config.php';
+return include base_path().'/public/filemanager/config/config.php';

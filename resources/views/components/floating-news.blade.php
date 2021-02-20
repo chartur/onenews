@@ -33,20 +33,3 @@
 
 	</div>
 </div>
-@if(false)
-	@include('components.floating-ads')
-@endif
-<script>
-	function closeFloating(el, openAgain) {
-		$(el).closest('.floating-news').removeClass('show');
-		if(openAgain) {
-			setTimeout(function () {
-				$('#floating-ads').addClass('show')
-			}, 6000)
-		}
-	}
-
-	setTimeout(function () {
-		$('#floating-news').addClass('show');
-	}, 10000)
-</script>
