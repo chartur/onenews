@@ -15,6 +15,12 @@ use App\Models\Adsense;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Parsers\ArmLurParser;
+use App\Parsers\BlogNewsParser;
+use App\Parsers\IravabanNetParser;
+use App\Parsers\LragirParser;
+use App\Parsers\NewsAmParser;
+use App\Parsers\ShamshyanParser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
@@ -39,6 +45,58 @@ class PostsController extends Controller
         $tags = Tag::where('type', Tag::TYPE_POST)->get();
         $ads = Adsense::get();
         return view('admin.create-new-post')->with(compact('activePage', 'categories', 'tags', 'ads'));
+    }
+
+    /**
+     * Returns new post parse and creation page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function newPostParseView()
+    {
+        $activePage = 'new_post_parse';
+        $categories = Category::get();
+        $tags = Tag::where('type', Tag::TYPE_POST)->get();
+        $ads = Adsense::get();
+
+        $parse_sites = [
+            'news.am',
+            'iravaban.net',
+            'shamshyan.com',
+            'lragir.am',
+            'blognews.am',
+            'armlur.am'
+        ];
+
+        $ads = Adsense::get();
+
+        return view('admin.parse-new-post')->with(compact('activePage', 'categories', 'tags', 'ads', 'parse_sites', 'ads'));
+    }
+
+    public function getParsedData(Request $request)
+    {
+        $request->validate([
+            'site' => 'required',
+            'url' => 'required'
+        ]);
+
+        $parse_sites = [
+            'news.am' => NewsAmParser::class,
+            'iravaban.net' => IravabanNetParser::class,
+            'shamshyan.com' => ShamshyanParser::class,
+            'lragir.am' => LragirParser::class,
+            'blognews.am' => BlogNewsParser::class,
+            'armlur.am' => ArmLurParser::class
+        ];
+
+        if(!isset($parse_sites[$request->site])) {
+            return response()->json([
+                'message' => 'Անհայտ կայք'
+            ], 500);
+        }
+
+        $parser = new $parse_sites[$request->site]($request->url);
+        return response()->json($parser->getPostData());
     }
 
     public function store(Request $request)

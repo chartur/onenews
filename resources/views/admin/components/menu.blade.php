@@ -10,7 +10,7 @@
 				<i class="fa fa-thumb-tack"></i>Էջի կառավարում
 			</a>
 		</li>
-		<li class="{{ in_array($activePage, ['new_post', 'all_posts', 'post']) ? 'active open' : '' }}">
+		<li class="{{ in_array($activePage, ['new_post', 'all_posts', 'post', 'new_post_parse']) ? 'active open' : '' }}">
 			<a href="">
 				<i class="fa fa-newspaper-o"></i>
 				Փոստեր
@@ -23,6 +23,12 @@
 						Ստեղծել
 					</a>
 				</li>
+                <li class="{{ $activePage == 'new_post_parse' ? 'active' : '' }}">
+                    <a href="/cabinet/posts/parse">
+                        <i class="fa fa-copy mr-2"></i>
+                        Պատճենել
+                    </a>
+                </li>
 				<li class="{{ $activePage == 'all_posts' ? 'active' : '' }}">
 					<a href="/cabinet/posts/list">
 						<i class="fa fa-list mr-2"></i>
