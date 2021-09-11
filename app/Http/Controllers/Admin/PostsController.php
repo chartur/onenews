@@ -62,6 +62,7 @@ class PostsController extends Controller
 
         $parse_sites = [
             'news.am',
+            'news.am - style',
             'iravaban.net',
             'shamshyan.com',
             'lragir.am',
