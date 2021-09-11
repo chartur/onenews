@@ -20,6 +20,7 @@ use App\Parsers\BlogNewsParser;
 use App\Parsers\IravabanNetParser;
 use App\Parsers\LragirParser;
 use App\Parsers\NewsAmParser;
+use App\Parsers\NewsAmStyle;
 use App\Parsers\ShamshyanParser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -82,6 +83,7 @@ class PostsController extends Controller
 
         $parse_sites = [
             'news.am' => NewsAmParser::class,
+            'news.am - style' => NewsAmStyle::class,
             'iravaban.net' => IravabanNetParser::class,
             'shamshyan.com' => ShamshyanParser::class,
             'lragir.am' => LragirParser::class,
