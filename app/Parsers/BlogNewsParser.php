@@ -58,6 +58,9 @@ class BlogNewsParser extends Parser
 
         foreach ($images as $image) {
             $src = $image->getAttribute('src');
+            if(substr( $src, 0, 4 ) != "http") {
+                $src = $this->siteUrl.$src;
+            }
             $this->postContent .= "<div><img src='$src'></div>";
         }
 
