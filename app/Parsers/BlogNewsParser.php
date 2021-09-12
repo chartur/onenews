@@ -28,6 +28,8 @@ class BlogNewsParser extends Parser
         $elements = $this->dom->find('meta[property="og:title"]');
         $element = $elements[0];
         $this->postTitle = $element->getAttribute('content');
+        $this->postTitle = str_replace('- BlogNews.am', '', $this->postTitle);
+        $this->postTitle = trim($this->postTitle);
         return $this;
     }
 
@@ -45,6 +47,7 @@ class BlogNewsParser extends Parser
     private function parsePostContent()
     {
         $elements = $this->dom->find('article');
+        $elements->lastChild()->delete();
         $deleteElements = $this->dom->find('article .note');
         foreach ($deleteElements as $element) {
             $element->delete();
@@ -65,7 +68,9 @@ class BlogNewsParser extends Parser
             if(!$src) {
                 continue;
             }
-            $this->postContent .= "<iframe src='$src'></iframe>";
+            $width = $iframe->getAttribute('width');
+            $height = $iframe->getAttribute('height');
+            $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
         }
 
         return $this;

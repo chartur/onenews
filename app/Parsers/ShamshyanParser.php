@@ -57,7 +57,9 @@ class ShamshyanParser extends Parser
             if(!$src) {
                 continue;
             }
-            $this->postContent .= "<iframe src='$src'></iframe>";
+            $width = $iframe->getAttribute('width');
+            $height = $iframe->getAttribute('height');
+            $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
         }
 
         return $this;
