@@ -44,19 +44,17 @@ class BlogNewsParser extends Parser
 
     private function parsePostContent()
     {
-        $elements = $this->dom->find('article div[dir="auto"]');
-        $iframes = $this->dom->find('.article-text iframe');
-        $images = $this->dom->find('.article-text img');
+        $elements = $this->dom->find('article');
+        $element = $elements[0];
+        $iframes = $this->dom->find('article iframe');
+        $images = $this->dom->find('article img');
 
         foreach ($images as $image) {
             $src = $image->getAttribute('src');
             $this->postContent .= "<div><img src='$src'></div>";
         }
 
-        foreach ($elements as $p)
-        {
-            $this->postContent .= '<p>'. $p->innerText() .'</p>';
-        }
+        $this->postContent .= '<p>'. $element->innerText() .'</p>';
 
         foreach ($iframes as $iframe) {
             $src = $iframe->getAttribute('src');
