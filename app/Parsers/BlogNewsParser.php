@@ -45,6 +45,10 @@ class BlogNewsParser extends Parser
     private function parsePostContent()
     {
         $elements = $this->dom->find('article');
+        $deleteElements = $this->dom->find('article .note');
+        foreach ($deleteElements as $element) {
+            $element->delete();
+        }
         $element = $elements[0];
         $iframes = $this->dom->find('article iframe');
         $images = $this->dom->find('article img');
