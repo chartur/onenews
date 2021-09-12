@@ -5,7 +5,7 @@ namespace App\Parsers;
 
 class BlogNewsParser extends Parser
 {
-    private $siteUrl = 'https://www.blognews.am/';
+    private $siteUrl = 'https://www.blognews.am';
 
     public function getPostData() {
         $this->parsePostTitle()
