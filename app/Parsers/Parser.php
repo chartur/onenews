@@ -60,7 +60,17 @@ class Parser
         if(!$this->postImage) {
             return;
         }
-        $file = file_get_contents($this->postImage);
+
+        $opts = [
+            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+            "ssl" => [
+                "verify_peer" => false,
+                "verify_peer_name" => false,
+            ],
+        ];  
+        
+        $file = file_get_contents($this->postImage, false, stream_context_create($opts));
+
         $extension = pathinfo(parse_url($this->postImage, PHP_URL_PATH), PATHINFO_EXTENSION);
         $now = Carbon::now();
         $name = $now->format('YmdHisu');
@@ -72,7 +82,13 @@ class Parser
     }
 
     private function file_get_contents_utf8($url) {
-        $opts = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
+        $opts = [
+            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+            "ssl" => [
+                "verify_peer" => false,
+                "verify_peer_name" => false,
+            ],
+        ];  
         $context = stream_context_create($opts);
         $content = file_get_contents($url,false, $context);
         return mb_convert_encoding($content, 'UTF-8',
