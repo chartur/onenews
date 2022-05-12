@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="/admin/css/vendor.css">
+        <link rel="stylesheet" href="{{ asset('/admin/css/vendor.css') }}">
         <link rel="stylesheet" href="/admin/css/app.css">
         <link rel="icon" href="{{ asset('/images/fav.png') }}">
         <!-- Theme initialization -->

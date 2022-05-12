@@ -19,7 +19,7 @@ return [
         'subscribe' => 'Բաժանորդագրվել'
     ],
     'categories' => 'Կատեգորիաներ',
-    'popular_tags' => 'Հայտնի տեգեր',
+    'popular_tags' => 'Հայտնի թեգեր',
     'you_are_here' => 'Ձեր հասցեն',
 
     'contact_form' => [

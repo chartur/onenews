@@ -27,7 +27,7 @@
 	<section class="section">
 		<form action="/cabinet/ads/store" method="POST" id="ads-form">
 			@csrf
-			<div class="row" id="adsense-area">
+			<div class="row" id="adsense-area1">
 				@foreach($ads as $ad)
 					<div class="col-12 col-md-6 col-lg-4 ads-card-column">
 						<div class="card">
@@ -40,7 +40,7 @@
 								</div>
 							</div>
 							<div class="card-block">
-								<textarea class="ads_content form-control" name="content[]" placeholder="Գովազդի կոդը" rows="10">{{ $ad->content }}</textarea>
+								<textarea class="ads_content1 form-control" name="content[]" placeholder="Գովազդի կոդը" rows="10">{{ $ad->content }}</textarea>
 							</div>
 							<div class="card-footer text-center">
 								<button class="btn btn-danger" type="button" onclick="deleteAdsCard(this)">
@@ -70,7 +70,7 @@
 						</div>
 					</div>
 					<div class="card-block">
-						<textarea class="ads_content form-control" name="content[]" placeholder="Գովազդի կոդը" rows="10"></textarea>
+						<textarea class="ads_content1 form-control" name="content[]" placeholder="Գովազդի կոդը" rows="10"></textarea>
 					</div>
 					<div class="card-footer text-center">
 						<button class="btn btn-danger" type="button" onclick="deleteAdsCard(this)">
@@ -81,7 +81,7 @@
 				</div>
 			</div>`;
 
-			$('#adsense-area').append(adsCard);
+			$('#adsense-area1').append(adsCard);
 		}
 
 		function deleteAdsCard(el) {

@@ -31,16 +31,16 @@
 @section('content')
 	<div id="post-page-content">
 		<article class="p-3">
-			<header>
-				<h1 class="text-center">{{ getAttributeByLang($main_post, 'title') }}</h1>
-			</header>
-			@if($ads->count())
+		    @if($ads->count())
 				<div class="mt-2 mb-2 w-100 text-center">
 					<div class="d-inline-block" style="width: 320px; height: 100px">
 						{!! $ads->toArray()[1]['content'] !!}
 					</div>
 				</div>
 			@endif
+			<header>
+				<h1 class="text-center">{{ getAttributeByLang($main_post, 'title') }}</h1>
+			</header>
 			<div>
 				<aside class="mb-3 pt-2 pb-2">
 					<div class="row">
@@ -124,10 +124,8 @@
 								{!! $post_content !!}
 							</div>
 							@if($ads->count())
-								<div class="text-center">
-									<div class="mt-2 mb-2 d-inline-block" style="width: 320px; height: 250px">
-										{!! $ads->first()->content !!}
-									</div>
+								<div class="w-100 mt-2 mb-2 d-inline-block">
+									{!! $ads->where('slug', 'posts')->first()->content !!}
 								</div>
 							@endif
 							@if($main_post->source)

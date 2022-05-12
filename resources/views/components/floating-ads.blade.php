@@ -7,7 +7,7 @@
 	<div>
 		@if($ads->count())
 			<div class="mt-2 mb-2 w-100 text-center">
-				{!! $ads->toArray()[1]['content'] !!}
+				{!! $ads->where('slug', 'text-ads')->first()->content !!}
 			</div>
 		@endif
 	</div>
