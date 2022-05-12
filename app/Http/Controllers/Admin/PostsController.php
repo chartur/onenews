@@ -307,7 +307,7 @@ class PostsController extends Controller
         $translated_title = $translator
             ->setSource('hy')
             ->setTarget('ru')
-            ->translate($request->hy_content);
+            ->translate($request->hy_title);
 
 
         $translated_description = '';
