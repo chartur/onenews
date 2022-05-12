@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<hr>
-					<div class="fb-comments" data-numposts="10" data-width="100%"></div>
+					<div class="fb-comments" data-href="{{ url()->current() }}" data-numposts="10" data-width="100%"></div>
 				</div>
 				<div class="col-12 col-md-3 position-absolute position-xs-static h-100" style="right: 0; overflow-y: scroll">
 					<div class="category-content-loading mb-3">
