@@ -82,30 +82,15 @@ class Parser
     }
 
     private function file_get_contents_utf8($url) {
-        // $opts = [
-        //     'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
-        //     "ssl" => [
-        //         "verify_peer" => false,
-        //         "verify_peer_name" => false,
-        //     ],
-        // ];  
-        // $context = stream_context_create($opts);
-        // $content = file_get_contents($url,false, $context);
-
-
-        
-
-        $ch = curl_init();
-        
-        curl_setopt( $ch, CURLOPT_AUTOREFERER, TRUE );
-        curl_setopt( $ch, CURLOPT_HEADER, 0 );
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-        curl_setopt( $ch, CURLOPT_URL, $url );
-        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, TRUE );
-        
-        $content = curl_exec( $ch );
-        curl_close( $ch );
-          
+        $opts = [
+            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+            "ssl" => [
+                "verify_peer" => false,
+                "verify_peer_name" => false,
+            ],
+        ];  
+        $context = stream_context_create($opts);
+        $content = file_get_contents($url,false, $context);
 
         return mb_convert_encoding($content, 'UTF-8',
             mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
