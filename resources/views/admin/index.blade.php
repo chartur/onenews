@@ -6,6 +6,9 @@
             <div class="col-md-4" id="options-content-loader">
 
             </div>
+            <div class="col-md-4" id="options-content-cretor-container">
+                <div class="card"></div>
+            </div>
         </div>
     </section>
     <section class="section">

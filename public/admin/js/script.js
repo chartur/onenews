@@ -86,3 +86,11 @@ $(document).ready(function () {
 		$('.post-language-container').attr('data-lang', lang)
 	})
 });
+
+
+function loadOptionsContentCreatorTemplate(optionId) {
+	$('#options-content-cretor-container')
+            .contentLoader('small')
+            .load('/cabinet/options/content-creator/' + optionId);
+
+}

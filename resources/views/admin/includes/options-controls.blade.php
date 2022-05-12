@@ -15,6 +15,9 @@
                                 <input class="checkbox option-checkbox" data-id="{{ $option->id }}" type="checkbox" {{ $option->value ? 'checked' : '' }}>
                                 <span>{{ $option->name }}</span>
                             </label>
+                            <span onclick="loadOptionsContentCreatorTemplate({{$option->id}})">
+                                <i class="fa fa-edit"></i>
+                            </span>
                         </div>
                     </div>
                 </li>

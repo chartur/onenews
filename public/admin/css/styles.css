@@ -200,6 +200,15 @@ th.table-sort-arrow:first-child {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #85CE36; /* Blue */
 }
+
+#options-content-cretor-container {
+    height: 251px;
+}
+
+#options-content-cretor-container .card{
+    margin: 0;
+    height: 100%;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

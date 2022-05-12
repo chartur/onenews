@@ -104,6 +104,8 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
 
     Route::group(['prefix' => 'options'], function (){
         Route::get('/', [OptionsController::class, 'toggleOptionsTemplate']);
+        Route::get('/content-creator/{option}', [OptionsController::class, 'loadContentCreator']);
+        Route::post('/content/{option}', [OptionsController::class, 'storeContent']);
         Route::post('/toggle/{option}', [OptionsController::class, 'toggleOptionById']);
     });
 });
