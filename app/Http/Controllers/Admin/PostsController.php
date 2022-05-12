@@ -25,6 +25,7 @@ use App\Parsers\ShamshyanParser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class PostsController extends Controller
 {
@@ -287,5 +288,48 @@ class PostsController extends Controller
         $fb = new FacebookArticleRepo($post, 'hy');
         $content = $fb->createContentHTML();
         return response()->json(compact('content'));
+    }
+
+    public function getTranslatedData(Request $request)
+    {
+        $request->validate([
+            'hy_content' => Rule::requiredIf($request->hy_title),
+            'hy_title' => Rule::requiredIf($request->hy_content),
+        ]);
+
+        $translator = new GoogleTranslate();
+
+        $translated_content = $translator
+            ->setSource('hy')
+            ->setTarget('ru')
+            ->translate($request->hy_content);
+
+        $translated_title = $translator
+            ->setSource('hy')
+            ->setTarget('ru')
+            ->translate($request->hy_content);
+
+
+        $translated_description = '';
+
+        if($request->hy_description) {
+            $translated_description = $translator
+                ->setSource('hy')
+                ->setTarget('ru')
+                ->translate($request->hy_description);
+        }
+        
+            
+
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Փոստը հաջողությամբ ստեղծված է։' ,
+            'data' => [
+                'content' => $translated_content,
+                'title' => $translated_title,
+                'description' => $translated_description
+            ]
+        ]);
     }
 }

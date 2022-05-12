@@ -19,6 +19,9 @@
 				<i class="fa fa-arrow-left mr-2"></i>
 				Հայերեն
 			</button>
+			<button type="button" class="btn btn-primary-outline mr-2 mb-0 to-translate-button" onclick="translatePost()">
+				Թարգմանել
+			</button>
 			<button type="button" class="btn btn-primary-outline language-container-switcher mr-2 mb-0" data-lang="ru">
 				Русский
 				<i class="fa fa-arrow-right mr-2"></i>

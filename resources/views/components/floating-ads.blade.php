@@ -7,7 +7,7 @@
 	<div>
 		@if($ads->count())
 			<div class="mt-2 mb-2 w-100 text-center">
-				{!! $ads->where('slug', 'text-ads')->first()->content !!}
+				{!! $ads->where('slug', env("ADS_SLUG_FOR_INNER_POST"))->first()->content !!}
 			</div>
 		@endif
 	</div>

@@ -34,6 +34,39 @@ function showMessage(status, message) {
 	NProgress.done();
 }
 
+function translatePost() {
+	NProgress.start();
+	var hy_content = tinymce.get('hy_content').getContent({ format: "text" }).trim();
+	var hy_title = $('input[name=hy_title]').val().trim();
+	var hy_desc = $('textarea[name=hy_description]').val().trim();
+
+	$.ajax({
+		url: '/cabinet/posts/translate',
+		type: 'post',
+		data: {
+			hy_content,
+			hy_title,
+			hy_description: hy_desc
+		},
+		dataType: 'json',
+		complete: NProgress.done,
+		success: function(res) {
+			tinymce.get('ru_content').setContent(res.data.content);
+			$('input[name=ru_title]').val(res.data.title);
+			if(res.data.description) {
+				$('textarea[name=ru_description]').val(res.data.description);
+			}
+
+			$('.language-container-switcher[data-lang="ru"]').trigger('click')
+
+			showMessage(res.status, res.message)
+		},
+		error: function (err) {
+			showMessage(err.responseJSON.status, err.responseJSON.message);
+		}
+	})
+}
+
 $(document).ready(function () {
 	$('.options-toggle-button').click(function () {
 		$('.options-container').toggleClass('open');

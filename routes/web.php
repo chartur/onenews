@@ -56,6 +56,7 @@ Route::group(['prefix' => 'cabinet', 'middleware' => 'auth'], function (){
 
     Route::group(['prefix' => 'posts'], function (){
         Route::get('/new', [AdminPostsController::class, 'newPostView']);
+        Route::post('/translate', [AdminPostsController::class, 'getTranslatedData']);
         Route::get('/parse', [AdminPostsController::class, 'newPostParseView']);
         Route::post('/parse-data', [AdminPostsController::class, 'getParsedData']);
         Route::post('/store', [AdminPostsController::class, 'store']);

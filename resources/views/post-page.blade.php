@@ -125,7 +125,7 @@
 							</div>
 							@if($ads->count())
 								<div class="w-100 mt-2 mb-2 d-inline-block">
-									{!! $ads->where('slug', 'posts')->first()->content !!}
+									{!! $ads->where('slug', env("ADS_SLUG_END_OF_POST"))->first()->content !!}
 								</div>
 							@endif
 							@if($main_post->source)

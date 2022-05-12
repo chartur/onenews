@@ -30,6 +30,10 @@ class AdsController extends Controller
         $count = count($reqs['name']);
 
         for($i = 0; $i < $count; $i++) {
+            if(!$reqs['name'][$i] || !$reqs['slug'][$i] || !$reqs['content'][$i]) {
+                return redirect()->back()->with('danger', 'Չստացվեց!');
+            }
+
             $ads[] = [
                 'name' => $reqs['name'][$i],
                 'slug' => $reqs['slug'][$i],
