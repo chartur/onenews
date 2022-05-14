@@ -33,9 +33,7 @@
 		<article class="p-3">
 		    @if($ads->count())
 				<div class="mt-2 mb-2 w-100 text-center">
-					<div class="d-inline-block" style="width: 320px; height: 100px">
-						{!! $ads->toArray()[1]['content'] !!}
-					</div>
+					{!! $ads->toArray()[1]['content'] !!}
 				</div>
 			@endif
 			<header>
