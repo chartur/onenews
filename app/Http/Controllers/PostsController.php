@@ -40,7 +40,19 @@ class PostsController
      */
     public function article($post_id, Request $request)
     {
+        return redirect("/article?id=$post_id");
+    }
+
+    public function articleWithQueryParam(Request $request)
+    {
+        if(!$request->has('id')) {
+            abort(404);
+        }
+
+        $post_id = $request->id;
+
         $main_post = Post::with('tags', 'category')->find($post_id);
+
         if(!$main_post) {
             abort(404);
         }
@@ -97,5 +109,5 @@ class PostsController
         $options = Option::get();
 
         return view('post-page')->with(compact('main_post', 'categories', 'tags', 'aboutSite', 'more_posts', 'floating_post', 'post_content', 'ads', 'options'));
-    }
+    } 
 }

@@ -14,9 +14,9 @@
 
     function createPostLink($id, $lang = false) {
         if($lang) {
-            return url($lang .'/article/'. $id);
+            return url($lang .'/article?id='. $id);
         }
-        return url('/article/'. $id);
+        return url('/article?id='. $id);
     }
 
     function addPostViewed($post_id) {
