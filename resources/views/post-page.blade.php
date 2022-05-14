@@ -10,13 +10,13 @@
 	<meta name="author" content="OneNews">
 
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="{{ url()->current() }}">
+	<meta property="og:url" content="{{ url()->full() }}">
 	<meta property="og:title" content="{{ getAttributeByLang($main_post, 'title') }}">
 	<meta property="og:description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
 	<meta property="og:image" content="{{ asset($main_post->image) }}">
 
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="{{ url()->current() }}">
+	<meta property="twitter:url" content="{{ url()->full() }}">
 	<meta property="twitter:title" content="{{ getAttributeByLang($main_post, 'title') }}">
 	<meta property="twitter:description" content="{{ mb_strimwidth(getAttributeByLang($main_post, $main_post->description ? 'description' : 'title'), 0, 158, '...') }}">
 	<meta property="twitter:image" content="{{ asset($main_post->image) }}">
@@ -67,13 +67,13 @@
 						<div class="col-12 col-lg-5 text-right my-auto">
 							<div class="d-flex flex-wrap align-items-end justify-content-center justify-content-lg-end">
 								<div class="d-flex align-items-end mr-2">
-									<iframe src="https://www.facebook.com/plugins/like.php?href={{ url()->current() }}&width=110&layout=button_count&action=like&size=small&share=false&height=20&appId=182306942842208" width="110" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+									<iframe src="https://www.facebook.com/plugins/like.php?href={{ url()->full() }}&width=110&layout=button_count&action=like&size=small&share=false&height=20&appId=182306942842208" width="110" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 								</div>
 								<div class="d-flex align-items-end mr-2">
-									<iframe src="https://www.facebook.com/plugins/share_button.php?href={{ url()->current() }}&layout=button_count&size=small&appId=182306942842208&width=115&height=20" width="120" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+									<iframe src="https://www.facebook.com/plugins/share_button.php?href={{ url()->full() }}&layout=button_count&size=small&appId=182306942842208&width=115&height=20" width="120" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 								</div>
 								<div class="d-flex align-items-end mr-2">
-									<a href="https://t.me/share/url?url={{ url()->current() }}" target="_blank" class="telegram-share-button">Telegram</a>
+									<a href="https://t.me/share/url?url={{ url()->full() }}" target="_blank" class="telegram-share-button">Telegram</a>
 								</div>
 								<div>
 									<a href="https://twitter.com/share" target="_blank" class="twitter-share-button">Tweet</a>
@@ -112,10 +112,10 @@
 									<div class="switch-post-locale mt-2 text-center">
 										@if(app()->getLocale() == 'hy')
 											<img width="30px" style="border: none" src="/images/flags/russia.png">
-											<a href="{{ str_replace('/hy/', '/ru/', url()->current()) }}">Доступен на Русском</a>
+											<a href="{{ str_replace('/hy/', '/ru/', url()->full()) }}">Доступен на Русском</a>
 										@else
 											<img width="30px" style="border: none" src="/images/flags/armenia.png">
-											<a href="{{ str_replace('/ru/', '/hy/', url()->current()) }}">Հասանելի է Հայերեն</a>
+											<a href="{{ str_replace('/ru/', '/hy/', url()->full()) }}">Հասանելի է Հայերեն</a>
 										@endif
 									</div>
 								@endif
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 					<hr>
-					<div class="fb-comments" data-href="{{ url()->current() }}" data-numposts="10" data-width="100%"></div>
+					<div class="fb-comments" data-href="{{ url()->full() }}" data-numposts="10" data-width="100%"></div>
 				</div>
 				<div class="col-12 col-md-3 position-absolute position-xs-static h-100" style="right: 0; overflow-y: scroll">
 					<div class="category-content-loading mb-3">
