@@ -86,6 +86,12 @@ class Parser
     private function file_get_contents_utf8($url) {
         $client = new Client;
         return $client->get($url, [
+            'verify' => false,
+            'curl' => [
+                //CURLOPT_SSLVERSION => 3
+                //CURLOPT_SSLVERSION => CURL_SSLVERSION_DEFAULT,
+                CURLOPT_SSL_VERIFYPEER => false
+            ],
             'on_stats' => function (TransferStats $stats) use (&$url) {
                 $url = $stats->getEffectiveUri();
             }
