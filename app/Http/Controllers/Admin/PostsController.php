@@ -22,6 +22,7 @@ use App\Parsers\LragirParser;
 use App\Parsers\NewsAmParser;
 use App\Parsers\NewsAmStyle;
 use App\Parsers\ShamshyanParser;
+use App\Parsers\TertAmParser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
@@ -66,6 +67,7 @@ class PostsController extends Controller
             'news.am - style',
             'iravaban.net',
             'shamshyan.com',
+            'tert.am',
             'lragir.am',
             'blognews.am',
             'armlur.am'
@@ -90,7 +92,8 @@ class PostsController extends Controller
             'shamshyan.com' => ShamshyanParser::class,
             'lragir.am' => LragirParser::class,
             'blognews.am' => BlogNewsParser::class,
-            'armlur.am' => ArmLurParser::class
+            'armlur.am' => ArmLurParser::class,
+            'tert.am' => TertAmParser::class,
         ];
 
         if(!isset($parse_sites[$request->site])) {
