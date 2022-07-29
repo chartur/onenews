@@ -25,6 +25,7 @@ use App\Parsers\ShamshyanParser;
 use App\Parsers\TertAmParser;
 use App\Parsers\HraparakAmParser;
 use App\Parsers\NewsAmSportParser;
+use App\Parsers\ArajinAmParser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
@@ -74,7 +75,8 @@ class PostsController extends Controller
             'hraparak.am',
             'lragir.am',
             'blognews.am',
-            'armlur.am'
+            'armlur.am',
+            '1in.am'
         ];
 
         $ads = Adsense::get();
@@ -99,7 +101,8 @@ class PostsController extends Controller
             'blognews.am' => BlogNewsParser::class,
             'armlur.am' => ArmLurParser::class,
             'tert.am' => TertAmParser::class,
-            'hraparak.am' => HraparakAmParser::class
+            'hraparak.am' => HraparakAmParser::class,
+            '1in.am' => ArajinAmParser::class
         ];
 
         if(!isset($parse_sites[$request->site])) {
