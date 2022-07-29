@@ -42,6 +42,9 @@ class IravabanNetParser extends Parser
     private function parsePostContent()
     {
         $elements = $this->dom->find('.entry-content p');
+        if(!$elements->count()) {
+            $elements = $this->dom->find('#video_content p');
+        }
         $iframes = $this->dom->find('.article-text iframe');
         $images = $this->dom->find('.article-text img');
 
@@ -63,6 +66,17 @@ class IravabanNetParser extends Parser
             $width = $iframe->getAttribute('width');
             $height = $iframe->getAttribute('height');
             $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
+        }
+
+        $single_ifream_video = $this->dom->find(".single_ifream_video iframe");
+
+        if($single_ifream_video->count()) {
+            $src = $single_ifream_video->getAttribute('src');
+            if($src) {
+                $width = $single_ifream_video->getAttribute('width');
+                $height = $single_ifream_video->getAttribute('height');
+                $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
+            }
         }
 
         return $this;
