@@ -93,7 +93,6 @@ class Parser
             ];  
             $context = stream_context_create($opts);
             $content = file_get_contents($url,false, $context);
-            dd($content);
     
             return mb_convert_encoding($content, 'UTF-8',
                 mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
