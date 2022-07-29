@@ -86,7 +86,6 @@ class Parser
     private function file_get_contents_utf8($url) {
         $client = new Client;
         return $client->get($url, [
-            'query'   => ['get' => 'params'],
             'on_stats' => function (TransferStats $stats) use (&$url) {
                 $url = $stats->getEffectiveUri();
             }
