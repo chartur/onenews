@@ -84,25 +84,25 @@ class Parser
     }
 
     private function file_get_contents_utf8($url) {
-        $client = new Client;
-        return $client->get($url, [
-            'on_stats' => function (TransferStats $stats) use (&$url) {
-                $url = $stats->getEffectiveUri();
-            }
-        ])->getBody()->getContents();
+        // $client = new Client;
+        // return $client->get($url, [
+        //     'on_stats' => function (TransferStats $stats) use (&$url) {
+        //         $url = $stats->getEffectiveUri();
+        //     }
+        // ])->getBody()->getContents();
 
-        // $opts = [
-        //     'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
-        //     "ssl" => [
-        //         "verify_peer" => false,
-        //         "verify_peer_name" => false,
-        //     ],
-        // ];  
+        $opts = [
+            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+            "ssl" => [
+                "verify_peer" => false,
+                "verify_peer_name" => false,
+            ],
+        ];  
         
-        // $context = stream_context_create($opts);
-        // $content = file_get_contents($url,false, $context);
+        $context = stream_context_create($opts);
+        $content = file_get_contents($url,false, $context);
 
-        // return mb_convert_encoding($content, 'UTF-8',
-        //     mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
+        return mb_convert_encoding($content, 'UTF-8',
+            mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
     }
 }
