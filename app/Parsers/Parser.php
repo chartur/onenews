@@ -4,6 +4,8 @@ namespace App\Parsers;
 
 use Carbon\Carbon;
 use PHPHtmlParser\Dom;
+use GuzzleHttp\Client;
+use GuzzleHttp\TransferStats;
 
 class Parser
 {
@@ -82,18 +84,26 @@ class Parser
     }
 
     private function file_get_contents_utf8($url) {
-        $opts = [
-            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
-            "ssl" => [
-                "verify_peer" => false,
-                "verify_peer_name" => false,
-            ],
-        ];  
-        
-        $context = stream_context_create($opts);
-        $content = file_get_contents($url,false, $context);
+        $client = new Client;
+        return $client->get($url, [
+            'query'   => ['get' => 'params'],
+            'on_stats' => function (TransferStats $stats) use (&$url) {
+                $url = $stats->getEffectiveUri();
+            }
+        ])->getBody()->getContents();
 
-        return mb_convert_encoding($content, 'UTF-8',
-            mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
+        // $opts = [
+        //     'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+        //     "ssl" => [
+        //         "verify_peer" => false,
+        //         "verify_peer_name" => false,
+        //     ],
+        // ];  
+        
+        // $context = stream_context_create($opts);
+        // $content = file_get_contents($url,false, $context);
+
+        // return mb_convert_encoding($content, 'UTF-8',
+        //     mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
     }
 }

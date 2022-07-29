@@ -24,6 +24,7 @@ use App\Parsers\NewsAmStyle;
 use App\Parsers\ShamshyanParser;
 use App\Parsers\TertAmParser;
 use App\Parsers\HraparakAmParser;
+use App\Parsers\NewsAmSportParser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\Facades\DataTables;
@@ -66,6 +67,7 @@ class PostsController extends Controller
         $parse_sites = [
             'news.am',
             'news.am - style',
+            'news.am - sport',
             'iravaban.net',
             'shamshyan.com',
             'tert.am',
@@ -90,6 +92,7 @@ class PostsController extends Controller
         $parse_sites = [
             'news.am' => NewsAmParser::class,
             'news.am - style' => NewsAmStyle::class,
+            'news.am - sport' => NewsAmSportParser::class,
             'iravaban.net' => IravabanNetParser::class,
             'shamshyan.com' => ShamshyanParser::class,
             'lragir.am' => LragirParser::class,
