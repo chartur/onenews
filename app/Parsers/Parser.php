@@ -84,32 +84,32 @@ class Parser
     }
 
     private function file_get_contents_utf8($url) {
-        // $client = new Client;
-        // return $client->get($url, [
-        //     'verify' => false,
-        //     'headers' => [
-        //         'User-Agent' => "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0",
-        //     ],
-        //     'curl' => [
-        //         CURLOPT_SSL_VERIFYPEER => false
-        //     ],
-        //     'on_stats' => function (TransferStats $stats) use (&$url) {
-        //         $url = $stats->getEffectiveUri();
-        //     }
-        // ])->getBody()->getContents();
-
-        $opts = [
-            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
-            "ssl" => [
-                "verify_peer" => false,
-                "verify_peer_name" => false,
+        $client = new Client;
+        return $client->get($url, [
+            'verify' => false,
+            'headers' => [
+                'User-Agent' => "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0",
             ],
-        ];  
-        
-        $context = stream_context_create($opts);
-        $content = file_get_contents($url,false, $context);
+            'curl' => [
+                CURLOPT_SSL_VERIFYPEER => false
+            ],
+            'on_stats' => function (TransferStats $stats) use (&$url) {
+                $url = $stats->getEffectiveUri();
+            }
+        ])->getBody()->getContents();
 
-        return mb_convert_encoding($content, 'UTF-8',
-            mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
+        // $opts = [
+        //     'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+        //     "ssl" => [
+        //         "verify_peer" => false,
+        //         "verify_peer_name" => false,
+        //     ],
+        // ];  
+        
+        // $context = stream_context_create($opts);
+        // $content = file_get_contents($url,false, $context);
+
+        // return mb_convert_encoding($content, 'UTF-8',
+        //     mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
     }
 }
