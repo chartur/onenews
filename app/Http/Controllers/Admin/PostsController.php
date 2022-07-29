@@ -324,7 +324,7 @@ class PostsController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Փոստը հաջողությամբ ստեղծված է։' ,
+            'message' => 'Փոստը հաջողությամբ թարգմանված է։' ,
             'data' => [
                 'content' => $translated_content,
                 'title' => $translated_title,

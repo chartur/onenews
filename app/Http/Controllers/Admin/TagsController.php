@@ -12,6 +12,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class TagsController
 {
@@ -172,5 +173,35 @@ class TagsController
             ->get();
 
         return view('admin.includes.tag-search-result')->with(compact('tags'));
+    }
+
+    public function getTagTranslation(Request $request)
+    {
+        $request->validate([
+            'tag' => "required"
+        ]);
+
+        $translator = new GoogleTranslate();
+
+        $translated_tag = $translator
+            ->setSource('hy')
+            ->setTarget('ru')
+            ->getResponse($request->tag);
+
+        $translates = [];
+        
+        foreach($translated_tag[5][0][2] as $value) {
+            $translates[] = $value[0];
+        }
+
+        // dd($translated_tag);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Թագը հաջողությամբ թարգմանված է։' ,
+            'data' => [
+                'tag' => $translates,
+            ]
+        ]);
     }
 }

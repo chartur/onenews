@@ -226,14 +226,16 @@
 						<div class="form-group">
 							<label class="w-100">
 								Հայերեն անուն
+								<button type="button" class="btn btn-sm btn-link text-success translate-tag-button">Թարգմանել</button>
 								<input type="text" required name="hy_name" class="form-control">
 							</label>
 						</div>
-						<div class="form-group">
+						<div class="form-group position-relative">
 							<label class="w-100">
 								Ռուսերեն անուն
 								<input type="text" required name="ru_name" class="form-control">
 							</label>
+							<div id="tag-translation-container"></div>
 						</div>
 					</form>
 				</div>
@@ -559,6 +561,40 @@
 			var title = $('input[name='+ lang +'_title]').val().trim();
 			copyToClipboard(url+' \n\r '+title);
 		}
+
+		$(".translate-tag-button").click(function() {
+			var hy_name = $('#add-new-tag-form input[name=hy_name]').val();
+
+			if(!hy_name) {
+				return showMessage('danger', 'Թագի հայերեն անվանումը պարտադիր է')
+			}
+
+			$.ajax({
+				url: '/cabinet/tags/translate',
+				type: 'post',
+				data: {
+					tag: hy_name
+				},
+				beforeSend: NProgress.start,
+				complete: NProgress.done,
+				success: function (res) {
+					showMessage(res.status, res.message);
+					const lis = res.data.tag.map((tag) => `<li class="translated-tag-element">${tag}</li>`).join('');
+					const html = `<ul class="translated-tags-list">${lis}</ul>`;
+					$("#tag-translation-container").html(html);
+					$("#tag-translation-container").addClass("d-block");
+				},
+				error: function (err) {
+					showMessage(err.responseJSON.status, err.responseJSON.message);
+				}
+			})
+		})
+
+		$(document).on("click", ".translated-tag-element", function() {
+			$('#add-new-tag-form input[name=ru_name]').val($(this).text());
+			$("#tag-translation-container").removeClass("d-block");
+		})
+
 
 		$('#tag-search').on('keyup', searchTag);
 
