@@ -52,6 +52,7 @@ class Parser
     {
         $this->nativeUrl = $url;
         $html = $this->file_get_contents_utf8($this->nativeUrl);
+        dd($html);
         $this->dom = new Dom;
         $this->dom->loadStr($html);
     }
@@ -82,17 +83,23 @@ class Parser
     }
 
     private function file_get_contents_utf8($url) {
-        $opts = [
-            'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
-            "ssl" => [
-                "verify_peer" => false,
-                "verify_peer_name" => false,
-            ],
-        ];  
-        $context = stream_context_create($opts);
-        $content = file_get_contents($url,false, $context);
-
-        return mb_convert_encoding($content, 'UTF-8',
-            mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
+        try {
+            $opts = [
+                'http' => ['header' => "User-Agent:MyAgent/1.0\r\n"],
+                "ssl" => [
+                    "verify_peer" => false,
+                    "verify_peer_name" => false,
+                ],
+            ];  
+            $context = stream_context_create($opts);
+            $content = file_get_contents($url,false, $context);
+            dd($content);
+    
+            return mb_convert_encoding($content, 'UTF-8',
+                mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
+        } catch(Exception $e) {
+            return $content = file_get_contents($url);   
+        }
+        
     }
 }
