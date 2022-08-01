@@ -28,7 +28,7 @@
 	<style>
 		.fancybox-content {
 			width: 98%!important;
-			max-width: 700px!important;
+			max-width: 575px!important;
 			padding: 10px!important;
 		}
 	</style>
