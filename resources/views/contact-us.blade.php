@@ -34,10 +34,13 @@
 					</div>
 				</div>
 			@endif
-			<div class="col-12 col-md-6">
-				<div class="image mb-2">
-					<img src="{{ asset($page->image) }}" width="100%">
-				</div>
+			<header class="p-2">
+				<h1>{{ getAttributeByLang($seo, 'title') }}</h1>
+				<p>
+					{!! getAttributeByLang($page, 'content') !!}
+				</p>
+			</header>
+			<div class="col-12 col-md-8 mt-5">
 				<form action="{{ routingWithLang('/support') }}" method="POST">
 					@csrf
 					<input type="text" required name="name" class="form-control mb-2 {{ $errors->contact->count() &&  $errors->contact->first('name') ? 'is-invalid' : '' }}" placeholder="{{ trans('main.contact_form.name') }}">
@@ -46,12 +49,11 @@
 					<button class="btn btn-primary btn-block" style="background-color: #3d566e">{{ trans('main.contact_form.send') }}</button>
 				</form>
 			</div>
-			<header>
-				<h1>{{ getAttributeByLang($seo, 'title') }}</h1>
-				<p>
-					{!! getAttributeByLang($page, 'content') !!}
-				</p>
-			</header>
+			<div class="col-12 col-md-4">
+				<div class="image mb-2">
+					<img src="{{ asset($page->image) }}" width="100%">
+				</div>
+			</div>
 		</div>
 	</div>
 @endsection
