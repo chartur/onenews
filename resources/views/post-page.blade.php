@@ -25,6 +25,12 @@
 
 @section('styles')
 	<link rel="stylesheet" href="{{ asset('/admin/fancybox/jquery.fancybox.min.css') }}">
+	<style>
+		.fancybox-content {
+			width: 98%!important;
+			padding: 10px!important;
+		}
+	</style>
 @endsection
 
 
