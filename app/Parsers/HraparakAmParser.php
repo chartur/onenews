@@ -68,6 +68,19 @@ class HraparakAmParser extends Parser
             $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
         }
 
+        $iframes = $this->dom->find('.post-content iframe');
+
+        foreach ($iframes as $iframe) {
+            $src = $iframe->getAttribute('src');
+            if(!$src) {
+                continue;
+            }
+            $width = $iframe->getAttribute('width');
+            $height = $iframe->getAttribute('height');
+            $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
+        }
+
+
         return $this;
     }
 

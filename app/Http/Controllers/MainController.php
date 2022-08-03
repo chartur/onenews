@@ -367,7 +367,7 @@ class MainController extends Controller
         }
 
         Mail::send('email.support', $request->all(), function ($message) use ($request) {
-            $message->to('support@onenews.info', 'OneNews Support')
+            $message->to('admin@onenews.info', 'OneNews Support')
                 ->from('support@onenews.info', 'Sender of OneNews')
                 ->subject('New message from onenews sender');
         });
