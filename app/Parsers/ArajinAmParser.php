@@ -42,8 +42,8 @@ class ArajinAmParser extends Parser
     private function parsePostContent()
     {
         $elements = $this->dom->find('.single-post-content p');
-        // $iframes = $this->dom->find('.single-post-content iframe');
-        // $images = $this->dom->find('.single-post-content img');
+        $iframes = $this->dom->find('.single-post-content iframe');
+        //$images = $this->dom->find('.single-post-content img');
 
         // foreach ($images as $image) {
         //     $src = $image->getAttribute('src');
@@ -55,15 +55,15 @@ class ArajinAmParser extends Parser
             $this->postContent .= '<p>'. $p->innerText() .'</p>';
         }
 
-        // foreach ($iframes as $iframe) {
-        //     $src = $iframe->getAttribute('src');
-        //     if(!$src) {
-        //         continue;
-        //     }
-        //     $width = $iframe->getAttribute('width');
-        //     $height = $iframe->getAttribute('height');
-        //     $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
-        // }
+        foreach ($iframes as $iframe) {
+            $src = $iframe->getAttribute('src');
+            if(!$src) {
+                continue;
+            }
+            $width = $iframe->getAttribute('width');
+            $height = $iframe->getAttribute('height');
+            $this->postContent .= "<iframe src='$src' height='$height' width='$width'></iframe>";
+        }
 
         return $this;
     }
