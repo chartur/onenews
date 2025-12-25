@@ -25,24 +25,26 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         $reqs = $request->except('_token');
-
         $ads = [];
-        $count = count($reqs['name']);
+        if (isset($reqs['name'])) {
+            $count = count($reqs['name']);
+            for($i = 0; $i < $count; $i++) {
+                if(!$reqs['name'][$i] || !$reqs['slug'][$i] || !$reqs['content'][$i]) {
+                    return redirect()->back()->with('danger', 'Չստացվեց!');
+                }
 
-        for($i = 0; $i < $count; $i++) {
-            if(!$reqs['name'][$i] || !$reqs['slug'][$i] || !$reqs['content'][$i]) {
-                return redirect()->back()->with('danger', 'Չստացվեց!');
+                $ads[] = [
+                    'name' => $reqs['name'][$i],
+                    'slug' => $reqs['slug'][$i],
+                    'content' => $reqs['content'][$i],
+                ];
             }
-
-            $ads[] = [
-                'name' => $reqs['name'][$i],
-                'slug' => $reqs['slug'][$i],
-                'content' => $reqs['content'][$i],
-            ];
         }
 
         Adsense::query()->truncate();
-        Adsense::insert($ads);
+        if (count($ads) > 0) {
+            Adsense::insert($ads);
+        }
         return redirect()->back()->with('success', 'Գովազդները հաջողությամբ պահպանված է');
     }
 
