@@ -79,6 +79,11 @@
 		  ]
 		}
 </script>
+
+	@if(url('') !== 'http://localhost:8000')
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4690904339142228"
+                crossorigin="anonymous"></script>
+	@endif
 </head>
 <body>
 	<script>
