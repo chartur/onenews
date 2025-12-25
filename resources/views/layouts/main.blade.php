@@ -8,6 +8,7 @@
 	<meta property="fb:app_id" content="808625669696768">
 	<meta property="fb:pages" content="268599243671295" />
 	<meta property="fb:article_style" content="custom">
+    <meta name="google-adsense-account" content="ca-pub-4690904339142228">
 
 	@yield('meta')
 
@@ -78,10 +79,6 @@
 		  ]
 		}
 </script>
-
-	@if(url('') !== 'http://localhost:8000')
-		<script data-ad-client="ca-pub-4690904339142228" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	@endif
 </head>
 <body>
 	<script>
