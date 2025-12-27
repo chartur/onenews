@@ -8,13 +8,10 @@
 	<meta property="fb:app_id" content="808625669696768">
 	<meta property="fb:pages" content="268599243671295" />
 	<meta property="fb:article_style" content="custom">
+    <meta name="google-adsense-account" content="ca-pub-4690904339142228">
     @if(url('') !== 'http://localhost:8000')
-        <meta name="google-adsense-account" content="ca-pub-4690904339142228">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4690904339142228"
                 crossorigin="anonymous"></script>
-
-        <script>window.yaContextCb=window.yaContextCb||[]</script>
-        <script src="https://yandex.ru/ads/system/context.js" async></script>
     @endif
 	@yield('meta')
 
