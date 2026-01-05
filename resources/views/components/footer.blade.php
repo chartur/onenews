@@ -58,7 +58,7 @@
 <section class="t3-copyright">
 	<div class="container">
 		<div class="custom copyright">
-			<p class="mb-0">Copyright © 2019 OneNews. All Rights Reserved by onenews.info</p>
+			<p class="mb-0">Copyright © 2019 OneNews. All Rights Reserved by onenews.am</p>
 		</div>
 	</div>
 </section>

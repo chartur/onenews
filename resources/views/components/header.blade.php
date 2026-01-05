@@ -2,7 +2,7 @@
 	<a class="d-block text-center" href="/">
 		{{--<div style="padding-left: 30px" class="position-relative">--}}
 			{{--<div class="d-inline-block main-color logo-name">ONE</div>--}}
-			<img src="{{ asset('/images/full_logo.png') }}" alt="onenews.info logo" width="120px">
+			<img src="{{ asset('/images/full_logo.png') }}" alt="onenews.am logo" width="120px">
 		{{--</div>--}}
 
 	</a>

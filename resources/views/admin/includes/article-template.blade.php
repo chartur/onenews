@@ -43,7 +43,7 @@
 
 			<footer>
 				<!-- Copyright details for your article -->
-				<small>Copyright © 2019 OneNews. All Rights Reserved by onenews.info</small>
+				<small>Copyright © 2019 OneNews. All Rights Reserved by onenews.am</small>
 			</footer>
 		</article>
 	</body>

@@ -367,14 +367,14 @@ class MainController extends Controller
         }
 
         Mail::send('email.support', $request->all(), function ($message) use ($request) {
-            $message->to('admin@onenews.info', 'OneNews Support')
-                ->from('support@onenews.info', 'Sender of OneNews')
+            $message->to('admin@onenews.am', 'OneNews Support')
+                ->from('support@onenews.am', 'Sender of OneNews')
                 ->subject('New message from onenews sender');
         });
 
         Mail::send('email.sender', $request->all(), function ($message) use ($request) {
             $message->to($request->email, $request->name)
-                ->from('support@onenews.info', 'Support of OneNews')
+                ->from('support@onenews.am', 'Support of OneNews')
                 ->subject('OneNews լրատվական ծառայություն');
         });
 

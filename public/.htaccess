@@ -5,8 +5,8 @@
 
     RewriteEngine On
 
-    RewriteCond %{HTTP_HOST} ^www.onenews.info$ [NC]
-    RewriteRule ^(.*)$ http://onenews.info/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www.onenews.am$ [NC]
+    RewriteRule ^(.*)$ http://onenews.am/$1 [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
